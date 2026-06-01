@@ -1,0 +1,40 @@
+# === 操作系统 ===
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# === 编辑器 / IDE ===
+.vscode/
+.idea/
+*.swp
+*~
+
+# === Node ===
+node_modules/
+npm-debug.log*
+yarn-error.log
+
+# === Python ===
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+
+# === 构建产物 ===
+dist/
+build/
+
+# === 🔒 隐私：儿童问卷原始数据与生成报告，绝不入库（即便仓库私有也默认排除）===
+inbox/*
+!inbox/.gitkeep
+processed/*
+!processed/.gitkeep
+reports/*
+!reports/.gitkeep
+
+# === 本地草稿 / 临时 ===
+*.local
+*.tmp
+draft-*.json
