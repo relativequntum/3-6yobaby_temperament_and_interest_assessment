@@ -51,7 +51,7 @@
   4. **Problem Solving 问题解决**（与玩具/物品互动中的认知、模仿、想象）
   5. **Personal-Social 个人-社会**（自理、与人互动、独立性）
 - **计分逻辑（仅作借鉴，不照搬）**：每题「是 / 有时 / 还没有」= 10/5/0 分，域得分与「域切分点（约低于均值 2 个标准差）」比较以决定是否转介。**本工具不采用切分点判分。**
-- **心理测量**（用于支撑「领域结构成熟可靠」）：美国常模约 18,000 份问卷，整体一致性约 86%（区间 73–100%）；多研究报告灵敏度约 0.85–0.92、特异度约 0.78–0.92；内部一致性多数领域 Cronbach's α 接近但部分低于 .70（Squires et al., 2009；Velikonja et al., 2017 系统综述）。
+- **心理测量**（用于支撑「领域结构成熟可靠」）：美国常模约 18,000 份问卷，整体一致性约 86%（区间 73–100%）；**灵敏度约 0.85–0.92、特异度约 0.78–0.92 这一精确区间引自 ASQ-3 技术报告（Squires & Bricker, 2009 / ASQ-3 Technical Report）**；内部一致性多数领域 Cronbach's α 接近但部分低于 .70（Squires et al., 2009）。**Velikonja et al. (2017) 系统综述仅支撑「ASQ 心理测量属性可接受但跨研究异质（heterogeneous）」这一定性结论，不作精确灵敏度/特异度数值的来源**（2026-06 来源订正）。
 
 ### 2.2 CDC 发展里程碑（2022 修订版）— 行为锚点主来源
 - **方法学文献**：Zubler et al., 2022, *Pediatrics* 149(3):e2021052138（AAP 专家组制定 11 条入选标准；阈值 ≥75% 同龄达成；要求「自然情境下易观察、用平实语言」；新增 15、30 月龄节点；总体减少 26.4%、替换 40.9% 旧里程碑）。
@@ -254,7 +254,7 @@
 
 7. ⚠️ **Goodenough, F. L. (1926).** *Measurement of Intelligence by Drawings.* New York: World Book Co. **Harris, D. B. (1963).** *Children's Drawings as Measures of Intellectual Maturity.* New York: Harcourt, Brace & World.（画人测验「身体部位数随龄增加」的经典依据；二手来源核实，原书未直接调阅，建议查原著或近年综述核实评分细则）。综述参考：Draw-A-Person test 概览 https://en.wikipedia.org/wiki/Draw-a-Person_test （仅作背景，非主引）。
 
-8. ⚠️ **Velikonja, T., Edbrooke-Childs, J., Calderon, A., Sleed, M., Brown, A., & Deighton, J. (2017).** The psychometric properties of the Ages & Stages Questionnaires for ages 2–2.5: a systematic review. *Child: Care, Health and Development.* （ASQ-3 灵敏度/特异度区间的系统综述支撑）；ResearchGate 记录：https://www.researchgate.net/publication/306521176 （核心结论已见检索，完整页码/卷期建议查 PubMed 原文核实）。
+8. 🟡 **Velikonja, T., Edbrooke-Childs, J., Calderon, A., Sleed, M., Brown, A., & Deighton, J. (2017).** The psychometric properties of the Ages & Stages Questionnaires for ages 2–2.5: a systematic review. *Child: Care, Health and Development*, 43(1), 1–17. （卷期页码 2026-06 补全，⚠️→🟡）。**引用边界**：该综述仅支撑「ASQ 心理测量属性**可接受但跨研究异质**」的定性结论；**精确灵敏度 0.85–0.92／特异度 0.78–0.92 区间应改引 ASQ-3 技术报告，不挂在 Velikonja 名下**。ResearchGate 记录：https://www.researchgate.net/publication/306521176 。
 
 ---
 *免责再申明：本简报用于产品文献对齐与本土化建题，所列锚点为「描述性观察素材」，不构成发育筛查/诊断依据；正式筛查与诊断请使用 ASQ-3、儿心量表-II 等标准化工具并由专业人员施测。*

@@ -36,7 +36,7 @@
 ### 1.3 家长报告（代答/proxy report）的固有偏差
 家长报告是高生态效度、低成本、可覆盖日常多场景的信息源，但作为**代答**存在系统偏差，核心三类（本工具的「参照框架」问题尤其关键）：
 
-- **社会赞许性偏差（Social desirability bias）**：照看人倾向把孩子（及自己的养育）报告得更「好」。文献显示其对儿童自评/代答测量确有影响，但并非所有量表都受其污染——例如《Parenting Scale》的分数与社会赞许性量表无显著相关，说明**可通过题目措辞设计降低其影响**（行为锚定、具体场景化、避免明显「美德题干」）。（`SDB_LIT`；`PARSCALE`）
+- **社会赞许性偏差（Social desirability bias）**：照看人倾向把孩子（及自己的养育）报告得更「好」。**他人／代答报告普遍存在社会赞许偏差是测量学的一般共识（常识表述，不依赖特定引文；原 `SDB_LIT`=PMC9594396 因主题/方向双反已删除，见 §7 条目 14；真正的家长/informant 报告 SDB 文献当前「待补」）**。但并非所有量表都受其污染——例如《Parenting Scale》的分数与社会赞许性量表无显著相关，说明**可通过题目措辞设计降低其影响**（行为锚定、具体场景化、避免明显「美德题干」）。（`PARSCALE`）
 - **光环效应（Halo effect）**：照看人对孩子的整体好感会拉高其在各具体维度上的评分，压缩维度间差异——这对一个**专门做维度间相对比较**的工具是头号威胁，因为光环效应会把本应分化的画像「抹平」。
 - **参照框架效应 / 参照群体效应（Reference-group effect）**：Likert 主观评分依赖作答者**心里拿谁做参照**。Heine 等（2002）证明：不同文化/群体的人用不同的内部参照标准作答，导致跨群体的主观 Likert 比较失真，甚至「专家公认更集体主义的东亚人，在自评量表上反而显得不更集体主义」。对本工具的直接推论：**绝不能让家长跨孩子比较**（「我家孩子比别人强吗」会触发参照群体效应），而要把题干牢牢锚定在**可观察的具体行为频率**上，让个体内比较成为主轴。（`REFGRP`）
 
@@ -239,7 +239,7 @@ Ipsative 一词由 Cattell（1944）提出（拉丁 *ipse* =「自己」），�
 
 13. （社会赞许性可被题目设计缓解的证据）Arnold, D. S., O'Leary, S. G., Wolff, L. S., & Acker, M. M. (1993). The Parenting Scale: A measure of dysfunctional parenting in discipline situations. *Psychological Assessment, 5*(2), 137–144. 概述见 CEBC: https://www.cebc4cw.org/assessment/parenting-scale/ 。（其分数与社会赞许性无显著相关。**该原始文献的卷/页经二手来源转述，DOI=10.1037/1040-3590.5.2.137 需进一步核实**。）**[需核实]**（`PARSCALE`）
 
-14. （社会赞许性偏差对儿童相关自评/代答测量影响的实证综述类证据）相关研究（如 PMC9594396「The effect of social desirability bias on the measurement of subjective health literacy of children」, 2022）URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9594396/ 。（用于支持「社会赞许性确会影响儿童相关自评/代答」这一一般性论点；**具体作者/期刊/卷页未逐项核实，标注需进一步核实**。）**[需核实]**（`SDB_LIT`）
+14. **〔已删除原 `SDB_LIT` 引用，2026-06 修订〕** 原条目以 PMC9594396（Bollweg & Okan, 2022,「The effect of social desirability bias on the measurement of subjective health literacy of children」）支撑「社会赞许性影响（家长）代答」。经复核，该文研究的是**儿童自评**主观健康素养、且结论为社会赞许偏差**无显著影响**——与本工具拟支撑的「家长/informant 代答受社会赞许影响」在**主题（自评 vs 代答）与方向（无影响 vs 有影响）上双反**，不能作为支撑，**已删除**。相应论点改为**不依赖具体引文的常识表述**：「他人／代答报告普遍存在社会赞许偏差」（测量学一般共识；措辞工程可缓解但不能消除，同向证据见条目 13 `PARSCALE`）。若需真正的家长/informant 报告社会赞许文献，**当前为「待补」**，补入前不作具体引用。原 `SDB_LIT` 理论 key 在本简报 §1.3、§5.3（MEAS-C）等处的引用，一并改为「常识表述/待补」，不再挂 PMC9594396。
 
 15. （学龄前优势取向家长报告 + 一周重测 ≥0.80 的范例）Preschool Behavioral and Emotional Rating Scale / BERS-2 相关验证研究（如 ResearchGate「Convergent Validity and Test-Retest Reliability of the Preschool Behavioral and Emotional Behavior Rating Scale: Parents as Respondents」）。**该条作者、年份、期刊、卷页与确切重测系数均需进一步核实**（仅用于佐证「短间隔重测可达约 0.80」的量级，不作精确引用）。**[需核实]**（`BERS`）
 

@@ -54,7 +54,7 @@ EF（工作记忆、抑制控制/反应抑制、认知灵活性/转换）是入�
 
 ### 1.5 成长型思维前体（Growth Mindset Precursors）
 
-3–6 岁不直接测"智力可塑信念"，而测其**前体行为**：面对失败/受挫的反应、是否主动寻求挑战、被纠错后是否再试、把困难归因为"还没学会/再练练"而非"我不行"。证据链：父母在孩子 1–3 岁时的**过程表扬（process praise，表扬努力/策略）**比例越高，孩子 7–8 岁时越倾向于持有"渐进式/增量"动机框架（incremental / growth），并经由该框架预测后续学业成就（Gunderson et al. 2013）。个体差异在学前期已可见；4–5 岁儿童已能受过程/个人表扬影响而表现出掌握取向 vs 无助取向（Kamins & Dweck 1999；Gunderson et al. 2018 "praise balance"——需进一步核实具体作者顺序与年份）。
+3–6 岁不直接测"智力可塑信念"，而测其**前体行为**：面对失败/受挫的反应、是否主动寻求挑战、被纠错后是否再试、把困难归因为"还没学会/再练练"而非"我不行"。证据链：父母在孩子 1–3 岁时的**过程表扬（process praise，表扬努力/策略）**比例越高，孩子 7–8 岁时越倾向于持有"渐进式/增量"动机框架（incremental / growth）（Gunderson et al. 2013）。**注意：Gunderson et al. (2013) 原文测的是「过程表扬→增量动机框架」，并未测量学业成就，故本简报不据此宣称"预测后续学业成就"（该越界表述已删除，更远端链条来自他文）**。个体差异在学前期已可见；5–6 岁儿童已能受过程/个人表扬影响而表现出掌握取向 vs 无助取向（Kamins & Dweck 1999，**被试 5–6 岁**；学前过程/个人表扬配比与掌握动机另见 Xu, Mo, Pan & Li 2023, *JADP* 90:101607 "praise balance"）。
 
 ---
 
@@ -73,7 +73,7 @@ EF（工作记忆、抑制控制/反应抑制、认知灵活性/转换）是入�
 
 ## 3. 三段（3–4 / 4–5 / 5–6）的差异与可观察行为锚点
 
-整体发展趋势（综合 Garon, Bryson & Smith 2008；DMQ 跨龄数据；执行功能学前期文献）：抑制与工作记忆在 3→4 岁增长最显著；持续性注意在 3–5 岁大幅提升；冲突抑制、规则切换等更复杂的 EF 在学前后期（5–6 岁）才趋成熟。坚持的"对象"也从以客体/大动作为主，逐步扩展到更长时程、更社会化、更需计划的活动。
+整体发展趋势（综合 Garon, Bryson & Smith 2008；DMQ 跨龄数据；执行功能学前期文献）：抑制与工作记忆在学前期（约 3–6 岁）持续较快发展、多在学前早期增长尤为明显（具体岁段表述软化，避免绝对化的"3→4 岁增长最显著"）；持续性注意在 3–5 岁大幅提升；冲突抑制、规则切换等更复杂的 EF 在学前后期（5–6 岁）才趋成熟。坚持的"对象"也从以客体/大动作为主，逐步扩展到更长时程、更社会化、更需计划的活动。
 
 | 子维度 | 3–4 岁锚点（可观察） | 4–5 岁锚点 | 5–6 岁锚点 |
 |---|---|---|---|
@@ -191,7 +191,7 @@ EF（工作记忆、抑制控制/反应抑制、认知灵活性/转换）是入�
 - 负性反应/F 维偏高时，提示"挫折恢复仍在发展"，给情绪共情 + 拆小步骤 + 过程表扬的家庭策略。
 
 **局限**
-1. **单一家长报告的偏差**：社会赞许性（DMQ 数据显示家长普遍给偏高分，多在 3.2–4.6/5）、单评分者主观性；本工具靠"在家小观察"题缓解但无法消除。
+1. **单一家长报告的偏差**：社会赞许性（DMQ 数据显示家长普遍给偏高分，**「多在 3.2–4.6/5」标「待核」**——该区间系二手转述、未回 DMQ 手册逐项核对，正式引用前须核实或删去）、单评分者主观性；本工具靠"在家小观察"题缓解但无法消除。
 2. **反向题易误填**：DMQ 经验表明 10–20% 家长对反向/负性题理解有误，DMQ 18 已剔除部分反向题。本工具反向题需做问卷可读性测试，措辞尽量直白。
 3. **行为表现 ≠ 潜在能力**：专注/坚持的家长评定与实验室 EF 任务相关为中等（CHEXI、DMQ 均如此），不能据此做 EF/ADHD 等任何诊断。
 4. **年龄外推风险**：OECD SSES 针对 10/15 岁，仅作构念分层参考，**严禁直接照搬其题目到 3–6 岁**。
@@ -208,7 +208,7 @@ EF（工作记忆、抑制控制/反应抑制、认知灵活性/转换）是入�
 
 2. ✅ Morgan, G. A., Busch-Rossnagel, N. A., Barrett, K. C., & Wang, J. (2009). **The Dimensions of Mastery Questionnaire (DMQ): A manual about its development, psychometrics, and use.** Colorado State University. PDF：https://www.vernieuwenderwijs.nl/wp-content/uploads/DMQ-manual-2009.pdf （含 DMQ 17：45 题、5 点"not at all typical→very typical"、反向题需重编码 5→1、家长评分均值 3.2–4.6）
 
-3. ✅ Józsa, K., & Morgan, G. A. 等. **An Improved Measure of Mastery Motivation: Reliability and Validity of the Dimensions of Mastery Questionnaire (DMQ 18) for Preschool Children.** （DMQ 18 学前版信效度）https://www.academia.edu/27100288 〔确切期刊/年份 🟡 需进一步核实〕
+3. ✅ Józsa, K., & Morgan, G. A. (2015). **An improved measure of mastery motivation: Reliability and validity of the Dimensions of Mastery Questionnaire (DMQ 18) for preschool children.** *Hungarian Educational Research Journal*, 5(4), 87–103. DOI: 10.14413/HERJ2015.04.08. （DMQ 18 学前版信效度；期刊/年份/卷期/DOI 2026-06 补全，🟡→✅）https://www.academia.edu/27100288
 
 4. ✅ Tang, S., Xu, T., Jin, L., Ji, L., Chen, Q., & Qiu, J. (2024). **Validation of the I- and D-type epistemic curiosity scale among young Chinese children and implications on early curiosity nurture.** *BMC Psychology*, 12, 795. DOI: 10.1186/s40359-024-02286-4 ｜ https://pmc.ncbi.nlm.nih.gov/articles/PMC11684292/ （中国 3–5 岁幼儿；I/D-YC 10 题、4 点 1=几乎从不→4=几乎总是、I/D 两因子）
 
@@ -228,11 +228,11 @@ EF（工作记忆、抑制控制/反应抑制、认知灵活性/转换）是入�
 
 12. 🟡 White, R. W. (1959). **Motivation reconsidered: The concept of competence.** *Psychological Review*, 66(5), 297–333.（掌握/胜任动机理论源头；本简报经多处二手文献转引，建议查原文核实卷期页码）
 
-13. ⚠️ Kamins, M. L., & Dweck, C. S. (1999). **Person versus process praise and criticism: Implications for contingent self-worth and coping.** *Developmental Psychology*, 35(3), 835–847.（学前/幼儿园儿童对个人/过程表扬的不同反应——掌握取向 vs 无助取向）〔本次为二手检索到，**需进一步核实原文 DOI/页码**〕
+13. ✅ Kamins, M. L., & Dweck, C. S. (1999). **Person versus process praise and criticism: Implications for contingent self-worth and coping.** *Developmental Psychology*, 35(3), 835–847. DOI: 10.1037/0012-1649.35.3.835.（PMID 10380873；**被试为 5–6 岁**——凡正文提及年龄写「5–6 岁」或泛称「学前儿童」，不写「4–5 岁」；DOI/卷期/页码 2026-06 核实，⚠️→✅）
 
 14. ⚠️ Vitiello, V. E., & Greenfield, D. B. (2017). **Executive functions and approaches to learning in predicting school readiness.** *Journal of Applied Developmental Psychology*（执行功能与学习品质共同预测入学准备）. https://www.sciencedirect.com/science/article/abs/pii/S0193397316301988 〔卷期页码/DOI **需进一步核实**〕
 
-15. ⚠️ "The 'praise balance': Uncovering the optimal recipe for mastery motivation in preschoolers." *Journal of Applied Developmental Psychology*（2023，学前过程/个人表扬配比与掌握动机）. https://www.sciencedirect.com/science/article/abs/pii/S0193397323000977 〔确切作者、卷期 **需进一步核实**〕
+15. ✅ Xu, X., Mo, L., Pan, L., & Li, Y. (2023). **The "praise balance": Uncovering the optimal recipe for mastery motivation in preschoolers.** *Journal of Applied Developmental Psychology*, 90, 101607. https://www.sciencedirect.com/science/article/abs/pii/S0193397323000977 〔作者全名、卷号、文章号 2026-06 补全，⚠️→✅；citationKey `Xu2023_praiseBalance`（原误标 `Gunderson2018`）〕
 
 16. ⚠️ Morgan, G. A., MacTurk, R. H., & Hrncir, E. J. (1995). **Mastery motivation: Overview, definitions and conceptual issues.** In R. H. MacTurk & G. A. Morgan (Eds.), *Mastery motivation: Origins, conceptualizations, and applications*. Ablex.（掌握动机定义与概念综述）〔书章，二手检索到，**需进一步核实页码**〕
 

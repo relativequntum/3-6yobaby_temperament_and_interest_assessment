@@ -40,7 +40,7 @@
 
 ### 1.5 早期强烈兴趣与概念性兴趣（早慧迹象，谨慎使用）
 - **极端强烈兴趣**（DeLoache, Simcock & Macari, 2007，key: DELOACHE2007）：约**近三分之一**幼儿曾有过对某类对象（飞机/火车/汽车/茶具等）的极强烈兴趣；存在显著**性别差异**（男孩更常见）。说明强烈、聚焦的兴趣在正常发育儿童中很普遍，**不是病理、也不等于天赋**。
-- **概念性兴趣**（Alexander, Johnson, Leibham & Kelley, 2008；Johnson/Alexander/Leibham 系列，key: ALEXANDER2008）：4 岁儿童中相当比例会对某「知识性概念域」（如恐龙、马）形成兴趣并在 4–6 岁间持续；是否能维持，取决于**儿童认知技能 × 家庭是否提供一致性、沟通、教育性活动与自由游戏时间**。→ 「预先倾向 × 机会」共同决定兴趣能否扎根（参见「emergence … predisposition meets opportunity」一文，需进一步核实其完整作者/卷期）。
+- **概念性兴趣**（Alexander, Johnson, Leibham & Kelley, 2008；Johnson/Alexander/Leibham 系列，key: ALEXANDER2008）：4 岁儿童中相当比例会对某「知识性概念域」（如恐龙、马）形成兴趣并在 4–6 岁间持续；是否能维持，取决于**儿童认知技能 × 家庭是否提供一致性、沟通、教育性活动与自由游戏时间**。→ 「预先倾向 × 机会」共同决定兴趣能否扎根（Neitzel, Alexander & Johnson, 2019, *Learning, Culture and Social Interaction*, 23:100271）。
 
 ---
 
@@ -224,7 +224,7 @@
 
 5. **The Revised Dimensions of Mastery Questionnaire (DMQ 18)**（2019 工作文件 / 手册稿；Morgan 等）。 7 子量表、39 题、家长/照看人评定，覆盖婴儿至学龄/青少年多版本。 ResearchGate: https://www.researchgate.net/publication/326107138 ｜结构（7 子量表）多源一致可核实；**完整发表出处（期刊 vs. 手册章节）与年份需进一步核实**。
 
-6. Morgan, G. A., Wang, J., Liao, H.-F., Xu, Q., et al. (相关期刊版，如 *An Improved Measure of Mastery Motivation: Reliability and Validity of the DMQ 18 for Preschool Children*)。 ｜文章存在可核实（ResearchGate/Academia）；**确切作者顺序、期刊、卷期、年份、DOI 需进一步核实**。
+6. ✅ Józsa, K., & Morgan, G. A. (2015). **An improved measure of mastery motivation: Reliability and validity of the Dimensions of Mastery Questionnaire (DMQ 18) for preschool children.** *Hungarian Educational Research Journal*, 5(4), 87–103. DOI: 10.14413/HERJ2015.04.08. 〔**确认 2026-06**：DMQ18 学前版信效度的正式期刊出处；作者顺序、期刊、卷期、年份、DOI 已补全〕
 
 7. Csikszentmihalyi, M. (1990/2014). **Flow** 及 *Applications of Flow in Human Development and Education: The Collected Works of Mihaly Csikszentmihalyi.* Springer. https://doi.org/10.1007/978-94-017-9094-9 ｜心流构念与「类心流游戏」论述可核实；**具体页码/版本对应需核实**。
 
@@ -232,7 +232,7 @@
 
 9. Alexander, J. M., Johnson, K. E., Leibham, M. E., & Kelley, K. (2008). **The development of conceptual interests in young children.** *Cognitive Development, 23*(2), 324–334. ｜卷/页多源一致；DOI 约为 https://doi.org/10.1016/j.cogdev.2007.11.004（**DOI 需进一步核实**）。
 
-10. **The emergence of children's interest orientations during early childhood: When predisposition meets opportunity.** *Cognitive Development*（约 2019，作者疑为 Alexander/Johnson/Leibham 团队）。 ScienceDirect: S2210656118301752。 ｜文章存在可核实；**确切作者、年份、卷期、DOI 需进一步核实**（原文 ScienceDirect 页面付费、未取全文）。
+10. ✅ Neitzel, C. L., Alexander, J. M., & Johnson, K. E. (2019). **The emergence of children's interest orientations during early childhood: When predisposition meets opportunity.** *Learning, Culture and Social Interaction*, 23, art. 100271. DOI: 10.1016/j.lcsi.2019.01.004. 〔**期刊订正 2026-06**：原误置于 *Cognitive Development*，实际刊于 *Learning, Culture and Social Interaction*；作者全名、年份、文章号、DOI 已补全〕
 
 11. Waterhouse, L. (2023). **Why multiple intelligences theory is a neuromyth.** *Frontiers in Psychology, 14*, 1217288. https://doi.org/10.3389/fpsyg.2023.1217288 ｜可核实（Frontiers/PMC10493274；全文已读）。
 

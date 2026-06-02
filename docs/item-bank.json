@@ -1,21 +1,34 @@
 {
   "schema_version": "1.0",
+  "schema_version_note": "1.0 结构保持向后兼容：1.1.0 题库新增的 report_subscale/cluster/consistency_pair_id/note 等均为附加字段，老消费方未识别时应忽略而非报错，不破坏既有 schema 1.0 结构。",
   "instrument": {
     "name": "3-6岁幼儿发展优势与兴趣画像测评",
     "version": "1.0.0",
     "date": "2026-06-02",
     "age_range": "3-6",
     "language": "zh-CN",
-    "item_bank_version": "1.0.0"
+    "item_bank_version": "1.1.0"
   },
   "age_bands": [
-    { "id": "3-4", "min_months": 36, "max_months": 47 },
-    { "id": "4-5", "min_months": 48, "max_months": 59 },
-    { "id": "5-6", "min_months": 60, "max_months": 72 }
+    {
+      "id": "3-4",
+      "min_months": 36,
+      "max_months": 47
+    },
+    {
+      "id": "4-5",
+      "min_months": 48,
+      "max_months": 59
+    },
+    {
+      "id": "5-6",
+      "min_months": 60,
+      "max_months": 72
+    }
   ],
   "out_of_range_notice": "本测评专为出生月龄在36至72个月（约3至6周岁）之间的幼儿设计。根据您填写的出生年月，孩子目前不在这一区间内。低于3岁的幼儿行为变化快、个体差异大，3岁以上孩子才更适用本工具的发展锚点；超过6岁则更接近学龄期，建议使用面向学龄儿童的工具。您仍可继续填写以作初步了解，但结果的参照锚点可能不完全贴合孩子的实际年龄，请谨慎看待。",
-  "consent_text": "感谢您参与这份「3-6岁幼儿发展优势与兴趣画像」测评。在开始前，请您了解以下几点：\n\n【这是什么】本测评帮助您看清自己孩子在不同方面相对更擅长、更喜欢什么，形成一份「优势与兴趣画像」。它做的是同一个孩子在自己身上的相对比较（哪些方面相对突出、哪些方面还在发展中）。\n\n【这不是什么】本测评不是医学诊断、不是发育筛查、不是智力或天赋鉴定。它不会给孩子打「合格/不合格」「正常/异常」的标签，不会与其他孩子比较，也不会给出人群百分位或排名。题目由我们参照国际与本土成熟研究框架自行编写，不属于任何标准化诊断量表。\n\n【用途说明】结果仅供家庭自我了解、安排亲子活动与陪伴方向参考。它反映的是「填写人在最近一段时间、在家庭情境中观察到的孩子」，换一个人、换一段时间填写，结果可能略有不同，这很正常。如果您对孩子在某方面的发展有持续的担心，请咨询儿童保健医生或专业老师，本测评不能替代专业评估。\n\n【数据说明】您填写的信息将用于生成本次画像报告。请如实填写——填得真实比填得「好看」更有用。\n\n请确认您已阅读并理解以上说明，并同意在此基础上开始填写。",
-  "consent_version": "1.0",
+  "consent_text": "感谢您参与这份「3-6岁幼儿发展优势与兴趣画像」测评。在开始前，请您了解以下几点：\n\n【这是什么】本测评帮助您看清自己孩子在不同方面相对更擅长、更喜欢什么，形成一份「优势与兴趣画像」。它做的是同一个孩子在自己身上的相对比较（哪些方面相对突出、哪些方面还在发展中）。\n\n【这不是什么】本测评不是医学诊断、不是发育筛查、不是智力或天赋鉴定。它不会给孩子打「合格/不合格」「正常/异常」的标签，不会与其他孩子比较，也不会给出人群百分位或排名。题目由我们参照国际与本土成熟研究框架自行编写，不属于任何标准化诊断量表。\n\n【用途说明】结果仅供家庭自我了解、安排亲子活动与陪伴方向参考。它反映的是「填写人在最近一段时间、在家庭情境中观察到的孩子」，换一个人、换一段时间填写，结果可能略有不同，这很正常。如果您对孩子在某方面的发展有持续的担心，请咨询儿童保健医生或专业老师，本测评不能替代专业评估。\n\n【数据说明】您填写的信息将用于生成本次画像报告。请如实填写——填得真实比填得「好看」更有用。\n\n【数据治理】您的作答仅保存在本机浏览器，不会上传到任何服务器；草稿默认一直保留，直到您主动清除；页面随时提供「清除本机草稿」按钮，可一键删除。建议导出结果文件后立即清除草稿。即使出生月龄不在适用区间（越界 out_of_range）继续作答，数据同样仅保存在本机、不上传。本次会话使用的随机标识仅用于标记这一份作答，不跨次关联同一孩子。\n\n请确认您已阅读并理解以上说明，并同意在此基础上开始填写。",
+  "consent_version": "1.1",
   "identity_fields": [
     {
       "id": "birth_month",
@@ -30,9 +43,18 @@
       "type": "select",
       "required": true,
       "options": [
-        { "v": "girl", "label": "女孩" },
-        { "v": "boy", "label": "男孩" },
-        { "v": "prefer_not", "label": "不便填写" }
+        {
+          "v": "girl",
+          "label": "女孩"
+        },
+        {
+          "v": "boy",
+          "label": "男孩"
+        },
+        {
+          "v": "prefer_not",
+          "label": "不便填写"
+        }
       ],
       "hint": "性别仅用于让报告措辞更自然，不会用来与同性别同龄人比较，也不会改变任何评分。不同性别的孩子在各方面都既可能更安静也可能更活跃，本工具不预设任何性别刻板印象。"
     },
@@ -49,10 +71,22 @@
       "type": "select",
       "required": true,
       "options": [
-        { "v": "mother", "label": "妈妈" },
-        { "v": "father", "label": "爸爸" },
-        { "v": "grandparent", "label": "祖辈（爷爷奶奶/外公外婆）" },
-        { "v": "other_caregiver", "label": "其他主要照看人（如保育员、亲属）" }
+        {
+          "v": "mother",
+          "label": "妈妈"
+        },
+        {
+          "v": "father",
+          "label": "爸爸"
+        },
+        {
+          "v": "grandparent",
+          "label": "祖辈（爷爷奶奶/外公外婆）"
+        },
+        {
+          "v": "other_caregiver",
+          "label": "其他主要照看人（如保育员、亲属）"
+        }
       ],
       "hint": "考虑到隔代养育在中国家庭很普遍，谁陪孩子时间最多、谁就最了解他平时的样子。请如实选择，这有助于我们在报告中说明结果的观察视角。"
     },
@@ -62,19 +96,31 @@
       "type": "select",
       "required": true,
       "options": [
-        { "v": "lt1", "label": "不足1小时" },
-        { "v": "1to3", "label": "1-3小时" },
-        { "v": "3to6", "label": "3-6小时" },
-        { "v": "gt6", "label": "6小时以上，基本全天" }
+        {
+          "v": "lt1",
+          "label": "不足1小时"
+        },
+        {
+          "v": "1to3",
+          "label": "1-3小时"
+        },
+        {
+          "v": "3to6",
+          "label": "3-6小时"
+        },
+        {
+          "v": "gt6",
+          "label": "6小时以上，基本全天"
+        }
       ],
       "hint": "相处时间越长，您对孩子日常表现的观察样本越充分，结果也越能反映孩子平时的样子。若相处时间较少，建议也请陪伴时间最多的照看人填一次做对照。"
     },
     {
       "id": "child_id",
-      "label": "孩子标识码",
+      "label": "本次会话标识",
       "type": "auto",
       "required": false,
-      "hint": "child_id 由系统在本地自动生成（建议格式：cid- 加随机字符串，或基于出生月+昵称+创建时间的哈希），用于把同一孩子多次填写的记录关联起来、支持「过段时间再测看成长」。它不包含可识别个人身份的明文信息，家长无需手动填写。"
+      "hint": "child_id 是本次会话的随机标识（格式：cid- 加 crypto.randomUUID() 随机串），仅用于标记这一份作答，不跨次关联同一孩子、不做纵向追踪。它不包含任何可识别个人身份的明文信息，家长无需手动填写。如需复测对照，请人工以昵称对应两次结果。"
     }
   ],
   "sections": [
@@ -86,16 +132,37 @@
         {
           "id": "TMP-01",
           "subscale": "活动水平",
+          "report_subscale": "活动水平",
+          "cluster": null,
           "construct": "外向性/活跃性 Surgency",
           "text": "在家里，孩子总是跑来跑去、闲不下来。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "EAS1984/Rothbart2001",
@@ -105,149 +172,343 @@
         {
           "id": "TMP-02",
           "subscale": "活动水平",
+          "report_subscale": "活动水平",
+          "cluster": null,
           "construct": "外向性/活跃性 Surgency",
           "text": "孩子喜欢长时间安静地坐着做一件事。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "EAS1984",
           "observe_hint": "如安静翻书、做手工时，他能持续多久。",
-          "anchors_by_band": { "3-4": "如能安静坐着翻书几分钟", "4-5": "如能安静做一会儿手工", "5-6": "如能安静画画/做手工较长时间" }
+          "anchors_by_band": {
+            "3-4": "如能安静坐着翻书几分钟",
+            "4-5": "如能安静做一会儿手工",
+            "5-6": "如能安静画画/做手工较长时间"
+          }
         },
         {
           "id": "TMP-03",
           "subscale": "社交接近",
+          "report_subscale": "社交接近",
+          "cluster": null,
           "construct": "外向性/活跃性 Surgency",
           "text": "到了有很多小朋友的新场合，孩子很快就能加入大家一起玩。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "EAS1984/Rothbart2001",
           "observe_hint": "到游乐场或聚会时，看他多久开始主动和别的孩子玩。",
-          "anchors_by_band": { "3-4": "需大人陪着才敢加入", "4-5": "观察一会儿后能加入", "5-6": "自己主动凑过去一起玩" }
+          "anchors_by_band": {
+            "3-4": "需大人陪着才敢加入",
+            "4-5": "观察一会儿后能加入",
+            "5-6": "自己主动凑过去一起玩"
+          }
         },
         {
           "id": "TMP-04",
           "subscale": "害羞/慢热",
+          "report_subscale": "害羞/慢热",
+          "cluster": null,
           "construct": "外向性/活跃性 Surgency",
           "text": "第一次见到陌生人时，孩子会害羞、躲开或不说话。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "Rothbart2001",
           "observe_hint": "回想最近一次见到不熟悉的大人时他的反应。",
-          "anchors_by_band": { "3-4": "躲到大人身后", "4-5": "观察一会儿才靠近", "5-6": "先沉默几分钟再开口" }
+          "anchors_by_band": {
+            "3-4": "躲到大人身后",
+            "4-5": "观察一会儿才靠近",
+            "5-6": "先沉默几分钟再开口"
+          }
         },
         {
           "id": "TMP-05",
           "subscale": "趋避/适应",
+          "report_subscale": "趋避/适应",
+          "cluster": null,
           "construct": "外向性/活跃性 Surgency",
           "text": "换到新环境（新班级、新地方），孩子需要比较长的时间才能适应。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "NYLS1977",
           "observe_hint": "回想最近一次换环境（换园/搬家/旅行）他适应了几天。",
-          "anchors_by_band": { "3-4": "换园会哭闹好几天", "4-5": "换新环境约需几天才能融入", "5-6": "一两天即可适应" }
+          "anchors_by_band": {
+            "3-4": "换园会哭闹好几天",
+            "4-5": "换新环境约需几天才能融入",
+            "5-6": "一两天即可适应"
+          }
         },
         {
           "id": "TMP-06",
           "subscale": "冒险/高强度愉悦",
+          "report_subscale": "冒险/高强度愉悦",
+          "cluster": null,
           "construct": "外向性/活跃性 Surgency",
           "text": "孩子喜欢玩刺激的游戏，比如被举高、转圈、快速滑滑梯。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
           "observe_hint": "和小伙伴玩追逐或玩游乐设施时他的兴奋程度。",
-          "anchors_by_band": { "3-4": "爱被举高、转圈", "4-5": "爱爬高、玩得很疯", "5-6": "滑梯越高越快越喜欢" }
+          "anchors_by_band": {
+            "3-4": "爱被举高、转圈",
+            "4-5": "爱爬高、玩得很疯",
+            "5-6": "滑梯越高越快越喜欢"
+          }
         },
         {
           "id": "TMP-07",
           "subscale": "冒险/高强度愉悦",
+          "report_subscale": "冒险/高强度愉悦",
+          "cluster": null,
           "construct": "外向性/活跃性 Surgency",
           "text": "遇到有点难度或有点冒险的玩法，孩子愿意去尝试。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
           "observe_hint": "面对陌生的新游乐设施或更难的关卡时他的态度。",
-          "anchors_by_band": { "4-5": "敢爬较高的攀爬架", "5-6": "主动挑战更难的关卡" }
+          "anchors_by_band": {
+            "4-5": "敢爬较高的攀爬架",
+            "5-6": "主动挑战更难的关卡"
+          }
         },
         {
           "id": "TMP-08",
           "subscale": "挫折/愤怒反应",
+          "report_subscale": "挫折/愤怒反应",
+          "cluster": "resilience",
           "construct": "负性情绪 Negative Affectivity",
           "text": "想做的事被打断或做不成时，孩子会生气、发脾气。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
           "observe_hint": "回想最近他想做的事被打断时的反应强度。",
-          "anchors_by_band": { "3-4": "哭闹、跺脚", "4-5": "抗议、喊叫", "5-6": "生气但能说出来" }
+          "anchors_by_band": {
+            "3-4": "哭闹、跺脚",
+            "4-5": "抗议、喊叫",
+            "5-6": "生气但能说出来"
+          }
         },
         {
           "id": "TMP-09",
           "subscale": "挫折/愤怒反应",
+          "report_subscale": "挫折/愤怒反应",
+          "cluster": "resilience",
           "construct": "负性情绪 Negative Affectivity",
           "text": "玩具被别的小朋友拿走时，孩子会很激动地反应。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
@@ -257,92 +518,213 @@
         {
           "id": "TMP-10",
           "subscale": "可安抚性",
+          "report_subscale": "可安抚性",
+          "cluster": "resilience",
           "construct": "负性情绪 Negative Affectivity",
           "text": "孩子发脾气或哭闹后，能比较快地平静下来。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
           "observe_hint": "他闹完情绪后多久能恢复平静。",
-          "anchors_by_band": { "3-4": "需大人较久安抚", "4-5": "说几句能平复", "5-6": "能较快自己平复" }
+          "anchors_by_band": {
+            "3-4": "需大人较久安抚",
+            "4-5": "说几句能平复",
+            "5-6": "能较快自己平复"
+          }
         },
         {
           "id": "TMP-11",
           "subscale": "恐惧/谨慎",
+          "report_subscale": "恐惧/谨慎",
+          "cluster": null,
           "construct": "负性情绪 Negative Affectivity",
           "text": "遇到大的声响或陌生的动物，孩子会害怕。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
           "observe_hint": "如吸尘器声、鞭炮声、陌生狗等情境下他的反应。",
-          "anchors_by_band": { "3-4": "怕吸尘器声、怕狗", "4-5": "怕某些具体声音/动物", "5-6": "怕特定情境，能说出怕什么" }
+          "anchors_by_band": {
+            "3-4": "怕吸尘器声、怕狗",
+            "4-5": "怕某些具体声音/动物",
+            "5-6": "怕特定情境，能说出怕什么"
+          }
         },
         {
           "id": "TMP-12",
           "subscale": "恐惧/谨慎",
+          "report_subscale": "恐惧/谨慎",
+          "cluster": null,
           "construct": "负性情绪 Negative Affectivity",
           "text": "做没把握的事情前，孩子会显得担心、犹豫。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
           "observe_hint": "面对没做过的事，他更多是跃跃欲试还是先观望。",
-          "anchors_by_band": { "3-4": "怕做错先求助", "4-5": "做之前先问能不能", "5-6": "担心失败而迟疑" }
+          "anchors_by_band": {
+            "3-4": "怕做错先求助",
+            "4-5": "做之前先问能不能",
+            "5-6": "担心失败而迟疑"
+          }
         },
         {
           "id": "TMP-13",
           "subscale": "注意聚焦/坚持",
+          "report_subscale": "注意聚焦/坚持",
+          "cluster": "focus_persistence",
           "construct": "努力控制 Effortful Control",
           "text": "做自己感兴趣的事时，孩子能专注比较长的时间。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001/PR2006",
           "observe_hint": "他做最爱的活动时，给他计个时看能持续多久。",
-          "anchors_by_band": { "3-4": "专注约3-5分钟", "4-5": "能完成一个有步骤的小任务", "5-6": "能专注10分钟以上" }
+          "anchors_by_band": {
+            "3-4": "专注约3-5分钟",
+            "4-5": "能完成一个有步骤的小任务",
+            "5-6": "能专注10分钟以上"
+          }
         },
         {
           "id": "TMP-14",
           "subscale": "注意聚焦/坚持",
+          "report_subscale": "注意聚焦/坚持",
+          "cluster": "focus_persistence",
           "construct": "努力控制 Effortful Control",
           "text": "做一件事时，孩子很容易被周围的事物吸引而分心。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "Rothbart2001",
@@ -352,78 +734,220 @@
         {
           "id": "TMP-15",
           "subscale": "注意聚焦/坚持",
+          "report_subscale": "注意聚焦/坚持",
+          "cluster": "focus_persistence",
           "construct": "努力控制 Effortful Control",
           "text": "遇到有点难的任务，孩子会坚持尝试而不是马上放弃。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001",
           "observe_hint": "给他略难一点的拼图，看他卡住后的反应。",
-          "anchors_by_band": { "3-4": "拼图卡住会再试几次", "4-5": "卡住会换个方法试", "5-6": "反复尝试搭复杂积木" }
+          "anchors_by_band": {
+            "3-4": "拼图卡住会再试几次",
+            "4-5": "卡住会换个方法试",
+            "5-6": "反复尝试搭复杂积木"
+          }
         },
         {
           "id": "TMP-16",
           "subscale": "抑制控制",
+          "report_subscale": "抑制控制",
+          "cluster": "inhibitory_control",
           "construct": "努力控制 Effortful Control",
           "text": "当大人说「先等一下」，孩子能忍住、等一会儿。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001/PR2006",
           "observe_hint": "让他「等大家都拿到再吃」，看他能等多久。",
-          "anchors_by_band": { "3-4": "能等几秒", "4-5": "能等几十秒", "5-6": "能等几分钟" }
+          "anchors_by_band": {
+            "3-4": "能等几秒",
+            "4-5": "能等几十秒",
+            "5-6": "能等几分钟"
+          }
         },
         {
           "id": "TMP-17",
           "subscale": "抑制控制",
+          "report_subscale": "抑制控制",
+          "cluster": "inhibitory_control",
           "construct": "努力控制 Effortful Control",
           "text": "被告知不可以碰的东西，孩子还是会忍不住去碰。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "Rothbart2001",
           "observe_hint": "被叮嘱不能碰的东西（如别人手机），他能不能管住自己。",
-          "anchors_by_band": { "3-4": "提醒下仍想碰", "4-5": "提醒后能短暂忍住", "5-6": "能较好管住自己" }
+          "anchors_by_band": {
+            "3-4": "提醒下仍想碰",
+            "4-5": "提醒后能短暂忍住",
+            "5-6": "能较好管住自己"
+          }
         },
         {
           "id": "TMP-18",
           "subscale": "抑制控制",
+          "report_subscale": "抑制控制",
+          "cluster": "inhibitory_control",
           "construct": "努力控制 Effortful Control",
           "text": "很想要某样东西时，孩子能按约定先等一等再拿。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Rothbart2001/PR2006",
           "observe_hint": "约定「等一下再给」时，他能否遵守（类「棉花糖」情境）。",
-          "anchors_by_band": { "4-5": "约定后能短暂等待", "5-6": "能为奖励延迟满足" }
+          "anchors_by_band": {
+            "4-5": "约定后能短暂等待",
+            "5-6": "能为奖励延迟满足"
+          }
+        },
+        {
+          "id": "TMP-19",
+          "subscale": "冒险/高强度愉悦",
+          "report_subscale": "冒险/高强度愉悦",
+          "cluster": null,
+          "construct": "外向性/活跃性 Surgency",
+          "text": "在游乐场或户外，孩子喜欢又跑又跳、玩得大声大动作，越热闹越开心。",
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "scale": "freq5",
+          "options": [
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
+          ],
+          "reverse": false,
+          "source": "Rothbart2001",
+          "observe_hint": "到户外活动时，看他是更想痛快地疯跑大动作，还是更想安静地待着。",
+          "anchors_by_band": {
+            "3-4": "爱大声大动作地跑跳",
+            "4-5": "越热闹越带劲、玩得很疯",
+            "5-6": "主动找又跑又跳的激烈玩法"
+          }
         }
       ]
     },
@@ -435,54 +959,125 @@
         {
           "id": "SEL-01",
           "subscale": "情绪调节",
+          "report_subscale": "情绪调节",
+          "cluster": "resilience",
           "construct": "自我调节·情绪面 Self-Regulation",
           "text": "遇到不顺心的事（如玩具被拿走、要求被拒绝），孩子能在较短时间内平静下来。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "DECA-SR/ThompER",
           "observe_hint": "他被拒绝后多久能恢复情绪。",
-          "anchors_by_band": { "3-4": "在大人安抚/转移下平复", "4-5": "提醒后能等一会儿", "5-6": "多能自己较快平复" }
+          "anchors_by_band": {
+            "3-4": "在大人安抚/转移下平复",
+            "4-5": "提醒后能等一会儿",
+            "5-6": "多能自己较快平复"
+          }
         },
         {
           "id": "SEL-02",
           "subscale": "情绪调节",
+          "report_subscale": "情绪调节",
+          "cluster": "resilience",
           "construct": "自我调节·情绪面 Self-Regulation",
           "text": "孩子能用说话的方式表达情绪（如「我有点害怕」「我生气了」），而不是只用哭闹。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Denh/ThompER",
           "observe_hint": "他闹情绪时，是用语言说出来还是只用哭闹。",
-          "anchors_by_band": { "3-4": "以单词/短句为主", "4-5": "能说出情绪词", "5-6": "能说出原因" }
+          "anchors_by_band": {
+            "3-4": "以单词/短句为主",
+            "4-5": "能说出情绪词",
+            "5-6": "能说出原因"
+          }
         },
         {
           "id": "SEL-03",
           "subscale": "情绪调节",
+          "report_subscale": "情绪调节",
+          "cluster": "resilience",
           "construct": "自我调节·情绪面 Self-Regulation",
           "text": "一旦情绪上来（哭闹、发脾气），就很难安抚、要闹很久。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "DECA-SR/ThompER",
@@ -492,54 +1087,125 @@
         {
           "id": "SEL-04",
           "subscale": "行为与冲动控制",
+          "report_subscale": "行为与冲动控制",
+          "cluster": "inhibitory_control",
           "construct": "自我调节·行为面 Behavioral Control",
           "text": "当大人说「停」或「不可以」时，孩子能停下正在做的事。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Koch/Diam",
           "observe_hint": "你说「停」时他需要被说几次才停。",
-          "anchors_by_band": { "3-4": "常需重复才停", "4-5": "提醒一次能停", "5-6": "多数一次就停" }
+          "anchors_by_band": {
+            "3-4": "常需重复才停",
+            "4-5": "提醒一次能停",
+            "5-6": "多数一次就停"
+          }
         },
         {
           "id": "SEL-05",
           "subscale": "行为与冲动控制",
+          "report_subscale": "行为与冲动控制",
+          "cluster": "inhibitory_control",
           "construct": "自我调节·行为面 Behavioral Control",
           "text": "在需要安静的场合（如坐车、吃饭、听故事），孩子能管住自己不乱跑乱动。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Diam/DECA-SR",
           "observe_hint": "一起在餐桌吃饭时，看他能安坐多久。",
-          "anchors_by_band": { "3-4": "能安静很短时间", "4-5": "能安静一会儿", "5-6": "能安静较长时间" }
+          "anchors_by_band": {
+            "3-4": "能安静很短时间",
+            "4-5": "能安静一会儿",
+            "5-6": "能安静较长时间"
+          }
         },
         {
           "id": "SEL-06",
           "subscale": "行为与冲动控制",
+          "report_subscale": "行为与冲动控制",
+          "cluster": "inhibitory_control",
           "construct": "自我调节·行为面 Behavioral Control",
           "text": "孩子很冲动，想做什么就立刻去做，很难等或忍住。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "Koch/Diam",
@@ -549,37 +1215,84 @@
         {
           "id": "SEL-07",
           "subscale": "主动性与自主",
+          "report_subscale": "主动性与自主",
+          "cluster": "initiative",
           "construct": "主动性 Initiative",
           "text": "孩子愿意自己尝试做事（如穿脱衣鞋、收拾玩具、拿取东西），而不是事事等人帮。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "DECA-IN/ASQSE2",
           "observe_hint": "出门前让他自己试着穿外套。",
-          "anchors_by_band": { "3-4": "想自己来但常需帮", "4-5": "多数自理能独立完成", "5-6": "多步自理能独立完成" }
+          "anchors_by_band": {
+            "3-4": "想自己来但常需帮",
+            "4-5": "多数自理能独立完成",
+            "5-6": "多步自理能独立完成"
+          }
         },
         {
           "id": "SEL-08",
           "subscale": "主动性与自主",
+          "report_subscale": "主动性与自主",
+          "cluster": "initiative",
           "construct": "主动性 Initiative",
           "text": "玩或活动时，孩子会主动想点子、提议「我们来玩……」。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
+          "consistency_pair_id": "cp-1",
           "source": "DECA-IN",
           "observe_hint": "给一段自由玩耍时间，看他是否能自己发起活动。",
           "anchors_by_band": null
@@ -587,18 +1300,40 @@
         {
           "id": "SEL-09",
           "subscale": "主动性与自主",
+          "report_subscale": "主动性与自主",
+          "cluster": "initiative",
           "construct": "主动性 Initiative",
           "text": "孩子做事很被动，几乎都要大人安排和催促才动。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
+          "consistency_pair_id": "cp-1",
           "source": "DECA-IN",
           "observe_hint": "他是不是大多要被催着、带着才肯做。",
           "anchors_by_band": null
@@ -606,16 +1341,37 @@
         {
           "id": "SEL-10",
           "subscale": "依恋与关系",
+          "report_subscale": "依恋与关系",
+          "cluster": null,
           "construct": "依恋/关系 Attachment",
           "text": "难过或害怕时，孩子会找熟悉的大人寻求安慰，并能被安抚下来。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "DECA-AT/ZW",
@@ -625,92 +1381,211 @@
         {
           "id": "SEL-11",
           "subscale": "依恋与关系",
+          "report_subscale": "依恋与关系",
+          "cluster": null,
           "construct": "依恋/关系 Attachment",
           "text": "孩子能和其他小朋友一起玩、玩到一块儿去。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
-          "source": "DECA-AT/SDQ-Pro",
+          "source": "DECA-AT",
           "observe_hint": "和小朋友在一起时，是各玩各的还是真能玩到一起。",
-          "anchors_by_band": { "3-4": "多为各玩各的（平行游戏）", "4-5": "开始一起玩", "5-6": "有合作与共同主题" }
+          "note": "计分归属唯一为「依恋与关系」。本题虽与 SDQ 亲社会有跨载，但已去除 SDQ 亲社会出处；如需共情线索，与共情/亲社会子维度合并叙述，不重复计入。",
+          "anchors_by_band": {
+            "3-4": "多为各玩各的（平行游戏）",
+            "4-5": "开始一起玩",
+            "5-6": "有合作与共同主题"
+          }
         },
         {
           "id": "SEL-12",
           "subscale": "依恋与关系",
+          "report_subscale": "依恋与关系",
+          "cluster": null,
           "construct": "依恋/关系 Attachment",
           "text": "和小朋友闹了别扭后，孩子能（在帮助下或自己）和好、继续一起玩。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "DECA-AT/Eisen",
           "observe_hint": "他和小伙伴起冲突后是否能恢复一起玩。",
-          "anchors_by_band": { "4-5": "需大人协调才能和好", "5-6": "能自己提出和好" }
+          "anchors_by_band": {
+            "4-5": "需大人协调才能和好",
+            "5-6": "能自己提出和好"
+          }
         },
         {
           "id": "SEL-13",
           "subscale": "共情与亲社会",
+          "report_subscale": "共情与亲社会",
+          "cluster": null,
           "construct": "共情与亲社会 Empathy & Prosocial",
           "text": "看到别人难过或受伤，孩子会表现出关心（以下任一即可：注视、靠近、表情担心、问「你怎么了」）。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Hoff/ZW",
           "observe_hint": "家人假装碰疼了「哎哟」，看他的反应。",
-          "anchors_by_band": { "3-4": "注视/靠近即算", "4-5": "会表现担心", "5-6": "会问原因" }
+          "anchors_by_band": {
+            "3-4": "注视/靠近即算",
+            "4-5": "会表现担心",
+            "5-6": "会问原因"
+          }
         },
         {
           "id": "SEL-14",
           "subscale": "共情与亲社会",
+          "report_subscale": "共情与亲社会",
+          "cluster": null,
           "construct": "共情与亲社会 Empathy & Prosocial",
           "text": "孩子愿意把自己的玩具或零食分给别人。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Dunf/SDQ-Pro",
           "observe_hint": "分点心时，看他是否愿意分给别人。",
-          "anchors_by_band": { "3-4": "多在被请求时", "4-5": "较主动分享", "5-6": "有自发分享" }
+          "anchors_by_band": {
+            "3-4": "多在被请求时",
+            "4-5": "较主动分享",
+            "5-6": "有自发分享"
+          }
         },
         {
           "id": "SEL-15",
           "subscale": "共情与亲社会",
+          "report_subscale": "共情与亲社会",
+          "cluster": null,
           "construct": "共情与亲社会 Empathy & Prosocial",
           "text": "别人需要帮忙时（如够不到、拿不动），孩子会主动搭把手。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Dunf/SDQ-Pro",
@@ -720,16 +1595,35 @@
         {
           "id": "SEL-16",
           "subscale": "共情与亲社会",
+          "report_subscale": "共情与亲社会",
+          "cluster": null,
           "construct": "共情与亲社会 Empathy & Prosocial",
           "text": "孩子能注意到别人的情绪，并据此调整自己的做法（如别人累了就不再缠着玩）。",
-          "age_bands": ["5-6"],
+          "age_bands": [
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "Hoff/Eisen",
@@ -746,268 +1640,654 @@
         {
           "id": "DEV-01",
           "subscale": "沟通/语言",
+          "report_subscale": "沟通/语言",
+          "cluster": null,
           "construct": "沟通 Communication",
           "text": "孩子能和你一来一回地对话（你说一句、他接一句，连续好几个回合）。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ASQ3/CDC2022",
           "observe_hint": "吃饭时随便聊一个话题，数数你们来回了几句。",
-          "anchors_by_band": { "3-4": "至少2个来回", "4-5": "3个来回，并能说当天的事", "5-6": "3个以上来回且能展开话题" }
+          "anchors_by_band": {
+            "3-4": "至少2个来回",
+            "4-5": "3个来回，并能说当天的事",
+            "5-6": "3个以上来回且能展开话题"
+          }
         },
         {
           "id": "DEV-02",
           "subscale": "沟通/语言",
+          "report_subscale": "沟通/语言",
+          "cluster": null,
           "construct": "沟通 Communication",
           "text": "别人（不太熟的人）能听懂孩子在说什么。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022/ECM-II",
           "observe_hint": "让不常见的亲戚听他讲一件事，看能否听懂。",
-          "anchors_by_band": { "3-4": "大多数时候能懂", "4-5": "大部分能懂", "5-6": "基本都能懂" }
+          "anchors_by_band": {
+            "3-4": "大多数时候能懂",
+            "4-5": "大部分能懂",
+            "5-6": "基本都能懂"
+          }
         },
         {
           "id": "DEV-03",
           "subscale": "沟通/语言",
+          "report_subscale": "沟通/语言",
+          "cluster": null,
           "construct": "沟通 Communication",
           "text": "孩子能讲出一件当天或最近发生的事，说清楚来龙去脉。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022",
           "observe_hint": "放学后问「今天发生了什么有趣的事」。",
-          "anchors_by_band": { "4-5": "能讲一件事", "5-6": "故事含2个以上情节" }
+          "anchors_by_band": {
+            "4-5": "能讲一件事",
+            "5-6": "故事含2个以上情节"
+          }
         },
         {
           "id": "DEV-04",
           "subscale": "大运动",
+          "report_subscale": "大运动",
+          "cluster": null,
           "construct": "大运动 Gross Motor",
           "text": "孩子在户外跑动时既快又稳，很少摔跤。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "WHO-MGRS/ECM-II",
           "observe_hint": "在小区空地看他跑一圈。",
-          "anchors_by_band": { "3-4": "跑得稳", "4-5": "能急停转向", "5-6": "跑动灵活协调" }
+          "anchors_by_band": {
+            "3-4": "跑得稳",
+            "4-5": "能急停转向",
+            "5-6": "跑动灵活协调"
+          }
         },
         {
           "id": "DEV-05",
           "subscale": "大运动",
+          "report_subscale": "大运动",
+          "cluster": null,
           "construct": "大运动 Gross Motor",
           "text": "孩子玩攀爬、平衡木或蹦跳类游戏时身体协调、有把握。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ECM-II/WHO-MGRS",
           "observe_hint": "公园里看他玩攀爬架。",
-          "anchors_by_band": { "3-4": "能扶着爬、单脚短暂站立", "4-5": "能走过平衡木/单脚站几秒", "5-6": "能单脚连续跳几下" }
+          "anchors_by_band": {
+            "3-4": "能扶着爬、单脚短暂站立",
+            "4-5": "能走过平衡木/单脚站几秒",
+            "5-6": "能单脚连续跳几下"
+          }
         },
         {
           "id": "DEV-06",
           "subscale": "精细动作",
+          "report_subscale": "精细动作",
+          "cluster": null,
           "construct": "精细动作 Fine Motor",
           "text": "孩子能用笔画画或涂色，手比较稳。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022/DAP/ECM-II",
           "observe_hint": "给他纸笔，看他怎么握笔、画得稳不稳。",
-          "anchors_by_band": { "3-4": "能画封闭的圆圈/线条", "4-5": "三指握笔、能画出有几个部位的人", "5-6": "握笔正确、能写简单笔画或数字" }
+          "anchors_by_band": {
+            "3-4": "能画封闭的圆圈/线条",
+            "4-5": "三指握笔、能画出有几个部位的人",
+            "5-6": "握笔正确、能写简单笔画或数字"
+          }
         },
         {
           "id": "DEV-07",
           "subscale": "精细动作",
+          "report_subscale": "精细动作",
+          "cluster": null,
           "construct": "精细动作 Fine Motor",
           "text": "孩子能自己解开/扣上一些纽扣或拉拉链。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022/ECM-II",
           "observe_hint": "换衣服时让他自己试一颗扣子。",
-          "anchors_by_band": { "3-4": "能解开纽扣", "4-5": "能解开纽扣、能拉合拉链", "5-6": "能扣上一些纽扣" }
+          "anchors_by_band": {
+            "3-4": "能解开纽扣",
+            "4-5": "能解开纽扣、能拉合拉链",
+            "5-6": "能自己扣上纽扣、独立拉合拉链"
+          }
         },
         {
           "id": "DEV-08",
           "subscale": "精细动作",
+          "report_subscale": "精细动作",
+          "cluster": null,
           "construct": "精细动作 Fine Motor",
           "text": "孩子能把小东西串起来（串珠、通心粉、扣环等）。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022/ECM-II",
           "observe_hint": "给他一根绳和几颗珠子。",
-          "anchors_by_band": { "3-4": "能串大珠", "4-5": "能串较小的", "5-6": "能串更小、更快" }
+          "anchors_by_band": {
+            "3-4": "能串大珠",
+            "4-5": "能串较小的",
+            "5-6": "能串更小、更快"
+          }
         },
         {
           "id": "DEV-09",
           "subscale": "问题解决/认知",
+          "report_subscale": "问题解决/认知",
+          "cluster": null,
           "construct": "问题解决 Problem Solving",
           "text": "遇到小困难（够不到、装不进），孩子会自己想办法尝试解决。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022",
           "observe_hint": "玩具卡住时先别帮，看他怎么做。",
-          "anchors_by_band": { "3-4": "会试一两种办法", "4-5": "更主动尝试", "5-6": "会尝试多种策略" }
+          "anchors_by_band": {
+            "3-4": "会试一两种办法",
+            "4-5": "更主动尝试",
+            "5-6": "会尝试多种策略"
+          }
         },
         {
           "id": "DEV-10",
           "subscale": "问题解决/认知",
+          "report_subscale": "问题解决/认知",
+          "cluster": null,
           "construct": "问题解决 Problem Solving",
           "text": "讲熟悉的故事时，孩子能说出「接下来会发生什么」。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022",
           "observe_hint": "读到一半停下让他猜后面。",
-          "anchors_by_band": { "4-5": "能预测情节", "5-6": "预测更完整" }
+          "anchors_by_band": {
+            "4-5": "能预测情节",
+            "5-6": "预测更完整"
+          }
         },
         {
           "id": "DEV-11",
           "subscale": "问题解决/认知",
+          "report_subscale": "问题解决/认知",
+          "cluster": null,
           "construct": "问题解决 Problem Solving",
           "text": "孩子能数数、认一些颜色或用「昨天/明天」这类词，用得基本对。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022/ECM-II",
           "observe_hint": "上下楼梯一起数台阶，或聊「明天去哪」。",
-          "anchors_by_band": { "4-5": "能说出几种颜色、数几个数", "5-6": "能数到10、会用时间词" }
+          "anchors_by_band": {
+            "4-5": "能说出几种颜色、数几个数",
+            "5-6": "能数到10、会用时间词"
+          }
         },
         {
           "id": "DEV-12",
           "subscale": "个人-社会/自理",
+          "report_subscale": "个人-社会/自理",
+          "cluster": null,
           "construct": "个人-社会 Personal-Social",
           "text": "孩子能自己穿/脱一些衣物（宽松裤子、外套等）。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022/ECM-II",
           "observe_hint": "出门前让他自己穿外套。",
-          "anchors_by_band": { "3-4": "能穿部分", "4-5": "能自己穿外套", "5-6": "穿脱更独立" }
+          "anchors_by_band": {
+            "3-4": "能穿部分",
+            "4-5": "能自己穿外套",
+            "5-6": "穿脱更独立"
+          }
         },
         {
           "id": "DEV-13",
           "subscale": "个人-社会/自理",
+          "report_subscale": "个人-社会/自理",
+          "cluster": null,
           "construct": "个人-社会 Personal-Social",
           "text": "孩子能自己用勺子/筷子吃饭，洒得不多。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ECM-II",
           "observe_hint": "一顿饭里观察他自己吃的程度。",
-          "anchors_by_band": { "3-4": "能自己用勺子吃、少量洒漏可接受", "4-5": "会用筷子吃多数食物", "5-6": "用筷子较熟练、少洒漏" }
+          "anchors_by_band": {
+            "3-4": "能自己用勺子吃、少量洒漏可接受",
+            "4-5": "会用筷子吃多数食物",
+            "5-6": "用筷子较熟练、少洒漏"
+          }
         },
         {
           "id": "DEV-14",
           "subscale": "个人-社会/自理",
+          "report_subscale": "个人-社会/自理",
+          "cluster": null,
           "construct": "个人-社会 Personal-Social",
           "text": "玩有规则的游戏时，孩子能遵守规则、轮流等待。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "CDC2022",
           "observe_hint": "玩简单桌游看他能否轮流、守规则。",
-          "anchors_by_band": { "4-5": "过渡中，需提醒", "5-6": "较稳定地守规则轮流" }
+          "anchors_by_band": {
+            "4-5": "过渡中，需提醒",
+            "5-6": "较稳定地守规则轮流"
+          }
+        },
+        {
+          "id": "DEV-15",
+          "subscale": "问题解决/认知",
+          "report_subscale": "问题解决/认知",
+          "cluster": null,
+          "construct": "问题解决 Problem Solving",
+          "text": "玩拼插、套叠或形状配对类玩具时，孩子能自己琢磨出怎么把零件正确装到一起。",
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "scale": "freq5",
+          "options": [
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
+          ],
+          "reverse": false,
+          "source": "CDC2022/ECM-II",
+          "observe_hint": "给他一套形状配对或简单拼插玩具，先别示范，看他自己怎么试。",
+          "anchors_by_band": {
+            "3-4": "能装对简单的形状/大块",
+            "4-5": "能试错调整、装对多数",
+            "5-6": "能有条理地一次次装对、较少求助"
+          }
         }
       ]
     },
@@ -1019,16 +2299,37 @@
         {
           "id": "INT-01",
           "subscale": "运动/大肌肉",
+          "report_subscale": "运动/大肌肉",
+          "cluster": null,
           "construct": "活动领域偏好·运动 INT-MOV",
           "text": "遇到能跑、跳、爬的活动（追逐、攀爬架、球类），孩子的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "HR2006/MOE2012",
@@ -1038,16 +2339,37 @@
         {
           "id": "INT-02",
           "subscale": "艺术/绘画手工",
+          "report_subscale": "艺术/绘画手工",
+          "cluster": null,
           "construct": "活动领域偏好·艺术 INT-ART",
           "text": "给孩子纸笔、颜料、黏土等让他涂画或做手工时，他的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "HR2006/MOE2012",
@@ -1057,16 +2379,37 @@
         {
           "id": "INT-03",
           "subscale": "音乐/律动",
+          "report_subscale": "音乐/律动",
+          "cluster": null,
           "construct": "活动领域偏好·音乐 INT-MUS",
           "text": "听音乐/儿歌、跟着节奏拍手跳舞、玩能发声的乐器时，孩子的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "HR2006/MOE2012",
@@ -1076,16 +2419,37 @@
         {
           "id": "INT-04",
           "subscale": "语言/故事",
+          "report_subscale": "语言/故事",
+          "cluster": null,
           "construct": "活动领域偏好·语言 INT-LAN",
           "text": "听故事、读绘本、自己翻看图画书时，孩子的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "HR2006/MOE2012",
@@ -1095,16 +2459,37 @@
         {
           "id": "INT-05",
           "subscale": "数理/逻辑",
+          "report_subscale": "数理/逻辑",
+          "cluster": null,
           "construct": "活动领域偏好·数理 INT-LOG",
           "text": "玩拼图、配对、找规律、数数、分类整理这类动脑游戏时，孩子的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "MOE2012",
@@ -1114,16 +2499,37 @@
         {
           "id": "INT-06",
           "subscale": "自然探索",
+          "report_subscale": "自然探索",
+          "cluster": null,
           "construct": "活动领域偏好·自然 INT-NAT",
           "text": "接触小动物、植物、虫子，或玩水、玩沙、户外观察时，孩子的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "ALEXANDER2008/MOE2012",
@@ -1133,16 +2539,37 @@
         {
           "id": "INT-07",
           "subscale": "建构/搭建",
+          "report_subscale": "建构/搭建",
+          "cluster": null,
           "construct": "活动领域偏好·建构 INT-CON",
           "text": "玩积木、磁力片、拼插玩具，把东西搭高、组装出成品时，孩子的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "HR2006/MOE2012",
@@ -1152,16 +2579,37 @@
         {
           "id": "INT-08",
           "subscale": "社交/扮演",
+          "report_subscale": "社交/扮演",
+          "cluster": null,
           "construct": "活动领域偏好·社交扮演 INT-SOC",
           "text": "玩过家家、角色扮演（当医生、开商店、修东西、做饭、照顾娃娃），或和小朋友合作游戏时，孩子的喜欢程度是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "like5",
           "options": [
-            { "v": 1, "label": "明显不喜欢/会躲开" },
-            { "v": 2, "label": "不太感兴趣" },
-            { "v": 3, "label": "一般/还行" },
-            { "v": 4, "label": "挺喜欢、会主动玩" },
-            { "v": 5, "label": "一玩就停不下来" }
+            {
+              "v": 1,
+              "label": "明显不喜欢/会躲开"
+            },
+            {
+              "v": 2,
+              "label": "不太感兴趣"
+            },
+            {
+              "v": 3,
+              "label": "一般/还行"
+            },
+            {
+              "v": 4,
+              "label": "挺喜欢、会主动玩"
+            },
+            {
+              "v": 5,
+              "label": "一玩就停不下来"
+            }
           ],
           "reverse": false,
           "source": "MOE2012/SDQ1997",
@@ -1171,56 +2619,129 @@
         {
           "id": "INT-09",
           "subscale": "强度/沉浸",
+          "report_subscale": "强度/沉浸",
+          "cluster": "focus_persistence",
           "construct": "兴趣品质·沉浸 INT-INT",
           "text": "做他最爱的活动时，孩子会专注到听不见你叫他、像是忘了时间。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "FLOW-CSZ",
           "observe_hint": "他有没有过本来说玩一会儿、结果远超时间还不肯停。",
-          "anchors_by_band": { "3-4": "玩到没注意你进来", "4-5": "叫几声才回应", "5-6": "完全沉浸、要等他停下才理你" }
+          "anchors_by_band": {
+            "3-4": "玩到没注意你进来",
+            "4-5": "叫几声才回应",
+            "5-6": "完全沉浸、要等他停下才理你"
+          }
         },
         {
           "id": "INT-10",
           "subscale": "持续性/专注",
+          "report_subscale": "持续性/专注",
+          "cluster": "focus_persistence",
           "construct": "兴趣品质·持续 INT-PER",
           "text": "做喜欢的活动时，孩子能坚持较长时间而不频繁换来换去。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
+          "consistency_pair_id": "cp-2",
           "source": "MORGAN-DMQ",
           "observe_hint": "他做最爱的活动能持续多久。",
-          "anchors_by_band": { "3-4": "约5-10分钟", "4-5": "10-20分钟", "5-6": "20分钟以上" }
+          "anchors_by_band": {
+            "3-4": "约5-10分钟",
+            "4-5": "10-20分钟",
+            "5-6": "20分钟以上"
+          }
         },
         {
           "id": "INT-11",
           "subscale": "持续性/专注",
+          "report_subscale": "持续性/专注",
+          "cluster": "focus_persistence",
           "construct": "兴趣品质·持续 INT-PER",
           "text": "孩子很容易就对手头的活动失去兴趣、转去做别的。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
+          "consistency_pair_id": "cp-2",
           "source": "MORGAN-DMQ",
           "observe_hint": "他是不是玩一下就丢、很快换别的。",
           "anchors_by_band": null
@@ -1228,37 +2749,85 @@
         {
           "id": "INT-12",
           "subscale": "自主发起",
+          "report_subscale": "自主发起",
+          "cluster": "initiative",
           "construct": "兴趣品质·自主 INT-SELF",
           "text": "不用大人提议，孩子会自己找出或提出想玩的活动，并有明显偏爱。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
+          "consistency_pair_id": "cp-3",
           "source": "HR2006",
           "observe_hint": "把几样玩具放一起，他通常先抓哪一两样。",
-          "anchors_by_band": { "3-4": "会主动奔向喜欢的", "4-5": "会主动提出要玩什么", "5-6": "会自己规划怎么玩" }
+          "anchors_by_band": {
+            "3-4": "会主动奔向喜欢的",
+            "4-5": "会主动提出要玩什么",
+            "5-6": "会自己规划怎么玩"
+          }
         },
         {
           "id": "INT-13",
           "subscale": "自主发起",
+          "report_subscale": "自主发起",
+          "cluster": "initiative",
           "construct": "兴趣品质·自主 INT-SELF",
           "text": "孩子大多要等大人安排，自己很少主动选择想做的事。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
+          "consistency_pair_id": "cp-3",
           "source": "HR2006",
           "observe_hint": "他是不是很少自己开始玩、总等人安排。",
           "anchors_by_band": null
@@ -1266,16 +2835,37 @@
         {
           "id": "INT-14",
           "subscale": "掌握取向/愉悦",
+          "report_subscale": "掌握取向/愉悦",
+          "cluster": "mastery",
           "construct": "兴趣品质·掌握 INT-MAS",
           "text": "自己做到/完成一件事时，孩子会表现出明显的高兴、得意（笑、拍手、要你看）。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "MORGAN-DMQ",
@@ -1285,21 +2875,44 @@
         {
           "id": "INT-15",
           "subscale": "掌握取向/愉悦",
+          "report_subscale": "掌握取向/愉悦",
+          "cluster": "mastery",
           "construct": "兴趣品质·掌握 INT-MAS",
           "text": "孩子喜欢挑战稍微有点难的玩法，而不只玩已经很熟的。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "MORGAN-DMQ",
           "observe_hint": "给他略难一点的版本，看他是否更带劲。",
-          "anchors_by_band": { "4-5": "失败后愿再试", "5-6": "主动找更难的挑战" }
+          "anchors_by_band": {
+            "4-5": "失败后愿再试",
+            "5-6": "主动找更难的挑战"
+          }
         }
       ]
     },
@@ -1311,37 +2924,85 @@
         {
           "id": "LRN-01",
           "subscale": "专注与坚持",
+          "report_subscale": "专注与坚持",
+          "cluster": "focus_persistence",
           "construct": "专注与坚持 Focus & Persistence",
           "text": "玩他喜欢的活动时，孩子能专心投入、不容易被旁边的事吸引走。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
+          "consistency_pair_id": "cp-4",
           "source": "DMQ18/EF",
           "observe_hint": "他做喜欢的事时旁边有动静会不会就分神。",
-          "anchors_by_band": { "3-4": "约5-10分钟即算专注", "4-5": "10-15分钟", "5-6": "15-20分钟以上" }
+          "anchors_by_band": {
+            "3-4": "约5-10分钟即算专注",
+            "4-5": "10-15分钟",
+            "5-6": "15-20分钟以上"
+          }
         },
         {
           "id": "LRN-02",
           "subscale": "专注与坚持",
+          "report_subscale": "专注与坚持",
+          "cluster": "focus_persistence",
           "construct": "专注与坚持 Focus & Persistence",
           "text": "一件事没做完，孩子就想去做别的、很难收回注意力。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
+          "consistency_pair_id": "cp-4",
           "source": "EF",
           "observe_hint": "他是不是常常一件事没完就跳去别的。",
           "anchors_by_band": null
@@ -1349,35 +3010,79 @@
         {
           "id": "LRN-03",
           "subscale": "专注与坚持",
+          "report_subscale": "专注与坚持",
+          "cluster": "focus_persistence",
           "construct": "专注与坚持 Focus & Persistence",
           "text": "做一件需要好几步的事（如搭一座桥、画一幅画），孩子能坚持做到完成。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "DMQ18/ELOF",
           "observe_hint": "他做多步骤的事能否坚持到底。",
-          "anchors_by_band": { "4-5": "能做完多数步骤", "5-6": "即使中间枯燥也能做完" }
+          "anchors_by_band": {
+            "4-5": "能做完多数步骤",
+            "5-6": "即使中间枯燥也能做完"
+          }
         },
         {
           "id": "LRN-04",
           "subscale": "好奇与探索",
+          "report_subscale": "好奇与探索",
+          "cluster": null,
           "construct": "好奇与探索 Curiosity",
           "text": "看到没见过的东西，孩子会主动靠近、去看去摸、想弄清楚那是什么。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ID-YC/Jirout",
@@ -1387,73 +3092,167 @@
         {
           "id": "LRN-05",
           "subscale": "好奇与探索",
+          "report_subscale": "好奇与探索",
+          "cluster": null,
           "construct": "好奇与探索 Curiosity",
           "text": "孩子经常问「这是什么」「为什么会这样」之类的问题。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ID-YC/ELOF",
           "observe_hint": "读绘本时留意他主动发问的次数。",
-          "anchors_by_band": { "3-4": "多问「这是什么」", "4-5": "出现「为什么/怎么会」", "5-6": "围绕一个主题深挖追问" }
+          "anchors_by_band": {
+            "3-4": "多问「这是什么」",
+            "4-5": "出现「为什么/怎么会」",
+            "5-6": "围绕一个主题深挖追问"
+          }
         },
         {
           "id": "LRN-06",
           "subscale": "主动性与自我驱动",
+          "report_subscale": "主动性与自我驱动",
+          "cluster": "initiative",
           "construct": "主动性与自我驱动 Initiative",
           "text": "孩子会自己想出要玩什么、要做什么，而不是总等大人安排。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ELOF/Hyson",
           "observe_hint": "给他空闲时间，他能否自己安排活动。",
-          "anchors_by_band": { "3-4": "简单自选", "4-5": "会提议玩什么", "5-6": "会提议并组织" }
+          "anchors_by_band": {
+            "3-4": "简单自选",
+            "4-5": "会提议玩什么",
+            "5-6": "会提议并组织"
+          }
         },
         {
           "id": "LRN-14",
           "subscale": "主动性与自我驱动",
+          "report_subscale": "主动性与自我驱动",
+          "cluster": "initiative",
           "construct": "主动性与自我驱动 Initiative",
           "text": "孩子能为了一个自己定的小目标（如把这座塔搭高），主动想办法去实现。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ELOF/DMQ_def",
           "observe_hint": "他能否朝一个自己设的小目标坚持想办法。",
-          "anchors_by_band": { "4-5": "有简单目标导向", "5-6": "目标导向＋计划萌芽" }
+          "anchors_by_band": {
+            "4-5": "有简单目标导向",
+            "5-6": "目标导向＋计划萌芽"
+          }
         },
         {
           "id": "LRN-07",
           "subscale": "创造与灵活",
+          "report_subscale": "创造与灵活",
+          "cluster": null,
           "construct": "创造与灵活 Creativity & Flexibility",
           "text": "同一种玩具或材料，孩子能想出好几种不同的玩法。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "ELOF/EF",
@@ -1463,16 +3262,36 @@
         {
           "id": "LRN-08",
           "subscale": "创造与灵活",
+          "report_subscale": "创造与灵活",
+          "cluster": null,
           "construct": "创造与灵活 Creativity & Flexibility",
           "text": "玩法或规则变了，孩子能比较快地跟着调整，而不是非按原来不可。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "EF",
@@ -1482,16 +3301,37 @@
         {
           "id": "LRN-09",
           "subscale": "创造与灵活",
+          "report_subscale": "创造与灵活",
+          "cluster": null,
           "construct": "创造与灵活 Creativity & Flexibility",
           "text": "事情没按孩子原来想的来，他就很难接受、一定要照老样子。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "EF",
@@ -1501,16 +3341,37 @@
         {
           "id": "LRN-10",
           "subscale": "掌握愉悦与挑战取向",
+          "report_subscale": "掌握愉悦与挑战取向",
+          "cluster": "mastery",
           "construct": "掌握愉悦与挑战取向 Mastery & Challenge",
           "text": "自己做成一件有点难的事时，孩子会很开心、兴奋，还想再做一次或挑战更难的。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "DMQ18/Mindset",
@@ -1520,16 +3381,37 @@
         {
           "id": "LRN-11",
           "subscale": "掌握愉悦与挑战取向",
+          "report_subscale": "掌握愉悦与挑战取向",
+          "cluster": "mastery",
           "construct": "掌握愉悦与挑战取向 Mastery & Challenge",
           "text": "孩子更喜欢稳妥、有把握的事，对要费点劲的挑战大多回避。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "Mindset/DMQ_def",
@@ -1539,35 +3421,81 @@
         {
           "id": "LRN-12",
           "subscale": "面对挫折的恢复",
+          "report_subscale": "面对挫折的恢复",
+          "cluster": "resilience",
           "construct": "面对挫折的恢复 Resilience to Challenge",
           "text": "一件事没做好，孩子过一会儿能平复下来、愿意再试。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "DMQ18/Mindset",
           "observe_hint": "他做不好一件事后多久能愿意再试。",
-          "anchors_by_band": { "3-4": "需大人安抚后再试", "4-5": "鼓励下能再试", "5-6": "能较快自我平复再试" }
+          "note": "已正向化为 Resilience（正向计分）：本题为正向题，计分时不得再按 DMQ 负性反应翻转，仅同子维度的反向题 LRN-13 需翻转。",
+          "anchors_by_band": {
+            "3-4": "需大人安抚后再试",
+            "4-5": "鼓励下能再试",
+            "5-6": "能较快自我平复再试"
+          }
         },
         {
           "id": "LRN-13",
           "subscale": "面对挫折的恢复",
+          "report_subscale": "面对挫折的恢复",
+          "cluster": "resilience",
           "construct": "面对挫折的恢复 Resilience to Challenge",
           "text": "试了一次没成功，孩子就认定「我不行」、不肯再碰。",
-          "age_bands": ["4-5", "5-6"],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": true,
           "source": "DMQ18/Mindset",
@@ -1584,16 +3512,37 @@
         {
           "id": "FAM-01",
           "subscale": "养育方式·要求性",
+          "report_subscale": "养育方式·要求性",
+          "cluster": null,
           "construct": "结构/规则 Demandingness",
           "text": "我会给孩子定清楚的日常规矩（比如几点睡、玩多久），并坚持执行。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "PSDQ2001/MACCOBY1983",
@@ -1603,16 +3552,37 @@
         {
           "id": "FAM-02",
           "subscale": "养育方式·要求性",
+          "report_subscale": "养育方式·要求性",
+          "cluster": null,
           "construct": "结构/规则 Demandingness",
           "text": "孩子不守约定时，我会说明原因并要求他改正。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "BAUMRIND1991/CHAO1994",
@@ -1622,16 +3592,37 @@
         {
           "id": "FAM-03",
           "subscale": "养育方式·回应性",
+          "report_subscale": "养育方式·回应性",
+          "cluster": null,
           "construct": "温暖/敏感 Responsiveness",
           "text": "孩子难过或受挫时，我会先安抚他的情绪。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "PSDQ2001/HOME1979",
@@ -1641,16 +3632,37 @@
         {
           "id": "FAM-04",
           "subscale": "养育方式·回应性",
+          "report_subscale": "养育方式·回应性",
+          "cluster": null,
           "construct": "温暖/敏感 Responsiveness",
           "text": "我会留意孩子的兴趣，顺着他喜欢的话题陪他聊/玩。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "HOFF2018/HOME1979",
@@ -1660,15 +3672,33 @@
         {
           "id": "FAM-05",
           "subscale": "家庭学习环境",
+          "report_subscale": "家庭学习环境",
+          "cluster": null,
           "construct": "家庭学习环境 Home Learning",
           "text": "家里有适合孩子年龄的图画书/绘本的情况是？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "single",
           "options": [
-            { "v": "many", "label": "比较多，种类也丰富" },
-            { "v": "some", "label": "有一些" },
-            { "v": "few", "label": "较少" },
-            { "v": "none", "label": "几乎没有" }
+            {
+              "v": "many",
+              "label": "比较多，种类也丰富"
+            },
+            {
+              "v": "some",
+              "label": "有一些"
+            },
+            {
+              "v": "few",
+              "label": "较少"
+            },
+            {
+              "v": "none",
+              "label": "几乎没有"
+            }
           ],
           "reverse": false,
           "source": "HOME1979/HOFF2003",
@@ -1678,37 +3708,89 @@
         {
           "id": "FAM-06",
           "subscale": "家庭学习环境",
+          "report_subscale": "家庭学习环境",
+          "cluster": null,
           "construct": "家庭学习环境 Home Learning",
           "text": "我（或家人）会陪孩子读绘本/讲故事。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "HOME1988/HOFF2003",
           "observe_hint": "亲子共读频率。",
-          "anchors_by_band": { "3-4": "以指图命名为主", "4-5": "会提问、让他复述", "5-6": "会讨论因果、预测结局" }
+          "anchors_by_band": {
+            "3-4": "以指图命名为主",
+            "4-5": "会提问、让他复述",
+            "5-6": "会讨论因果、预测结局"
+          }
         },
         {
           "id": "FAM-07",
           "subscale": "家庭学习环境",
+          "report_subscale": "家庭学习环境",
+          "cluster": null,
           "construct": "家庭学习环境 Home Learning",
           "text": "家里有可以让孩子动手探索的材料（可多选）。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "multi",
           "options": [
-            { "v": "blocks", "label": "积木/拼插玩具" },
-            { "v": "art", "label": "画笔/颜料/手工材料" },
-            { "v": "puzzle", "label": "拼图/找规律类玩具" },
-            { "v": "nature", "label": "可观察的动植物/自然材料" },
-            { "v": "music", "label": "乐器/音乐玩具" },
-            { "v": "roleplay", "label": "过家家/角色扮演道具" },
-            { "v": "none", "label": "暂时都没有" }
+            {
+              "v": "blocks",
+              "label": "积木/拼插玩具"
+            },
+            {
+              "v": "art",
+              "label": "画笔/颜料/手工材料"
+            },
+            {
+              "v": "puzzle",
+              "label": "拼图/找规律类玩具"
+            },
+            {
+              "v": "nature",
+              "label": "可观察的动植物/自然材料"
+            },
+            {
+              "v": "music",
+              "label": "乐器/音乐玩具"
+            },
+            {
+              "v": "roleplay",
+              "label": "过家家/角色扮演道具"
+            },
+            {
+              "v": "none",
+              "label": "暂时都没有"
+            }
           ],
           "reverse": false,
           "source": "HOME1979",
@@ -1718,15 +3800,33 @@
         {
           "id": "FAM-08",
           "subscale": "屏幕与媒体使用",
+          "report_subscale": "屏幕与媒体使用",
+          "cluster": null,
           "construct": "屏幕与媒体 Screen Use",
           "text": "孩子平时每天看屏幕（电视/平板/手机）大约多久？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "single",
           "options": [
-            { "v": "lt05", "label": "不到半小时" },
-            { "v": "05to1", "label": "半小时到1小时" },
-            { "v": "1to2", "label": "1到2小时" },
-            { "v": "gt2", "label": "2小时以上" }
+            {
+              "v": "lt05",
+              "label": "不到半小时"
+            },
+            {
+              "v": "05to1",
+              "label": "半小时到1小时"
+            },
+            {
+              "v": "1to2",
+              "label": "1到2小时"
+            },
+            {
+              "v": "gt2",
+              "label": "2小时以上"
+            }
           ],
           "reverse": false,
           "source": "WHO2019/AAP2016MEDIA",
@@ -1736,16 +3836,37 @@
         {
           "id": "FAM-09",
           "subscale": "屏幕与媒体使用",
+          "report_subscale": "屏幕与媒体使用",
+          "cluster": null,
           "construct": "屏幕与媒体 Screen Use",
           "text": "孩子看屏幕时，我会陪着一起看，并和他聊聊看到的内容。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "AAP2016MEDIA",
@@ -1755,15 +3876,33 @@
         {
           "id": "FAM-10",
           "subscale": "作息与睡眠",
+          "report_subscale": "作息与睡眠",
+          "cluster": null,
           "construct": "作息与睡眠 Sleep & Routine",
           "text": "孩子每天总睡眠（含午睡）大约多少小时？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "single",
           "options": [
-            { "v": "lt9", "label": "不足9小时" },
-            { "v": "9to10", "label": "9到10小时" },
-            { "v": "10to13", "label": "10到13小时" },
-            { "v": "gt13", "label": "超过13小时" }
+            {
+              "v": "lt9",
+              "label": "不足9小时"
+            },
+            {
+              "v": "9to10",
+              "label": "9到10小时"
+            },
+            {
+              "v": "10to13",
+              "label": "10到13小时"
+            },
+            {
+              "v": "gt13",
+              "label": "超过13小时"
+            }
           ],
           "reverse": false,
           "source": "AASM2016/NSF2015/WS-T579",
@@ -1773,14 +3912,29 @@
         {
           "id": "FAM-11",
           "subscale": "语言环境",
+          "report_subscale": "语言环境",
+          "cluster": null,
           "construct": "语言环境 Language Env",
           "text": "家里日常对孩子使用几种语言/方言？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "single",
           "options": [
-            { "v": "1", "label": "1种" },
-            { "v": "2", "label": "2种" },
-            { "v": "3plus", "label": "3种或更多" }
+            {
+              "v": "1",
+              "label": "1种"
+            },
+            {
+              "v": "2",
+              "label": "2种"
+            },
+            {
+              "v": "3plus",
+              "label": "3种或更多"
+            }
           ],
           "reverse": false,
           "source": "HOFF2012/HOFF2018",
@@ -1790,16 +3944,37 @@
         {
           "id": "FAM-12",
           "subscale": "照看结构与支持网络",
+          "report_subscale": "照看结构与支持网络",
+          "cluster": null,
           "construct": "照看结构 Caregiving Structure",
           "text": "平时孩子主要由谁照看？（可多选）",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "multi",
           "options": [
-            { "v": "parents", "label": "父母" },
-            { "v": "grandparents", "label": "祖辈" },
-            { "v": "nanny", "label": "保育员/保姆" },
-            { "v": "preschool", "label": "幼儿园/托管" },
-            { "v": "other", "label": "其他亲属" }
+            {
+              "v": "parents",
+              "label": "父母"
+            },
+            {
+              "v": "grandparents",
+              "label": "祖辈"
+            },
+            {
+              "v": "nanny",
+              "label": "保育员/保姆"
+            },
+            {
+              "v": "preschool",
+              "label": "幼儿园/托管"
+            },
+            {
+              "v": "other",
+              "label": "其他亲属"
+            }
           ],
           "reverse": false,
           "source": "XU2024/CHAO1994",
@@ -1809,16 +3984,37 @@
         {
           "id": "FAM-13",
           "subscale": "照看结构与支持网络",
+          "report_subscale": "照看结构与支持网络",
+          "cluster": null,
           "construct": "照看结构 Caregiving Structure",
           "text": "主要照看人之间（如爸妈与祖辈）对怎么带孩子比较一致。",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "freq5",
           "options": [
-            { "v": 1, "label": "几乎从不" },
-            { "v": 2, "label": "偶尔" },
-            { "v": 3, "label": "有时" },
-            { "v": 4, "label": "经常" },
-            { "v": 5, "label": "几乎总是" }
+            {
+              "v": 1,
+              "label": "几乎从不"
+            },
+            {
+              "v": 2,
+              "label": "偶尔"
+            },
+            {
+              "v": 3,
+              "label": "有时"
+            },
+            {
+              "v": 4,
+              "label": "经常"
+            },
+            {
+              "v": 5,
+              "label": "几乎总是"
+            }
           ],
           "reverse": false,
           "source": "XU2024",
@@ -1837,7 +4033,11 @@
           "subscale": "开放题",
           "construct": "家长关切 Parent Concern",
           "text": "您最想通过这次测评了解孩子哪方面？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "text",
           "options": [],
           "reverse": false,
@@ -1850,7 +4050,11 @@
           "subscale": "开放题",
           "construct": "兴趣线索 Interest Cue",
           "text": "孩子最近为什么着迷？有没有一件事/一样东西他特别上心、反复要玩或要看？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "text",
           "options": [],
           "reverse": false,
@@ -1863,7 +4067,11 @@
           "subscale": "开放题",
           "construct": "带养难题 Caregiving Challenge",
           "text": "目前在带养孩子上，您最头疼或最想得到帮助的是什么？",
-          "age_bands": ["3-4", "4-5", "5-6"],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
           "scale": "text",
           "options": [],
           "reverse": false,

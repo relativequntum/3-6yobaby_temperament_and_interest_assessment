@@ -16,7 +16,7 @@
 
 气质研究有三条主要理论脉络，本专题全部覆盖：
 
-1. **Thomas & Chess 的 NYLS 取向（行为风格 / 临床传统）**：九维度 + 三类型（易养/难养/慢热）+ 匹配度（goodness-of-fit）。源自纽约纵向研究（New York Longitudinal Study, 始于 1956，追踪 133 名儿童）。强调气质是「行为的风格（the how of behavior）」，并提出气质与环境的交互决定发展结果。
+1. **Thomas & Chess 的 NYLS 取向（行为风格 / 临床传统）**：九维度 + 三类型（易养/难养/慢热）+ 匹配度（goodness-of-fit）。源自纽约纵向研究（New York Longitudinal Study, 始于 1956，追踪**约 138 名**儿童；样本量订正 2026-06，原误作 133 名）。强调气质是「行为的风格（the how of behavior）」，并提出气质与环境的交互决定发展结果。
    - 出处：Thomas & Chess (1977)；goodness-of-fit 概念见 §2.3、§5。
 
 2. **Rothbart 的心理生物学取向（当代主流、因子结构最清晰）**：把气质定义为「反应性与自我调节的构成性个体差异」。在 3-7 岁用 CBQ 测量，提炼出 **三大高阶因子**：外向性/活跃性（Surgency/Extraversion）、负性情绪（Negative Affectivity）、努力控制（Effortful Control），下含 15 个低阶子量表。
@@ -76,7 +76,7 @@
 - 出处：Putnam & Rothbart (2006)。
 - **短版 SF**：94 项，保留全部 15 子量表。
 - **极简版 VSF**：36 项，**只保留 3 个高阶因子分**（不再产出 15 子量表分），每因子 12 项。适用 3-8 岁。
-- 信度：原文报告 VSF 三因子内部一致性可接受；后续研究（如 Sleddens 等）报 Surgency/Negativity/Effortful Control α 约 0.78 / 0.70 / 0.72（与 Putnam & Rothbart 2006 一致）。CFA 对 VSF 36 项的三因子模型仅为「边际拟合（marginal fit）」——这是已知局限，提示 VSF 适合做粗略画像而非精细诊断（恰合本工具定位）。
+- 信度：原文报告 VSF 三因子内部一致性可接受；后续研究 **Sleddens et al. (2011, *Psychological Assessment*, 23(2):417-426, DOI 10.1037/a0022111；荷兰样本、被试 6-8 岁)** 报 Surgency/Negativity/Effortful Control α 约 0.78 / 0.70 / 0.72——**此三个 α 数值标「待核」**（与 Putnam & Rothbart 2006 量级一致，但确切数值正式引用前回原文核对）。CFA 对 VSF 36 项的三因子模型仅为「边际拟合（marginal fit）」——这是已知局限，提示 VSF 适合做粗略画像而非精细诊断（恰合本工具定位）。
 - **对本工具的意义**：VSF 的「3 大因子 + 极简题量」结构，是单人家长报告、低负担测评的现实最佳参照；但本工具若想给出更细的「优势画像」，建议在 VSF 三因子骨架下，**择优纳入若干高阶因子内、对 3-6 岁最具区分度与可观察性的子量表**（见 §4）。
 
 ### 2.3 Thomas & Chess NYLS 九维度、三类型、匹配度
@@ -230,7 +230,7 @@
 
 1. **单一报告人偏差**：家长报告受家长自身特质、期望、情境样本所限；CBQ-VSF 跨报告人一致性仅中等。单人填写会放大此偏差——解读须保守。
 2. **VSF 三因子 CFA 仅边际拟合**，低收入/少数族裔样本部分量表信度下降（Putnam & Rothbart, 2006）；自编精简题更需本土预试与信度检验后才能正式用分。
-3. **文化差异真实存在**：Ahadi, Rothbart & Ye (1993) 在上海 vs 美国样本发现——努力控制在中国样本中与负性情绪**无关**、反而与外向性**负相关**（与美国样本不同）；且部分子量表的性别差异方向相反。**这意味着照搬西方常模与因子相关结构有风险**，本工具坚持个体内比较、不套用西方人群常模是正确选择。
+3. **文化差异真实存在**：Ahadi, Rothbart & Ye (1993) 在上海 vs 美国样本发现——努力控制在中国样本中与负性情绪**无关**、反而与外向性**负相关**（与美国样本不同）；且部分子量表的**性别差异随文化而异**（中美样本不一致，措辞订正 2026-06，不写「方向相反」——原文为跨文化的细致比较，「方向相反」过强）。**这意味着照搬西方常模与因子相关结构有风险**，本工具坚持个体内比较、不套用西方人群常模是正确选择。
 4. **气质≠命运**：气质有稳定性但非固定，受成熟与环境调节；解读须避免决定论措辞。
 5. **「类型」标签的风险**：Thomas-Chess 三类型直观但会贴标签、且约 35% 儿童不可分类——本工具用连续维度画像而非类型标签。
 6. **构念边界**：努力控制与执行功能（executive function）部分重叠但非等同（自我调节的因子结构在学前期仍有争议，见 Nigg 等讨论——需进一步核实具体文献）。
@@ -243,11 +243,11 @@
 
 1. Rothbart, M. K., Ahadi, S. A., Hershey, K. L., & Fisher, P. (2001). **Investigations of temperament at three to seven years: The Children's Behavior Questionnaire.** *Child Development*, 72(5), 1394-1408. DOI: 10.1111/1467-8624.00355. PubMed: https://pubmed.ncbi.nlm.nih.gov/11699677/ ✅
 
-2. Putnam, S. P., & Rothbart, M. K. (2006). **Development of short and very short forms of the Children's Behavior Questionnaire.** *Journal of Personality Assessment*, 87(1), 103-113. DOI: 10.1207/s15327752jpa8701_09. PubMed: https://pubmed.ncbi.nlm.nih.gov/16856791/ ✅（页码 2026-06 核实修正为 103-113）
+2. Putnam, S. P., & Rothbart, M. K. (2006). **Development of short and very short forms of the Children's Behavior Questionnaire.** *Journal of Personality Assessment*, 87(1). DOI: 10.1207/s15327752jpa8701_09. PubMed: https://pubmed.ncbi.nlm.nih.gov/16856791/ 🟡（**页码存在双分页源**：Bowdoin/出版方记为 103-113，PubMed PMID 16856791 记为 102-112；两版**并列标注、不断言已统一修正**，正式引用前以纸本期刊页码为准）
 
 3. Kotelnikova, Y., Olino, T. M., Klein, D. N., Kryski, K. R., & Hayden, E. P. (2015/2016). **Higher- and lower-order factor analyses of the Children's Behavior Questionnaire in early and middle childhood.** *Psychological Assessment*, 28(1), 92-108. DOI: 10.1037/pas0000153. PMC: https://pmc.ncbi.nlm.nih.gov/articles/PMC4666831/ ✅（用于核对 15 子量表的三因子归属与跨载问题）
 
-4. Ahadi, S. A., Rothbart, M. K., & Ye, R. M. (1993). **Children's temperament in the U.S. and China: Similarities and differences.** *European Journal of Personality*, 7(5), 359-377. DOI: 10.1002/per.2410070506. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/per.2410070506 ✅（DOI 与卷期经检索核对；全文为付费墙，关键发现据摘要与多源二手印证）
+4. Ahadi, S. A., Rothbart, M. K., & Ye, R. M. (1993). **Children's temperament in the U.S. and China: Similarities and differences.** *European Journal of Personality*, 7(5), 359-378. DOI: 10.1002/per.2410070506. URL: https://onlinelibrary.wiley.com/doi/abs/10.1002/per.2410070506 ✅（末页 2026-06 订正 377→378；DOI 与卷期经检索核对；全文为付费墙，关键发现据摘要与多源二手印证；性别差异表述「随文化而异」，不写「方向相反」）
 
 5. Thomas, A., & Chess, S. (1977). **Temperament and Development.** New York: Brunner/Mazel. （NYLS 九维度、三类型、goodness-of-fit 的奠基著作）🟡（经多源一致印证；建议核对纸本原文）
 

@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/3-6-assessment/export.schema.json",
+  "title": "3-6岁幼儿发展优势与兴趣画像测评 — 导出 JSON 契约",
+  "description": "问卷（questionnaire/index.html 的 buildExport()）提交后导出的 JSON 的唯一机读事实源。人读说明见 docs/json-schema.md；如有歧义以本文件为准。schema_version 1.1。各字段值域与前端一致。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "instrument",
+    "child",
+    "age_band",
+    "consent",
+    "responses",
+    "open_ended",
+    "meta"
+  ],
+  "additionalProperties": false,
+  "patternProperties": {
+    "^_": {
+      "$comment": "放开下划线前缀键：容纳 _identity_extra 及未来非核心扩展。消费方未识别时应忽略而非报错。"
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "description": "导出契约版本。当前发行版固定为 1.1；保留 1.0 以兼容历史导出。",
+      "type": "string",
+      "enum": ["1.1", "1.0"]
+    },
+    "instrument": {
+      "type": "object",
+      "required": ["name", "version", "date", "age_range", "language", "item_bank_version"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "age_range": { "type": "string" },
+        "language": { "type": "string" },
+        "item_bank_version": {
+          "description": "本次所用题库版本，与 schema_version 是独立版本线。",
+          "type": "string"
+        }
+      }
+    },
+    "child": {
+      "type": "object",
+      "required": ["child_id", "nickname", "birth_month", "age_months_at_submit", "sex"],
+      "additionalProperties": false,
+      "properties": {
+        "child_id": {
+          "description": "单次会话随机标识（cid- + UUID）。仅标记本份作答，跨次不可自动关联；非稳定标识、不支持纵向追踪。",
+          "type": "string",
+          "pattern": "^cid-.+"
+        },
+        "nickname": { "type": ["string", "null"] },
+        "birth_month": {
+          "description": "出生年月 YYYY-MM。",
+          "type": "string",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+        },
+        "age_months_at_submit": {
+          "description": "提交时月龄，completed-month 取整：(submitYear-birthYear)*12 + (submitMonth-birthMonth)，只按年-月做差、不看具体日（XS-04）。birth_month 缺失/非法时为 null。",
+          "type": ["integer", "null"]
+        },
+        "sex": { "type": "string", "enum": ["girl", "boy", "prefer_not"] }
+      }
+    },
+    "age_band": {
+      "description": "本次根据出生月龄判定的年龄段；越界为 out_of_range。",
+      "type": "string",
+      "enum": ["3-4", "4-5", "5-6", "out_of_range"]
+    },
+    "consent": {
+      "type": "object",
+      "required": ["agreed", "consent_version", "agreed_at"],
+      "additionalProperties": false,
+      "properties": {
+        "agreed": { "type": "boolean", "const": true },
+        "consent_version": { "type": "string" },
+        "agreed_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "responses": {
+      "description": "评分题作答数组（TMP/SEL/DEV/INT/LRN/FAM 已呈现的每道题一条）。",
+      "type": "array",
+      "items": { "$ref": "#/$defs/response" }
+    },
+    "open_ended": {
+      "description": "开放题作答数组（OPEN，可为空数组）。",
+      "type": "array",
+      "items": { "$ref": "#/$defs/openItem" }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["timing", "quality"],
+      "additionalProperties": false,
+      "properties": {
+        "timing": { "$ref": "#/$defs/timing" },
+        "quality": { "$ref": "#/$defs/quality" }
+      }
+    },
+    "_identity_extra": {
+      "description": "身份补充字段（顶层、可选、前端恒导出）。供 skill 推断 familiarity_low。已在 1.1 正式登记为允许键。",
+      "type": "object",
+      "required": ["relationship", "daily_contact"],
+      "additionalProperties": false,
+      "properties": {
+        "relationship": {
+          "type": "string",
+          "enum": ["mother", "father", "grandparent", "other_caregiver"]
+        },
+        "daily_contact": {
+          "type": "string",
+          "enum": ["lt1", "1to3", "3to6", "gt6"]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "response": {
+      "type": "object",
+      "required": [
+        "item_id",
+        "section",
+        "construct",
+        "subscale",
+        "report_subscale",
+        "cluster",
+        "consistency_pair_id",
+        "question_text",
+        "scale",
+        "raw_value",
+        "value_label",
+        "age_band",
+        "reverse",
+        "scored",
+        "anchor_shown"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "item_id": { "type": "string" },
+        "section": {
+          "type": "string",
+          "enum": ["TMP", "SEL", "DEV", "INT", "LRN", "FAM"]
+        },
+        "construct": { "type": "string" },
+        "subscale": { "type": "string" },
+        "report_subscale": {
+          "description": "报告呈现用子维度名（复制自题库），无则 null。",
+          "type": ["string", "null"]
+        },
+        "cluster": {
+          "description": "跨 section 能力簇标签（复制自题库），无归簇为 null。",
+          "type": ["string", "null"],
+          "enum": [
+            "resilience",
+            "focus_persistence",
+            "initiative",
+            "inhibitory_control",
+            "mastery",
+            null
+          ]
+        },
+        "consistency_pair_id": {
+          "description": "一致性配对题标识（如 cp-1）；同 id 的正/反向题构成配对，供 skill 计算 inconsistency_flag。无配对为 null。",
+          "type": ["string", "null"]
+        },
+        "question_text": { "type": "string" },
+        "scale": {
+          "type": "string",
+          "enum": ["freq5", "like5", "single", "multi"]
+        },
+        "raw_value": {
+          "description": "原始作答值：freq5/like5 为 1-5 整数；single 为选项 v 字符串；multi 为 v 字符串数组；未作答为 null。",
+          "type": ["integer", "string", "array", "null"],
+          "items": { "type": "string" }
+        },
+        "value_label": {
+          "description": "所选项中文标签（multi 为标签数组），自包含。未作答时为 \"\" 或 []。",
+          "type": ["string", "array"],
+          "items": { "type": "string" }
+        },
+        "age_band": {
+          "description": "该题锚点实际呈现所用年龄段（越界时回退到 3-4 或 5-6），用于锚点复现。",
+          "type": "string",
+          "enum": ["3-4", "4-5", "5-6"]
+        },
+        "reverse": { "type": "boolean" },
+        "scored": {
+          "description": "是否计入孩子画像（TMP/SEL/DEV/INT/LRN=true；FAM=false）。",
+          "type": "boolean"
+        },
+        "anchor_shown": {
+          "description": "作答时实际呈现的本龄段锚点文本，无则 null。",
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "openItem": {
+      "type": "object",
+      "required": ["item_id", "construct", "question_text", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "item_id": { "type": "string" },
+        "construct": { "type": "string" },
+        "question_text": { "type": "string" },
+        "text": {
+          "description": "家长输入，可为空字符串。",
+          "type": "string"
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "required": [
+        "started_at",
+        "submitted_at",
+        "total_active_sec",
+        "per_section_sec",
+        "resumed_from_draft"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "started_at": { "type": ["string", "null"], "format": "date-time" },
+        "submitted_at": { "type": "string", "format": "date-time" },
+        "total_active_sec": {
+          "description": "总活跃作答秒数（排除挂起/切后台），取整。",
+          "type": "integer",
+          "minimum": 0
+        },
+        "per_section_sec": {
+          "type": "object",
+          "required": ["TMP", "SEL", "DEV", "INT", "LRN", "FAM", "OPEN"],
+          "additionalProperties": false,
+          "properties": {
+            "TMP": { "type": "integer", "minimum": 0 },
+            "SEL": { "type": "integer", "minimum": 0 },
+            "DEV": { "type": "integer", "minimum": 0 },
+            "INT": { "type": "integer", "minimum": 0 },
+            "LRN": { "type": "integer", "minimum": 0 },
+            "FAM": { "type": "integer", "minimum": 0 },
+            "OPEN": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "resumed_from_draft": { "type": "boolean" }
+      }
+    },
+    "quality": {
+      "description": "数据质量旗标。未判定布尔位默认 false；用于 skill 侧降级报告强度/加重免责，而非删除作答。",
+      "type": "object",
+      "required": [
+        "straightlining_flag",
+        "fast_response_flag",
+        "high_missing_flag",
+        "inconsistency_flag",
+        "sdb_halo_flag",
+        "familiarity_low",
+        "recent_disruption",
+        "longstring_max",
+        "notes",
+        "quality_flag_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "straightlining_flag": { "type": "boolean" },
+        "fast_response_flag": { "type": "boolean" },
+        "high_missing_flag": { "type": "boolean" },
+        "inconsistency_flag": { "type": "boolean" },
+        "sdb_halo_flag": { "type": "boolean" },
+        "familiarity_low": { "type": "boolean" },
+        "recent_disruption": { "type": "boolean" },
+        "longstring_max": { "type": "integer", "minimum": 0 },
+        "notes": { "type": ["string", "null"] },
+        "quality_flag_status": {
+          "description": "各旗标的计算来源/状态。reserved=本版预留、恒 false、暂不计算；computed=前端本端已计算；computed_in_skill_from_pairs=留待 skill 用配对题计算；computed_from_contact=由 _identity_extra.daily_contact 推断。",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sdb_halo": { "$ref": "#/$defs/flagStatus" },
+            "inconsistency": { "$ref": "#/$defs/flagStatus" },
+            "longstring": { "$ref": "#/$defs/flagStatus" },
+            "familiarity_low": { "$ref": "#/$defs/flagStatus" }
+          }
+        }
+      }
+    },
+    "flagStatus": {
+      "type": "string",
+      "enum": [
+        "reserved",
+        "computed",
+        "computed_in_skill_from_pairs",
+        "computed_from_contact"
+      ]
+    }
+  }
+}
