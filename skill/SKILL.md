@@ -143,7 +143,7 @@ python skill/scripts/select_activities.py <work/profile.json> -o <work/candidate
 3. `why` 由你写（顺势放大/低门槛扶持的因娃理由，结合 `temperament_fit_notes`）；
 4. 写成 RCO 的一条 activity：`{id, name, type, why, steps, difficulty_ladder, evidence:{strength,basis}, safety_notes}`。
 
-> 现成范本：`questionnaire/sample-rco.json`（含 glance + 10 章 narratives + 内联 profile + 3 条已富化 activities），照它的形状写即可。
+> 现成范本：`docs/sample-report/rco.json`（含 glance + 10 章 narratives + 内联 profile + 3 条已富化 activities），照它的形状写即可。
 
 ---
 
@@ -208,7 +208,7 @@ pip install jsonschema playwright && playwright install chromium
 # 单份全管线
 python skill/scripts/score.py inbox/2026-06-03/xxx.json -o work/profile.json          # ① 校验+计分
 python skill/scripts/select_activities.py work/profile.json -o work/candidates.json   # ② 候选筛选
-#   ③ 由你撰写叙事 + 富化活动 → 组装 work/rco.json（见 §4.1，范本 questionnaire/sample-rco.json）
+#   ③ 由你撰写叙事 + 富化活动 → 组装 work/rco.json（见 §4.1，范本 docs/sample-report/rco.json）
 python skill/scripts/render.py work/rco.json --profile work/profile.json -o reports/{昵称-childid-日期}/  # ④ 渲染三件套（无chromium加 --no-pdf）
 #   ⑤ 把原始 JSON 移到 processed/
 
