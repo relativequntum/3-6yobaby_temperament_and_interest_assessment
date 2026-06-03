@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="generator" content="skill/scripts/render.py">
+<title>{{TITLE}}</title>
+<style>
+/* ============================================================
+   报告样式：响应式·手机优先·内联自包含·离线
+   非诊断、温暖、家长友好；A4 打印友好（report.pdf 走此页打印）。
+   仅用系统字体栈（无外链字体），保证离线与跨端一致。
+   ============================================================ */
+:root{
+  --ink:#2f2a26; --muted:#8a8178; --soft:#b8aea2;
+  --paper:#fbf7f1; --card:#ffffff; --line:#eadfd1;
+  --accent:#e8995a; --accent-deep:#cf7a3c; --accent-soft:#fbeede;
+  --good:#7fa86b; --calm:#8fb3c4; --protect:#a98fc4;
+  --shadow:0 1px 3px rgba(60,48,36,.08),0 6px 18px rgba(60,48,36,.05);
+  --radius:16px; --maxw:760px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",
+    "Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",
+    sans-serif;
+  font-size:16px; line-height:1.72; letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:20px 18px 64px;}
+
+/* ---- 文字与标题 ---- */
+h1,h2,h3{line-height:1.3; font-weight:700; color:var(--ink);}
+h1{font-size:1.7rem; margin:.2em 0 .1em;}
+h2{font-size:1.28rem; margin:1.7em 0 .5em; padding-bottom:.3em;
+   border-bottom:2px solid var(--accent-soft);}
+h3{font-size:1.06rem; margin:1.2em 0 .35em; color:var(--accent-deep);}
+p{margin:.5em 0;}
+small,.muted{color:var(--muted);}
+a{color:var(--accent-deep);}
+strong{color:var(--ink);}
+ul,ol{margin:.4em 0 .8em; padding-left:1.3em;}
+li{margin:.28em 0;}
+hr{border:none; border-top:1px dashed var(--line); margin:1.6em 0;}
+
+/* ---- 卡片 / 区块 ---- */
+.card{background:var(--card); border:1px solid var(--line);
+  border-radius:var(--radius); padding:18px 18px; margin:14px 0;
+  box-shadow:var(--shadow);}
+.section{margin:30px 0;}
+.section:first-of-type{margin-top:8px;}
+
+/* ---- 顶部封面 ---- */
+.cover{background:linear-gradient(135deg,#fff5e9,#fbeede 60%,#f6e7d3);
+  border:1px solid var(--line); border-radius:22px; padding:24px 22px;
+  box-shadow:var(--shadow); margin-bottom:8px;}
+.cover .kicker{font-size:.82rem; letter-spacing:.12em; color:var(--accent-deep);
+  text-transform:uppercase; margin:0 0 6px;}
+.cover h1{margin:.1em 0;}
+.cover .meta-row{display:flex; flex-wrap:wrap; gap:8px 14px; margin-top:10px;
+  font-size:.92rem; color:var(--muted);}
+.cover .meta-row b{color:var(--ink); font-weight:600;}
+
+/* ---- 一页速览 ---- */
+.glance{background:var(--accent-soft); border:1px solid #f0dcc2;
+  border-radius:20px; padding:20px; margin:16px 0 8px;}
+.glance h2{border:none; margin:.1em 0 .5em; padding:0;}
+.glance .portrait{font-size:1.12rem; line-height:1.6; font-weight:500;}
+.glance .three{margin-top:14px;}
+.glance .three ol{counter-reset:wk; list-style:none; padding-left:0;}
+.glance .three li{position:relative; padding:8px 8px 8px 42px; margin:8px 0;
+  background:#fff; border-radius:12px; border:1px solid #f0dcc2;}
+.glance .three li::before{counter-increment:wk; content:counter(wk);
+  position:absolute; left:10px; top:50%; transform:translateY(-50%);
+  width:24px; height:24px; border-radius:50%; background:var(--accent);
+  color:#fff; font-weight:700; font-size:.85rem; display:flex;
+  align-items:center; justify-content:center;}
+
+/* ---- chips / 标签 ---- */
+.chips{display:flex; flex-wrap:wrap; gap:7px; margin:8px 0;}
+.chip{display:inline-block; padding:3px 11px; border-radius:999px;
+  font-size:.82rem; background:#fff; border:1px solid var(--line);
+  color:var(--ink);}
+.chip.strong{background:#fdeede; border-color:#f3d3ad; color:var(--accent-deep);}
+.chip.protect{background:#f1ebf7; border-color:#dccaee; color:#7d5da6;}
+.chip.calm{background:#e9f1f5; border-color:#cfe0e9; color:#4f7f95;}
+
+/* ---- 防护话术框 ---- */
+.guard{background:#f6f1fa; border-left:4px solid var(--protect);
+  border-radius:0 12px 12px 0; padding:10px 14px; margin:10px 0;
+  font-size:.93rem; color:#5b4a72;}
+.note{background:#f3f7fa; border-left:4px solid var(--calm);
+  border-radius:0 12px 12px 0; padding:10px 14px; margin:10px 0;
+  font-size:.93rem; color:#3f5e6e;}
+.soft-hint{background:#fff6ec; border:1px dashed var(--accent);
+  border-radius:12px; padding:12px 14px; margin:12px 0; color:#7a5a36;}
+
+/* ---- 行动建议三线 ---- */
+.act-lines{display:grid; gap:12px;}
+@media(min-width:640px){.act-lines{grid-template-columns:1fr;}}
+.act-line{border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  background:#fff;}
+.act-line>.head{padding:10px 14px; font-weight:700; color:#fff;
+  display:flex; align-items:center; gap:8px;}
+.act-line.game>.head{background:linear-gradient(90deg,#e8995a,#e0853f);}
+.act-line.exercise>.head{background:linear-gradient(90deg,#7fa86b,#6c9659);}
+.act-line.companionship>.head{background:linear-gradient(90deg,#8fb3c4,#6f9bb0);}
+.act-line .body{padding:6px 14px 12px;}
+.act-item{padding:10px 0; border-top:1px dashed var(--line);}
+.act-item:first-child{border-top:none;}
+.act-item .name{font-weight:600;}
+.act-item .src{font-size:.78rem; color:var(--muted); margin-left:6px;}
+.act-item .meta{font-size:.85rem; color:var(--muted); margin-top:2px;}
+.evi{display:inline-block; font-size:.74rem; padding:1px 7px; border-radius:8px;
+  background:#eef3ea; color:#5b7a4a; margin-left:4px;}
+.evi.principle{background:#f3eef6; color:#6f5a8a;}
+
+/* ---- 表格（附录方法学等） ---- */
+table{width:100%; border-collapse:collapse; margin:10px 0; font-size:.9rem;}
+th,td{text-align:left; padding:7px 9px; border-bottom:1px solid var(--line);
+  vertical-align:top;}
+th{color:var(--muted); font-weight:600; background:#faf5ee;}
+
+/* ---- 页脚 / 边界 ---- */
+.boundary{margin-top:18px; padding:16px; border-radius:14px;
+  background:#f7f2ec; border:1px solid var(--line); font-size:.9rem;
+  color:#6a6258;}
+.footer{margin-top:30px; text-align:center; font-size:.8rem; color:var(--muted);}
+.toc{font-size:.92rem;}
+.toc a{display:inline-block; margin:2px 0; text-decoration:none;}
+details{margin:8px 0;}
+summary{cursor:pointer; font-weight:600; color:var(--accent-deep);}
+
+/* ---- 打印（A4，report.pdf 走此页）---- */
+@page{size:A4; margin:14mm 14mm 16mm;}
+@media print{
+  :root{--shadow:none;}
+  body{background:#fff; font-size:11.5pt; line-height:1.6;}
+  .wrap{max-width:100%; padding:0;}
+  .card,.cover,.glance,.act-line{box-shadow:none;}
+  .section{margin:14pt 0;}
+  h2{margin-top:16pt;}
+  .avoid-break,.card,.act-line,.glance,.cover,table,.act-item{
+    break-inside:avoid; page-break-inside:avoid;}
+  h1,h2,h3{break-after:avoid; page-break-after:avoid;}
+  .page-break{break-before:page; page-break-before:always;}
+  details{display:block;} details>summary{list-style:none;}
+  a{color:var(--ink); text-decoration:none;}
+  .no-print{display:none !important;}
+}
+.ax-chart{display:block; margin:10px 0; max-width:100%; height:auto;}
+.ax-chart text{font-family:inherit;}
+.ax-empty text{font-style:italic;}
+.ax-badge{margin:0 2px;}
+</style>
+</head>
+<body>
+<main class="wrap">
+{{BODY}}
+</main>
+</body>
+</html>

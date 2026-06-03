@@ -1,0 +1,1397 @@
+{
+  "schema": {
+    "profile_schema": "1.0",
+    "doc": "skill/PROFILE_SCHEMA.md"
+  },
+  "meta": {
+    "nickname": "豆豆",
+    "child_id": "cid-ede473db-c630-4b3f-a3f9-c30eaca01eb4",
+    "age_band": "4-5",
+    "age_months_at_submit": 54,
+    "sex": "girl",
+    "submitted_at": "2026-06-02T17:34:32+08:00",
+    "item_bank_version": "1.1.0",
+    "scoring_config_version": "1.0.0",
+    "source_export_schema_version": "1.1",
+    "non_diagnostic_notice": "本配置仅用于个体内（ipsative）相对优势画像；不做诊断/筛查、不出人群百分位、不设达标切分点。"
+  },
+  "data_quality": {
+    "flags": {
+      "straightlining": false,
+      "fast_response": true,
+      "high_missing": false,
+      "missing_ratio": 0.0,
+      "inconsistency": false,
+      "familiarity_low": false,
+      "recent_disruption": false,
+      "sdb_halo": false,
+      "resumed_from_draft": false
+    },
+    "confidence": "med",
+    "confidence_basis": {
+      "hard_flags": 1,
+      "soft_flags": 0,
+      "rule": "硬旗(直答/过快/高缺答/矛盾)≥2 或 硬1+软1 → low；硬1或软≥1 → med；否则 high"
+    },
+    "explanations": [
+      "平均每题约 0.1 秒，低于 2 秒可疑下界（阈值需本地校准）"
+    ],
+    "handling": "标注优先而非删除（Ward & Meade 2023）：多旗标→弱化绝对表述、加重免责。"
+  },
+  "baseline": {
+    "freq5_person_mean": 3.696,
+    "n_units": [
+      {
+        "kind": "cluster",
+        "id": "focus_persistence"
+      },
+      {
+        "kind": "cluster",
+        "id": "inhibitory_control"
+      },
+      {
+        "kind": "cluster",
+        "id": "initiative"
+      },
+      {
+        "kind": "cluster",
+        "id": "resilience"
+      },
+      {
+        "kind": "cluster",
+        "id": "mastery"
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "TMP",
+          "活动水平"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "TMP",
+          "冒险/高强度愉悦"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "TMP",
+          "恐惧/谨慎"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "SEL",
+          "依恋与关系"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "SEL",
+          "共情与亲社会"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "DEV",
+          "沟通/语言"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "DEV",
+          "大运动"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "DEV",
+          "精细动作"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "DEV",
+          "问题解决/认知"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "DEV",
+          "个人-社会/自理"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "LRN",
+          "好奇与探索"
+        ]
+      },
+      {
+        "kind": "subscale",
+        "id": [
+          "LRN",
+          "创造与灵活"
+        ]
+      }
+    ],
+    "scope": "按量表/按section（freq5 行为题；like5 不并入）",
+    "note": "个人总均值仅由计入画像的 freq5 题（簇合并后只计一次）构成；like5 兴趣领域分单独在 INT 内排序、不并入。"
+  },
+  "sections": [
+    {
+      "id": "DEV",
+      "name": "发展快照",
+      "scale": "freq5",
+      "raw_mean": 3.933,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 15,
+      "within_child_relative": 0.238,
+      "relative_label": "中间位置",
+      "protected_high": true,
+      "domain_order": [
+        {
+          "domain": "沟通/语言",
+          "raw_mean": 4.333,
+          "raw_band": {
+            "level": "高",
+            "phrase": "多落在「经常/几乎总是」一档",
+            "scale": "freq5"
+          },
+          "n_items": 3,
+          "within_child_relative": 0.638,
+          "relative_label": "相对突出",
+          "protected_high": true
+        },
+        {
+          "domain": "精细动作",
+          "raw_mean": 4.333,
+          "raw_band": {
+            "level": "高",
+            "phrase": "多落在「经常/几乎总是」一档",
+            "scale": "freq5"
+          },
+          "n_items": 3,
+          "within_child_relative": 0.638,
+          "relative_label": "相对突出",
+          "protected_high": true
+        },
+        {
+          "domain": "问题解决/认知",
+          "raw_mean": 4.0,
+          "raw_band": {
+            "level": "高",
+            "phrase": "多落在「经常/几乎总是」一档",
+            "scale": "freq5"
+          },
+          "n_items": 4,
+          "within_child_relative": 0.304,
+          "relative_label": "相对突出",
+          "protected_high": true
+        },
+        {
+          "domain": "个人-社会/自理",
+          "raw_mean": 3.667,
+          "raw_band": {
+            "level": "高",
+            "phrase": "多落在「经常/几乎总是」一档",
+            "scale": "freq5"
+          },
+          "n_items": 3,
+          "within_child_relative": -0.029,
+          "relative_label": "中间位置",
+          "protected_high": true
+        },
+        {
+          "domain": "大运动",
+          "raw_mean": 3.0,
+          "raw_band": {
+            "level": "中",
+            "phrase": "多落在「有时」一档",
+            "scale": "freq5"
+          },
+          "n_items": 2,
+          "within_child_relative": -0.696,
+          "relative_label": "相对还在发展中",
+          "protected_high": false
+        }
+      ]
+    },
+    {
+      "id": "INT",
+      "name": "兴趣品质(B层)",
+      "scale": "freq5",
+      "raw_mean": 3.857,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 7,
+      "within_child_relative": 0.162,
+      "relative_label": "中间位置",
+      "protected_high": true
+    },
+    {
+      "id": "LRN",
+      "name": "学习品质",
+      "scale": "freq5",
+      "raw_mean": 3.857,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 14,
+      "within_child_relative": 0.162,
+      "relative_label": "中间位置",
+      "protected_high": true
+    },
+    {
+      "id": "SEL",
+      "name": "社会情绪",
+      "scale": "freq5",
+      "raw_mean": 3.733,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 15,
+      "within_child_relative": 0.038,
+      "relative_label": "中间位置",
+      "protected_high": true
+    },
+    {
+      "id": "TMP",
+      "name": "气质",
+      "scale": "freq5",
+      "raw_mean": 3.563,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 16,
+      "within_child_relative": -0.133,
+      "relative_label": "中间位置",
+      "protected_high": true
+    }
+  ],
+  "clusters": [
+    {
+      "cluster": "focus_persistence",
+      "report_name": "专注-坚持",
+      "scale": "freq5",
+      "raw_mean": 4.111,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 9,
+      "members_used": [
+        "INT-09",
+        "INT-10",
+        "INT-11",
+        "LRN-01",
+        "LRN-02",
+        "LRN-03",
+        "TMP-13",
+        "TMP-14",
+        "TMP-15"
+      ],
+      "within_child_relative": 0.415,
+      "relative_label": "相对突出",
+      "merged_single_metric": true,
+      "counts_in_baseline_once": true,
+      "protected_high": true
+    },
+    {
+      "cluster": "inhibitory_control",
+      "report_name": "抑制控制",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 6,
+      "members_used": [
+        "SEL-04",
+        "SEL-05",
+        "SEL-06",
+        "TMP-16",
+        "TMP-17",
+        "TMP-18"
+      ],
+      "within_child_relative": 0.304,
+      "relative_label": "相对突出",
+      "merged_single_metric": true,
+      "counts_in_baseline_once": true,
+      "protected_high": true
+    },
+    {
+      "cluster": "initiative",
+      "report_name": "主动性",
+      "scale": "freq5",
+      "raw_mean": 3.714,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 7,
+      "members_used": [
+        "INT-12",
+        "INT-13",
+        "LRN-06",
+        "LRN-14",
+        "SEL-07",
+        "SEL-08",
+        "SEL-09"
+      ],
+      "within_child_relative": 0.019,
+      "relative_label": "中间位置",
+      "merged_single_metric": true,
+      "counts_in_baseline_once": true,
+      "protected_high": true
+    },
+    {
+      "cluster": "resilience",
+      "report_name": "挫折恢复/情绪调节",
+      "scale": "freq5",
+      "raw_mean": 3.75,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 8,
+      "members_used": [
+        "LRN-12",
+        "LRN-13",
+        "SEL-01",
+        "SEL-02",
+        "SEL-03",
+        "TMP-08",
+        "TMP-09",
+        "TMP-10"
+      ],
+      "within_child_relative": 0.054,
+      "relative_label": "中间位置",
+      "merged_single_metric": true,
+      "counts_in_baseline_once": true,
+      "protected_high": true
+    },
+    {
+      "cluster": "mastery",
+      "report_name": "掌握取向",
+      "scale": "freq5",
+      "raw_mean": 3.75,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 4,
+      "members_used": [
+        "INT-14",
+        "INT-15",
+        "LRN-10",
+        "LRN-11"
+      ],
+      "within_child_relative": 0.054,
+      "relative_label": "中间位置",
+      "merged_single_metric": true,
+      "counts_in_baseline_once": true,
+      "protected_high": true
+    }
+  ],
+  "subscales": [
+    {
+      "section": "DEV",
+      "report_subscale": "个人-社会/自理",
+      "scale": "freq5",
+      "raw_mean": 3.667,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "DEV",
+      "report_subscale": "大运动",
+      "scale": "freq5",
+      "raw_mean": 3.0,
+      "raw_band": {
+        "level": "中",
+        "phrase": "多落在「有时」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "DEV",
+      "report_subscale": "沟通/语言",
+      "scale": "freq5",
+      "raw_mean": 4.333,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "DEV",
+      "report_subscale": "精细动作",
+      "scale": "freq5",
+      "raw_mean": 4.333,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "DEV",
+      "report_subscale": "问题解决/认知",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 4,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "建构/搭建",
+      "scale": "like5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "明显更被这类活动吸引、会主动玩",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "强度/沉浸",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 1,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "持续性/专注",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "掌握取向/愉悦",
+      "scale": "freq5",
+      "raw_mean": 3.5,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "数理/逻辑",
+      "scale": "like5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "明显更被这类活动吸引、会主动玩",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "社交/扮演",
+      "scale": "like5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "明显更被这类活动吸引、会主动玩",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "自主发起",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "自然探索",
+      "scale": "like5",
+      "raw_mean": 3.0,
+      "raw_band": {
+        "level": "中",
+        "phrase": "对这类活动一般/还行",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "艺术/绘画手工",
+      "scale": "like5",
+      "raw_mean": 5.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "明显更被这类活动吸引、会主动玩",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "语言/故事",
+      "scale": "like5",
+      "raw_mean": 5.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "明显更被这类活动吸引、会主动玩",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "运动/大肌肉",
+      "scale": "like5",
+      "raw_mean": 3.0,
+      "raw_band": {
+        "level": "中",
+        "phrase": "对这类活动一般/还行",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "INT",
+      "report_subscale": "音乐/律动",
+      "scale": "like5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "明显更被这类活动吸引、会主动玩",
+        "scale": "like5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "LRN",
+      "report_subscale": "专注与坚持",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "LRN",
+      "report_subscale": "主动性与自我驱动",
+      "scale": "freq5",
+      "raw_mean": 3.5,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "LRN",
+      "report_subscale": "创造与灵活",
+      "scale": "freq5",
+      "raw_mean": 3.667,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "LRN",
+      "report_subscale": "好奇与探索",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "LRN",
+      "report_subscale": "掌握愉悦与挑战取向",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "LRN",
+      "report_subscale": "面对挫折的恢复",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "SEL",
+      "report_subscale": "主动性与自主",
+      "scale": "freq5",
+      "raw_mean": 3.667,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "SEL",
+      "report_subscale": "依恋与关系",
+      "scale": "freq5",
+      "raw_mean": 3.667,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "SEL",
+      "report_subscale": "共情与亲社会",
+      "scale": "freq5",
+      "raw_mean": 3.333,
+      "raw_band": {
+        "level": "中",
+        "phrase": "多落在「有时」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "SEL",
+      "report_subscale": "情绪调节",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "SEL",
+      "report_subscale": "行为与冲动控制",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "冒险/高强度愉悦",
+      "scale": "freq5",
+      "raw_mean": 3.0,
+      "raw_band": {
+        "level": "中",
+        "phrase": "多落在「有时」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "可安抚性",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 1,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "害羞/慢热",
+      "scale": "freq5",
+      "raw_mean": 2.0,
+      "raw_band": {
+        "level": "低",
+        "phrase": "多落在「偶尔/几乎从不」一档",
+        "scale": "freq5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": true,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "恐惧/谨慎",
+      "scale": "freq5",
+      "raw_mean": 3.5,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "抑制控制",
+      "scale": "freq5",
+      "raw_mean": 4.0,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "挫折/愤怒反应",
+      "scale": "freq5",
+      "raw_mean": 3.0,
+      "raw_band": {
+        "level": "中",
+        "phrase": "多落在「有时」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "注意聚焦/坚持",
+      "scale": "freq5",
+      "raw_mean": 4.333,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 3,
+      "in_cluster": true,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "活动水平",
+      "scale": "freq5",
+      "raw_mean": 3.0,
+      "raw_band": {
+        "level": "中",
+        "phrase": "多落在「有时」一档",
+        "scale": "freq5"
+      },
+      "n_items": 2,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": false,
+      "standalone_single_item": false,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "社交接近",
+      "scale": "freq5",
+      "raw_mean": 2.0,
+      "raw_band": {
+        "level": "低",
+        "phrase": "多落在「偶尔/几乎从不」一档",
+        "scale": "freq5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": true,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    },
+    {
+      "section": "TMP",
+      "report_subscale": "趋避/适应",
+      "scale": "freq5",
+      "raw_mean": 2.0,
+      "raw_band": {
+        "level": "低",
+        "phrase": "多落在「偶尔/几乎从不」一档",
+        "scale": "freq5"
+      },
+      "n_items": 1,
+      "in_cluster": false,
+      "ranked": false,
+      "excluded_from_baseline": true,
+      "standalone_single_item": true,
+      "caveat": "题少／子维度间相关高，仅供参考"
+    }
+  ],
+  "interest_map": {
+    "person_like5_mean": 4.0,
+    "domains": [
+      {
+        "item_id": "INT-02",
+        "domain": "艺术/绘画手工",
+        "like5_raw": 5,
+        "raw_band": {
+          "level": "高",
+          "phrase": "明显更被这类活动吸引、会主动玩",
+          "scale": "like5"
+        },
+        "within_int_relative": 1.0,
+        "label": "最被吸引（一玩就停不下来）",
+        "rank": 1
+      },
+      {
+        "item_id": "INT-04",
+        "domain": "语言/故事",
+        "like5_raw": 5,
+        "raw_band": {
+          "level": "高",
+          "phrase": "明显更被这类活动吸引、会主动玩",
+          "scale": "like5"
+        },
+        "within_int_relative": 1.0,
+        "label": "最被吸引（一玩就停不下来）",
+        "rank": 2
+      },
+      {
+        "item_id": "INT-03",
+        "domain": "音乐/律动",
+        "like5_raw": 4,
+        "raw_band": {
+          "level": "高",
+          "phrase": "明显更被这类活动吸引、会主动玩",
+          "scale": "like5"
+        },
+        "within_int_relative": 0.0,
+        "label": "明显更被吸引、会主动玩",
+        "rank": 3
+      },
+      {
+        "item_id": "INT-05",
+        "domain": "数理/逻辑",
+        "like5_raw": 4,
+        "raw_band": {
+          "level": "高",
+          "phrase": "明显更被这类活动吸引、会主动玩",
+          "scale": "like5"
+        },
+        "within_int_relative": 0.0,
+        "label": "明显更被吸引、会主动玩",
+        "rank": 4
+      },
+      {
+        "item_id": "INT-07",
+        "domain": "建构/搭建",
+        "like5_raw": 4,
+        "raw_band": {
+          "level": "高",
+          "phrase": "明显更被这类活动吸引、会主动玩",
+          "scale": "like5"
+        },
+        "within_int_relative": 0.0,
+        "label": "明显更被吸引、会主动玩",
+        "rank": 5
+      },
+      {
+        "item_id": "INT-08",
+        "domain": "社交/扮演",
+        "like5_raw": 4,
+        "raw_band": {
+          "level": "高",
+          "phrase": "明显更被这类活动吸引、会主动玩",
+          "scale": "like5"
+        },
+        "within_int_relative": 0.0,
+        "label": "明显更被吸引、会主动玩",
+        "rank": 6
+      },
+      {
+        "item_id": "INT-01",
+        "domain": "运动/大肌肉",
+        "like5_raw": 3,
+        "raw_band": {
+          "level": "中",
+          "phrase": "对这类活动一般/还行",
+          "scale": "like5"
+        },
+        "within_int_relative": -1.0,
+        "label": "一般/还行",
+        "rank": 7
+      },
+      {
+        "item_id": "INT-06",
+        "domain": "自然探索",
+        "like5_raw": 3,
+        "raw_band": {
+          "level": "中",
+          "phrase": "对这类活动一般/还行",
+          "scale": "like5"
+        },
+        "within_int_relative": -1.0,
+        "label": "一般/还行",
+        "rank": 8
+      }
+    ]
+  },
+  "interest_quality": [
+    {
+      "cluster": "focus_persistence",
+      "report_name": "专注-坚持",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "signal": "高=已超越一时新鲜、值得继续提供机会；低而某领域 like5 高=目前喜欢但尚未稳定深度投入",
+      "note": "B 层品质信号并入相应簇，仅作偏好成色定性参考"
+    },
+    {
+      "cluster": "initiative",
+      "report_name": "主动性",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "signal": "高=已超越一时新鲜、值得继续提供机会；低而某领域 like5 高=目前喜欢但尚未稳定深度投入",
+      "note": "B 层品质信号并入相应簇，仅作偏好成色定性参考"
+    },
+    {
+      "cluster": "mastery",
+      "report_name": "掌握取向",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "signal": "高=已超越一时新鲜、值得继续提供机会；低而某领域 like5 高=目前喜欢但尚未稳定深度投入",
+      "note": "B 层品质信号并入相应簇，仅作偏好成色定性参考"
+    }
+  ],
+  "relative_strengths_top": [
+    {
+      "ref": "focus_persistence",
+      "kind": "cluster",
+      "name": "专注-坚持",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "within_child_relative": 0.415,
+      "relative_label": "相对突出",
+      "protected_high": true
+    },
+    {
+      "ref": "inhibitory_control",
+      "kind": "cluster",
+      "name": "抑制控制",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "within_child_relative": 0.304,
+      "relative_label": "相对突出",
+      "protected_high": true
+    },
+    {
+      "ref": "DEV",
+      "kind": "section",
+      "name": "发展快照",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "within_child_relative": 0.238,
+      "relative_label": "中间位置",
+      "protected_high": true
+    },
+    {
+      "ref": "INT",
+      "kind": "section",
+      "name": "兴趣品质(B层)",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "within_child_relative": 0.162,
+      "relative_label": "中间位置",
+      "protected_high": true
+    },
+    {
+      "ref": "LRN",
+      "kind": "section",
+      "name": "学习品质",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "within_child_relative": 0.162,
+      "relative_label": "中间位置",
+      "protected_high": true
+    }
+  ],
+  "growth_areas_top": {
+    "items": [],
+    "protected_high_relative_low": [
+      {
+        "ref": "TMP",
+        "kind": "section",
+        "name": "气质",
+        "raw_band": {
+          "level": "高",
+          "phrase": "多落在「经常/几乎总是」一档",
+          "scale": "freq5"
+        },
+        "within_child_relative": -0.133,
+        "note": "原始水平高（经常/几乎总是），相对没那么突出但仍很常见，不列为待发展"
+      }
+    ],
+    "t11_guard": "原始为高的项绝不列入 growth；仅个体内相对偏低、原始非高者才入。"
+  },
+  "red_flags": [],
+  "reverse_applied": [
+    {
+      "item_id": "TMP-02",
+      "scale": "freq5",
+      "raw_value": 3,
+      "oriented": 3
+    },
+    {
+      "item_id": "TMP-04",
+      "scale": "freq5",
+      "raw_value": 4,
+      "oriented": 2
+    },
+    {
+      "item_id": "TMP-05",
+      "scale": "freq5",
+      "raw_value": 4,
+      "oriented": 2
+    },
+    {
+      "item_id": "TMP-14",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "TMP-17",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "SEL-03",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "SEL-06",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "SEL-09",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "INT-11",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "INT-13",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "LRN-02",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "LRN-09",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "LRN-11",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    },
+    {
+      "item_id": "LRN-13",
+      "scale": "freq5",
+      "raw_value": 2,
+      "oriented": 4
+    }
+  ],
+  "notes": [
+    "本报告为非诊断、个体内（ipsative）相对比较；不报人群百分位、不下临床结论。",
+    "原始水平描述带锚定量表频率/喜爱语义；个体内相对位仅在该孩子内部有意义。",
+    "同义簇已合并为单一指标、只计基线一次；子维度仅定性补充，标『题少/相关高，仅供参考』。",
+    "数据可信度为 med：报告已弱化绝对表述、加重免责。"
+  ]
+}

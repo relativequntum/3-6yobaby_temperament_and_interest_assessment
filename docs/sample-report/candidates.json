@@ -1,0 +1,2531 @@
+{
+  "schema": {
+    "candidates_schema": "1.0",
+    "doc": "skill/SKILL.md §候选筛选"
+  },
+  "meta": {
+    "nickname": "豆豆",
+    "child_id": "cid-ede473db-c630-4b3f-a3f9-c30eaca01eb4",
+    "age_band": "4-5",
+    "age_months_at_submit": 54,
+    "activity_bank_version": "1.1.0",
+    "item_bank_version": "1.1.0",
+    "non_diagnostic_notice": "本配置仅用于个体内（ipsative）相对优势画像；不做诊断/筛查、不出人群百分位、不设达标切分点。"
+  },
+  "confidence": "med",
+  "data_quality_flags": {
+    "straightlining": false,
+    "fast_response": true,
+    "high_missing": false,
+    "missing_ratio": 0.0,
+    "inconsistency": false,
+    "familiarity_low": false,
+    "recent_disruption": false,
+    "sdb_halo": false,
+    "resumed_from_draft": false
+  },
+  "selection_policy": {
+    "amplify": "相对优势 section/cluster + 强兴趣领域 + 高成色兴趣品质信号 → 顺势放大",
+    "nurture": "个体内相对靠后【且原始非高】的 section/cluster/DEV 领域 → 该补的，低挫败入口",
+    "rank_within_line": "target 命中数↓ → evidence『有据』优先 → id 升序；再做 game/exercise/companionship 类型均衡保底",
+    "t11_guard": "protected_high（原始为高）的项绝不进入 nurture 线，只可能出现在 amplify；growth_areas_top.items 已由 score.py 完成 T-11 防护，本脚本再加断言式双保险。",
+    "non_diagnostic": "不引入人群常模；red_flags/soft_referral 不在此转成活动建议。",
+    "per_line": 8
+  },
+  "advice_lines": [
+    {
+      "line_id": "amplify:cluster:focus_persistence",
+      "line_kind": "amplify",
+      "label": "专注-坚持",
+      "source_ref": {
+        "kind": "cluster",
+        "id": "focus_persistence"
+      },
+      "target_tokens": [
+        "focus_persistence"
+      ],
+      "rationale": "同义簇『专注-坚持』个体内相对突出（相对位 +0.41，原始带『高』）——顺势放大长板。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-ATL-013",
+          "name": "再难一点点·挑战阶梯游戏",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "mastery",
+          "temperament_fit_notes": "高负性情绪/回避挑战—难度加得极缓，先『赢』够了再升级，卡住先共情；高活跃—选体能投掷类、节奏快；慢热—私下玩、不比赛。",
+          "safety_notes": "投掷物选软质（布球/海绵），不向人投；活动区清空易碎物；体能类防滑防撞。"
+        },
+        {
+          "id": "ACT-ATL-019",
+          "name": "我会自己来·生活自理挑战（穿衣/整理/倒水）",
+          "type": [
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:个人-社会/自理",
+          "temperament_fit_notes": "高负性情绪/易急—从『留最后一步』起步保住成功感，卡住先共情；高活跃—把整理变成『限时小游戏』；慢热—多给不被催的时间；对祖辈包办家庭特别提示『放手让孩子自己来』。",
+          "safety_notes": "倒水用小壶防烫（不给热水）；整理时防夹手/砸落；穿衣避免长绳帽绳（防勒）。"
+        },
+        {
+          "id": "ACT-COG-001",
+          "name": "西蒙说/队长说",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持/易分心—每轮5-8个指令即可，常赢一下保持动机；高活跃—用全身大动作版消耗精力；慢热—先由其发指令当『西蒙』建立掌控感。",
+          "safety_notes": "避免要求危险动作（闭眼转圈、爬高）；指令保持安全可控。"
+        },
+        {
+          "id": "ACT-COG-005",
+          "name": "记忆翻牌配对",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—用4对起步、回合快；高活跃—把卡片铺在地上『翻完跑去拿』加动作；高负性情绪—采取『合作模式』全家一起翻、目标清空全桌而非比谁多。",
+          "safety_notes": "卡片边缘防割手；3岁幼儿防把小卡片放入口中。"
+        },
+        {
+          "id": "ACT-COG-006",
+          "name": "线性数字走格棋·1→10/20跑道",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—用1→10短跑道、一局两三分钟；高活跃—把跑道画在地上用身体当棋子走；务必走『线性横排』且念出落点数字（线性优于圆形、数字格优于纯颜色格）。",
+          "safety_notes": "骰子/棋子为小零件，3岁前后防误吞；地面版注意走动安全。"
+        },
+        {
+          "id": "ACT-COG-009",
+          "name": "拼图",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "高负性情绪/低挫折恢复—从远低于其能力的块数起步确保掌握愉悦，卡住先共情再拆小步、必要时留1-2块给他完成『收尾』；高活跃—分段完成、允许中途起身；慢热—独自钻研也很好。",
+          "safety_notes": "小块拼图3岁以下/爱放嘴里的孩子有误吞风险，选大块；木质拼图防边角。"
+        },
+        {
+          "id": "ACT-COG-011",
+          "name": "积木与磁力片搭建·照图搭+自由搭",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-CON",
+          "temperament_fit_notes": "高活跃—给大空间和大颗粒、允许推倒重来（推倒也是因果探索）；高负性情绪—『塔倒了』时示范『倒了没关系，我们看看怎么搭更稳』（成长型思维前体）；慢热—先模仿大人搭。",
+          "safety_notes": "大颗粒优先防误吞；磁力片注意磁珠类产品吞咽危险（选正规大片，避免小磁珠）；搭高防倒塌砸到。"
+        },
+        {
+          "id": "ACT-COG-021",
+          "name": "身体版执行功能游戏·按颜色跳格听数字做动作",
+          "type": [
+            "exercise",
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "为高活跃儿童量身——把抽象EF练习装进跑跳，既消耗精力又练自控；低坚持—回合短、规则少；慢热—先慢走版。",
+          "safety_notes": "地面防滑、清空障碍；跳跃落地缓冲；穿防滑鞋或光脚。"
+        }
+      ],
+      "type_coverage": {
+        "game": 7,
+        "exercise": 4,
+        "companionship": 5
+      }
+    },
+    {
+      "line_id": "amplify:cluster:inhibitory_control",
+      "line_kind": "amplify",
+      "label": "抑制控制",
+      "source_ref": {
+        "kind": "cluster",
+        "id": "inhibitory_control"
+      },
+      "target_tokens": [
+        "inhibitory_control"
+      ],
+      "rationale": "同义簇『抑制控制』个体内相对突出（相对位 +0.30，原始带『高』）——顺势放大长板。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-ATL-011",
+          "name": "换个法子灵活挑战·变规则/找新路",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "LRN:创造与灵活",
+          "temperament_fit_notes": "低灵活/偏刻板或高负性情绪—变规则前预告（『等下我们要换个玩法哦』），给适应时间，一次只变一点；高活跃—快节奏变化反而更吸引；慢热—不在压力下临时变。",
+          "safety_notes": "低风险；注意频繁变规则对刻板/易挫孩子可能引发烦躁，按其反应调节频率。"
+        },
+        {
+          "id": "ACT-COG-001",
+          "name": "西蒙说/队长说",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持/易分心—每轮5-8个指令即可，常赢一下保持动机；高活跃—用全身大动作版消耗精力；慢热—先由其发指令当『西蒙』建立掌控感。",
+          "safety_notes": "避免要求危险动作（闭眼转圈、爬高）；指令保持安全可控。"
+        },
+        {
+          "id": "ACT-COG-002",
+          "name": "音乐停就定住·跳舞定格",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "高活跃/高负性情绪尤其适合——把躁动转化为合法的『动—静』切换，定住后的平静本身是情绪调节练习；慢热—允许小幅度动作起步。",
+          "safety_notes": "清空场地；定格造型不鼓励单脚长时间硬撑以免摔倒。"
+        },
+        {
+          "id": "ACT-COG-003",
+          "name": "相反指令游戏·我说摸头你摸脚",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—从一对开始、回合短；高负性情绪—把『做错』演成滑稽桥段避免挫败；5-6岁高能力—可挑战四指令版获得掌握愉悦。",
+          "safety_notes": "纯口令动作，低风险；避免相反规则导致危险动作。"
+        },
+        {
+          "id": "ACT-COG-007",
+          "name": "简单规则桌游·颜色形状匹配/轮流出牌",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "高负性情绪/低挫折恢复是重点照顾对象——先玩『合作型』或『无输赢』桌游，赢输话术改为『这局我运气好/下局看你的』；高活跃—选回合短的；慢热—先两人玩、熟了再多人。",
+          "safety_notes": "小牌/小棋子防误吞；竞争情绪管理见temperament注。"
+        },
+        {
+          "id": "ACT-COG-018",
+          "name": "过家家/主题假装游戏·含计划-执行",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "慢热—用熟悉主题、先旁观再入戏；高活跃—给动作型角色（消防员、运动员）；高负性情绪—借角色练情绪表达（『医生怎么安慰病人』）。",
+          "safety_notes": "道具安全无尖锐；避免危险情节模仿（如真用药/明火）。"
+        },
+        {
+          "id": "ACT-COG-021",
+          "name": "身体版执行功能游戏·按颜色跳格听数字做动作",
+          "type": [
+            "exercise",
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "为高活跃儿童量身——把抽象EF练习装进跑跳，既消耗精力又练自控；低坚持—回合短、规则少；慢热—先慢走版。",
+          "safety_notes": "地面防滑、清空障碍；跳跃落地缓冲；穿防滑鞋或光脚。"
+        },
+        {
+          "id": "ACT-FAM-003",
+          "name": "屏幕时间·共看+约定+缓冲三件套",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "inhibitory_control"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "FAM:屏幕与媒体使用",
+          "temperament_fit_notes": "低努力控制/高负性情绪—关屏冲突最大，预告+缓冲活动比讲道理有效；高活跃—关屏后直接转向身体活动。",
+          "safety_notes": "睡前1小时避免屏幕（影响入睡）。"
+        }
+      ],
+      "type_coverage": {
+        "game": 7,
+        "exercise": 2,
+        "companionship": 3
+      }
+    },
+    {
+      "line_id": "amplify:dev:沟通/语言",
+      "line_kind": "amplify",
+      "label": "沟通/语言",
+      "source_ref": {
+        "kind": "dev_domain",
+        "id": "沟通/语言"
+      },
+      "target_tokens": [
+        "DEV:沟通/语言"
+      ],
+      "rationale": "发展快照·沟通/语言 在孩子内部相对突出（相对位 +0.64，原始带『高』）——放大已展现的能力。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-COG-001",
+          "name": "西蒙说/队长说",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持/易分心—每轮5-8个指令即可，常赢一下保持动机；高活跃—用全身大动作版消耗精力；慢热—先由其发指令当『西蒙』建立掌控感。",
+          "safety_notes": "避免要求危险动作（闭眼转圈、爬高）；指令保持安全可控。"
+        },
+        {
+          "id": "ACT-COG-014",
+          "name": "从小到大排排队·序列",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "用孩子感兴趣的物（爱车的排车、爱玩偶的排玩偶）提升兴趣；低坚持—3个起步；高活跃—用全家人按身高排队的『真人版』。",
+          "safety_notes": "棍/吸管不戳眼；小物防误吞。"
+        },
+        {
+          "id": "ACT-COG-016",
+          "name": "到处数一数·一一对应数数",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "嵌入日常（上楼梯、分水果）几乎零负担，适合所有气质；高活跃—边走边数台阶；低坚持—每次只数一小组。",
+          "safety_notes": "用食物数时注意卫生与噎食风险（葡萄等切小）。"
+        },
+        {
+          "id": "ACT-COG-018",
+          "name": "过家家/主题假装游戏·含计划-执行",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "慢热—用熟悉主题、先旁观再入戏；高活跃—给动作型角色（消防员、运动员）；高负性情绪—借角色练情绪表达（『医生怎么安慰病人』）。",
+          "safety_notes": "道具安全无尖锐；避免危险情节模仿（如真用药/明火）。"
+        },
+        {
+          "id": "ACT-COG-020",
+          "name": "厨房里的数学与科学·量序变化",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "高负性情绪—在『我帮上忙了』中获得胜任感；高活跃—给搅拌/揉面等大动作任务；慢热—从旁观和递东西开始。",
+          "safety_notes": "远离明火、刀具、热源、电器；只分配绝对安全的步骤；食材防噎、注意过敏与卫生；全程大人在旁。"
+        },
+        {
+          "id": "ACT-FM-018",
+          "name": "厨房精细小帮手·剥与捏",
+          "type": [
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:个人-社会/自理",
+          "temperament_fit_notes": "高活跃—在『真任务』里比单纯练习更投入；易挫折—从最好剥的开始；这是高质量亲子陪伴，对慢热孩子也因情境熟悉而放松。",
+          "safety_notes": "远离刀、火、热汤、热油；只做安全的剥/撕/揉环节；食材防呛（小颗粒由大人盯）；做前洗手。"
+        },
+        {
+          "id": "ACT-INT-003",
+          "name": "阳台/窗台种子日记",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-NAT",
+          "temperament_fit_notes": "高活跃—把『每天看一眼』绑定到固定身体动线（如上学前），短平快，不强求久坐画画；慢热—照护是低社交、可独自完成的任务，适合其节奏；高负性情绪—提前说明『植物有时会长不好，很正常』，预防养不活带来的失望。",
+          "safety_notes": "种子/化肥放孩子拿不到处，强调不入口；浇水防滑倒；选无毒植物。"
+        },
+        {
+          "id": "ACT-INT-004",
+          "name": "生活里数数+分类整理·边玩边数",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5"
+          ],
+          "matched_targets": [
+            "DEV:沟通/语言"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-LOG",
+          "temperament_fit_notes": "高活跃—把数数绑到身体动作（数着跳、数台阶），动起来数更投入；慢热—用他喜欢的东西（他爱的小汽车）来数；高负性情绪—数错不纠错式批评，只温和复述正确的数。",
+          "safety_notes": "小物件（纽扣/豆子）防3岁误吞，家长全程在旁并收好。"
+        }
+      ],
+      "type_coverage": {
+        "game": 7,
+        "exercise": 1,
+        "companionship": 7
+      }
+    },
+    {
+      "line_id": "amplify:dev:精细动作",
+      "line_kind": "amplify",
+      "label": "精细动作",
+      "source_ref": {
+        "kind": "dev_domain",
+        "id": "精细动作"
+      },
+      "target_tokens": [
+        "DEV:精细动作"
+      ],
+      "rationale": "发展快照·精细动作 在孩子内部相对突出（相对位 +0.64，原始带『高』）——放大已展现的能力。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-ATL-019",
+          "name": "我会自己来·生活自理挑战（穿衣/整理/倒水）",
+          "type": [
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:个人-社会/自理",
+          "temperament_fit_notes": "高负性情绪/易急—从『留最后一步』起步保住成功感，卡住先共情；高活跃—把整理变成『限时小游戏』；慢热—多给不被催的时间；对祖辈包办家庭特别提示『放手让孩子自己来』。",
+          "safety_notes": "倒水用小壶防烫（不给热水）；整理时防夹手/砸落；穿衣避免长绳帽绳（防勒）。"
+        },
+        {
+          "id": "ACT-COG-009",
+          "name": "拼图",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "高负性情绪/低挫折恢复—从远低于其能力的块数起步确保掌握愉悦，卡住先共情再拆小步、必要时留1-2块给他完成『收尾』；高活跃—分段完成、允许中途起身；慢热—独自钻研也很好。",
+          "safety_notes": "小块拼图3岁以下/爱放嘴里的孩子有误吞风险，选大块；木质拼图防边角。"
+        },
+        {
+          "id": "ACT-COG-011",
+          "name": "积木与磁力片搭建·照图搭+自由搭",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-CON",
+          "temperament_fit_notes": "高活跃—给大空间和大颗粒、允许推倒重来（推倒也是因果探索）；高负性情绪—『塔倒了』时示范『倒了没关系，我们看看怎么搭更稳』（成长型思维前体）；慢热—先模仿大人搭。",
+          "safety_notes": "大颗粒优先防误吞；磁力片注意磁珠类产品吞咽危险（选正规大片，避免小磁珠）；搭高防倒塌砸到。"
+        },
+        {
+          "id": "ACT-COG-012",
+          "name": "七巧板与几何形状拼摆",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "慢热/安静型的优势舞台；高活跃—设『限时拼一个』的小挑战增加投入；低坚持—从2-3块的简单图形起步。",
+          "safety_notes": "小块防误吞；木片防边角。"
+        },
+        {
+          "id": "ACT-COG-020",
+          "name": "厨房里的数学与科学·量序变化",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "高负性情绪—在『我帮上忙了』中获得胜任感；高活跃—给搅拌/揉面等大动作任务；慢热—从旁观和递东西开始。",
+          "safety_notes": "远离明火、刀具、热源、电器；只分配绝对安全的步骤；食材防噎、注意过敏与卫生；全程大人在旁。"
+        },
+        {
+          "id": "ACT-FM-002",
+          "name": "大珠子串项链",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "易挫折—从超大孔起步保证一次穿过；高活跃—限定『串够5颗就可以去玩』；慢热—允许只看不做几分钟。",
+          "safety_notes": "3岁以下慎用——珠子是典型误吞/窒息物（参CPSC小零件规定）；绳子勿绕颈，串好的项链由大人看管佩戴。"
+        },
+        {
+          "id": "ACT-FM-004",
+          "name": "自由涂鸦+框内涂色",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "对所有气质都先夸过程不夸像不像；易挫折—避免『涂出线了』式纠正；高活跃—可站着在立式画板/墙上画（大肌肉参与更坐得住）。",
+          "safety_notes": "颜料/笔选无毒可水洗；低龄避免细长笔含口中跌倒戳伤——坐稳再画。"
+        },
+        {
+          "id": "ACT-FM-005",
+          "name": "描红连线·迷宫·连点成画",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:精细动作"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "注意短/高活跃—单张控制在1-2分钟、做完即停；易挫折—家长先描一半再交棒；不把它当『写字作业』施压。",
+          "safety_notes": "避免长时间伏案，护眼距离与坐姿；笔尖安全。"
+        }
+      ],
+      "type_coverage": {
+        "game": 7,
+        "exercise": 4,
+        "companionship": 6
+      }
+    },
+    {
+      "line_id": "amplify:dev:问题解决/认知",
+      "line_kind": "amplify",
+      "label": "问题解决/认知",
+      "source_ref": {
+        "kind": "dev_domain",
+        "id": "问题解决/认知"
+      },
+      "target_tokens": [
+        "DEV:问题解决/认知"
+      ],
+      "rationale": "发展快照·问题解决/认知 在孩子内部相对突出（相对位 +0.30，原始带『高』）——放大已展现的能力。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-COG-001",
+          "name": "西蒙说/队长说",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持/易分心—每轮5-8个指令即可，常赢一下保持动机；高活跃—用全身大动作版消耗精力；慢热—先由其发指令当『西蒙』建立掌控感。",
+          "safety_notes": "避免要求危险动作（闭眼转圈、爬高）；指令保持安全可控。"
+        },
+        {
+          "id": "ACT-COG-003",
+          "name": "相反指令游戏·我说摸头你摸脚",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—从一对开始、回合短；高负性情绪—把『做错』演成滑稽桥段避免挫败；5-6岁高能力—可挑战四指令版获得掌握愉悦。",
+          "safety_notes": "纯口令动作，低风险；避免相反规则导致危险动作。"
+        },
+        {
+          "id": "ACT-COG-005",
+          "name": "记忆翻牌配对",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—用4对起步、回合快；高活跃—把卡片铺在地上『翻完跑去拿』加动作；高负性情绪—采取『合作模式』全家一起翻、目标清空全桌而非比谁多。",
+          "safety_notes": "卡片边缘防割手；3岁幼儿防把小卡片放入口中。"
+        },
+        {
+          "id": "ACT-COG-006",
+          "name": "线性数字走格棋·1→10/20跑道",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—用1→10短跑道、一局两三分钟；高活跃—把跑道画在地上用身体当棋子走；务必走『线性横排』且念出落点数字（线性优于圆形、数字格优于纯颜色格）。",
+          "safety_notes": "骰子/棋子为小零件，3岁前后防误吞；地面版注意走动安全。"
+        },
+        {
+          "id": "ACT-COG-007",
+          "name": "简单规则桌游·颜色形状匹配/轮流出牌",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "高负性情绪/低挫折恢复是重点照顾对象——先玩『合作型』或『无输赢』桌游，赢输话术改为『这局我运气好/下局看你的』；高活跃—选回合短的；慢热—先两人玩、熟了再多人。",
+          "safety_notes": "小牌/小棋子防误吞；竞争情绪管理见temperament注。"
+        },
+        {
+          "id": "ACT-COG-009",
+          "name": "拼图",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "高负性情绪/低挫折恢复—从远低于其能力的块数起步确保掌握愉悦，卡住先共情再拆小步、必要时留1-2块给他完成『收尾』；高活跃—分段完成、允许中途起身；慢热—独自钻研也很好。",
+          "safety_notes": "小块拼图3岁以下/爱放嘴里的孩子有误吞风险，选大块；木质拼图防边角。"
+        },
+        {
+          "id": "ACT-COG-011",
+          "name": "积木与磁力片搭建·照图搭+自由搭",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-CON",
+          "temperament_fit_notes": "高活跃—给大空间和大颗粒、允许推倒重来（推倒也是因果探索）；高负性情绪—『塔倒了』时示范『倒了没关系，我们看看怎么搭更稳』（成长型思维前体）；慢热—先模仿大人搭。",
+          "safety_notes": "大颗粒优先防误吞；磁力片注意磁珠类产品吞咽危险（选正规大片，避免小磁珠）；搭高防倒塌砸到。"
+        },
+        {
+          "id": "ACT-COG-012",
+          "name": "七巧板与几何形状拼摆",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:问题解决/认知"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "慢热/安静型的优势舞台；高活跃—设『限时拼一个』的小挑战增加投入；低坚持—从2-3块的简单图形起步。",
+          "safety_notes": "小块防误吞；木片防边角。"
+        }
+      ],
+      "type_coverage": {
+        "game": 8,
+        "exercise": 1,
+        "companionship": 6
+      }
+    },
+    {
+      "line_id": "amplify:interest:INT-ART",
+      "line_kind": "amplify",
+      "label": "艺术/绘画手工",
+      "source_ref": {
+        "kind": "interest_domain",
+        "id": "INT-02",
+        "construct": "INT-ART"
+      },
+      "target_tokens": [
+        "INT-ART"
+      ],
+      "rationale": "兴趣领域『艺术/绘画手工』被明显吸引（INT 内排名第1，原始带『高』，喜爱档 5）——顺势提供更多此类机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-FM-004",
+          "name": "自由涂鸦+框内涂色",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-ART"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "对所有气质都先夸过程不夸像不像；易挫折—避免『涂出线了』式纠正；高活跃—可站着在立式画板/墙上画（大肌肉参与更坐得住）。",
+          "safety_notes": "颜料/笔选无毒可水洗；低龄避免细长笔含口中跌倒戳伤——坐稳再画。"
+        },
+        {
+          "id": "ACT-LANG-015",
+          "name": "自制故事小书·孩子口述家长记录",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-ART"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "高负性情绪/怕画不好—强调『你画的就是最好的』，重过程不重像不像；高活跃—限定页数、配合站着画/趴地上画。",
+          "safety_notes": "蜡笔选无毒、大号防误吞；订书针由家长操作并收好。"
+        },
+        {
+          "id": "ACT-ATL-012",
+          "name": "开放式美工/涂鸦·过程重于成品",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-ART"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "LRN:创造与灵活",
+          "temperament_fit_notes": "高负性情绪/完美主义—强调『怎么弄都行、没有错』，避免示范『正确画法』引发挫败；高活跃—大幅面纸/户外、可站可动；慢热—独立创作友好，不必展示。",
+          "safety_notes": "用无毒/可水洗颜料胶水；3岁以下防误食颜料/小装饰物；剪刀用安全圆头并看护。"
+        },
+        {
+          "id": "ACT-FM-019",
+          "name": "立面画画（画板/墙贴纸/浴室画）",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-ART"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "为高活跃/坐不住的孩子量身——站着、用大肌肉、可走动，比伏案更投入且自然练到手腕姿势；易挫折—立面涂鸦无对错压力。",
+          "safety_notes": "画笔无毒可擦；站立画注意防滑、防笔戳；墙面用可移除材料免破坏。"
+        }
+      ],
+      "type_coverage": {
+        "game": 4,
+        "exercise": 1,
+        "companionship": 3
+      }
+    },
+    {
+      "line_id": "amplify:interest:INT-LAN",
+      "line_kind": "amplify",
+      "label": "语言/故事",
+      "source_ref": {
+        "kind": "interest_domain",
+        "id": "INT-04",
+        "construct": "INT-LAN"
+      },
+      "target_tokens": [
+        "INT-LAN"
+      ],
+      "rationale": "兴趣领域『语言/故事』被明显吸引（INT 内排名第2，原始带『高』，喜爱档 5）——顺势提供更多此类机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-LANG-001",
+          "name": "对话式阅读PEER一轮",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "慢热/高负性情绪—先让孩子主导翻页、你少提问，避免『被考』压力；高活跃—选短篇互动翻翻书，允许边读边比划，单次5-8分钟，频次高于时长。",
+          "safety_notes": "低龄选圆角/布书/硬卡书避免纸边割手；共读环境光线充足、坐姿舒适。"
+        },
+        {
+          "id": "ACT-LANG-002",
+          "name": "CROWD五问轮换",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "回忆类(R)与联系生活类(D)对4-5岁及以上更合适；对3岁以填空/开放/Wh为主，避免超出能力的『为什么』连环问引发挫败；高负性情绪答不出时立刻降级到填空题给成功体验。",
+          "safety_notes": "同对话式阅读：低龄选圆角书、光线充足。"
+        },
+        {
+          "id": "ACT-LANG-003",
+          "name": "看图说话",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "慢热—从家庭照片这类熟悉内容开始更容易开口；高活跃—可让孩子边演边说（动作辅助语言），不强求安静坐着。",
+          "safety_notes": "照片/绘本无特殊风险；注意不强迫表达，保护开口意愿。"
+        },
+        {
+          "id": "ACT-LANG-006",
+          "name": "押韵游戏·找押韵的词",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "高活跃—配合拍手/跺脚打节奏，把听辨变成动起来的游戏；慢热—先只听不答，多听几遍再邀请参与。",
+          "safety_notes": "纯口头游戏，无风险。"
+        },
+        {
+          "id": "ACT-LANG-009",
+          "name": "共读印刷指认·指字摸字",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "高活跃—把『找字』做成寻宝游戏，限时找一个就翻页；通用：保持萌发取向，不变成机械认字课，孩子主导兴趣为先。",
+          "safety_notes": "无；避免把共读变成识字考核而扼杀阅读兴趣。"
+        },
+        {
+          "id": "ACT-LANG-010",
+          "name": "生活中找字·环境文字寻宝",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "高活跃—边走边找，把外出变成移动游戏；慢热—从家里包装开始，不在陌生热闹环境施压。",
+          "safety_notes": "户外注意交通与人流安全，认字让位于看路；剪贴用圆头剪刀并看护。"
+        },
+        {
+          "id": "ACT-LANG-016",
+          "name": "重复共读同一本书",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "慢热—重复带来的熟悉感特别能降低焦虑、增加主动开口；通用：孩子反复要求读同一本是正常且有益的（再投入=兴趣加深信号），不必嫌烦换书。",
+          "safety_notes": "同对话式阅读。"
+        },
+        {
+          "id": "ACT-LANG-017",
+          "name": "双语亲子共读·绘本作高质量输入",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LAN"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "通用——读得开心、输入足量稳定比『说得标准』更重要；慢热/对第二语言抵触—从最爱的故事和儿歌入手，降低『学外语』的压力感。",
+          "safety_notes": "同共读；避免因纠正发音/语法过度而打击表达意愿。"
+        }
+      ],
+      "type_coverage": {
+        "game": 6,
+        "exercise": 1,
+        "companionship": 6
+      }
+    },
+    {
+      "line_id": "amplify:interest:INT-MUS",
+      "line_kind": "amplify",
+      "label": "音乐/律动",
+      "source_ref": {
+        "kind": "interest_domain",
+        "id": "INT-03",
+        "construct": "INT-MUS"
+      },
+      "target_tokens": [
+        "INT-MUS"
+      ],
+      "rationale": "兴趣领域『音乐/律动』被明显吸引（INT 内排名第3，原始带『高』，喜爱档 4）——顺势提供更多此类机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-COG-002",
+          "name": "音乐停就定住·跳舞定格",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-MUS"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "高活跃/高负性情绪尤其适合——把躁动转化为合法的『动—静』切换，定住后的平静本身是情绪调节练习；慢热—允许小幅度动作起步。",
+          "safety_notes": "清空场地；定格造型不鼓励单脚长时间硬撑以免摔倒。"
+        },
+        {
+          "id": "ACT-INT-001",
+          "name": "厨房打击乐·跟拍子",
+          "type": [
+            "game",
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5"
+          ],
+          "matched_targets": [
+            "INT-MUS"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-MUS",
+          "temperament_fit_notes": "高活跃—正好给身体与声音出口；『停—走』环节专门练抑制控制；慢热—先放他熟悉的歌、由家长先敲，他可能先看几遍再加入；高负性情绪—控制音量与时长，避免声音过大致烦躁。",
+          "safety_notes": "选不易碎、无尖角的容器；控制音量护听力；豆子瓶密封防误吞。"
+        },
+        {
+          "id": "ACT-LANG-006",
+          "name": "押韵游戏·找押韵的词",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-MUS"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "高活跃—配合拍手/跺脚打节奏，把听辨变成动起来的游戏；慢热—先只听不答，多听几遍再邀请参与。",
+          "safety_notes": "纯口头游戏，无风险。"
+        },
+        {
+          "id": "ACT-LANG-007",
+          "name": "童谣儿歌律动·唱+动作",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-MUS"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-MUS",
+          "temperament_fit_notes": "高活跃—消耗精力又练语言，可加大动作幅度；慢热—父母先唱给孩子听，不催促开口。",
+          "safety_notes": "动作类避免在硬地/狭窄处剧烈摆动，留出空间防碰撞。"
+        },
+        {
+          "id": "ACT-GM-013",
+          "name": "听口令身体律动操（跟节奏蹦跳拍打）",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-MUS"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "DEV:大运动·节奏协调+双侧动作",
+          "temperament_fit_notes": "慢热—在家无观众先跳熟、建立信心后再到集体；高活跃—快歌大动作放电，『音乐停定住』练刹车；高负性情绪—没有对错、跟不上也开心。",
+          "safety_notes": "清空周围障碍防转圈撞到；地面防滑（别只穿袜子在瓷砖上跳）。"
+        },
+        {
+          "id": "ACT-INT-002",
+          "name": "给故事/动作编一首歌·创编律动",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-MUS"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "INT-MUS",
+          "temperament_fit_notes": "高活跃—动作幅度放大、把『表演』搬到户外或空间大处，允许蹦跳；慢热—先两人私下编与演，熟练后再决定要不要给更多人看；高负性情绪—以『好玩、没有标准答案』定调，编错就笑着改。",
+          "safety_notes": "动作类注意周围空间，移开桌角与障碍；丝带勿绕颈。"
+        }
+      ],
+      "type_coverage": {
+        "game": 6,
+        "exercise": 4,
+        "companionship": 4
+      }
+    },
+    {
+      "line_id": "amplify:interest:INT-LOG",
+      "line_kind": "amplify",
+      "label": "数理/逻辑",
+      "source_ref": {
+        "kind": "interest_domain",
+        "id": "INT-05",
+        "construct": "INT-LOG"
+      },
+      "target_tokens": [
+        "INT-LOG"
+      ],
+      "rationale": "兴趣领域『数理/逻辑』被明显吸引（INT 内排名第4，原始带『高』，喜爱档 4）——顺势提供更多此类机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-COG-006",
+          "name": "线性数字走格棋·1→10/20跑道",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—用1→10短跑道、一局两三分钟；高活跃—把跑道画在地上用身体当棋子走；务必走『线性横排』且念出落点数字（线性优于圆形、数字格优于纯颜色格）。",
+          "safety_notes": "骰子/棋子为小零件，3岁前后防误吞；地面版注意走动安全。"
+        },
+        {
+          "id": "ACT-COG-012",
+          "name": "七巧板与几何形状拼摆",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "慢热/安静型的优势舞台；高活跃—设『限时拼一个』的小挑战增加投入；低坚持—从2-3块的简单图形起步。",
+          "safety_notes": "小块防误吞；木片防边角。"
+        },
+        {
+          "id": "ACT-COG-013",
+          "name": "分类整理·把它们分成几堆",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "可融入日常（收拾玩具、配袜子）减轻坚持负担；高活跃—做成『限时分拣赛』；慢热—从熟悉物品开始。",
+          "safety_notes": "豆子/纽扣等小颗粒防3岁幼儿误吞，优先用大件物品。"
+        },
+        {
+          "id": "ACT-COG-014",
+          "name": "从小到大排排队·序列",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "用孩子感兴趣的物（爱车的排车、爱玩偶的排玩偶）提升兴趣；低坚持—3个起步；高活跃—用全家人按身高排队的『真人版』。",
+          "safety_notes": "棍/吸管不戳眼；小物防误吞。"
+        },
+        {
+          "id": "ACT-COG-015",
+          "name": "找规律接龙·模式patterning",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "动作/声音版适合高活跃儿童（边动边找规律）；慢热—先看再做；自创规律环节给主动性强的孩子发挥。",
+          "safety_notes": "小物防误吞；声音版控制音量。"
+        },
+        {
+          "id": "ACT-COG-016",
+          "name": "到处数一数·一一对应数数",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "嵌入日常（上楼梯、分水果）几乎零负担，适合所有气质；高活跃—边走边数台阶；低坚持—每次只数一小组。",
+          "safety_notes": "用食物数时注意卫生与噎食风险（葡萄等切小）。"
+        },
+        {
+          "id": "ACT-INT-004",
+          "name": "生活里数数+分类整理·边玩边数",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-LOG",
+          "temperament_fit_notes": "高活跃—把数数绑到身体动作（数着跳、数台阶），动起来数更投入；慢热—用他喜欢的东西（他爱的小汽车）来数；高负性情绪—数错不纠错式批评，只温和复述正确的数。",
+          "safety_notes": "小物件（纽扣/豆子）防3岁误吞，家长全程在旁并收好。"
+        },
+        {
+          "id": "ACT-ATL-002",
+          "name": "为什么会这样·厨房小实验（沉浮/溶解/颜色混合）",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-LOG"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "LRN:好奇与探索",
+          "temperament_fit_notes": "高活跃—户外或浴室做、容许洒水、设『水只在盆里』一条规则；慢热—先让孩子旁观大人玩一轮再加入；高负性情绪—去掉『猜错』的输赢感，把『和预想不一样』说成『哦原来还能这样，真有意思』。",
+          "safety_notes": "用食用级颜料/食材防误食非食用色素；地面防滑；4岁以下全程看护防呛水；玻璃容器换成塑料/不锈钢。"
+        }
+      ],
+      "type_coverage": {
+        "game": 8,
+        "exercise": 0,
+        "companionship": 8
+      }
+    },
+    {
+      "line_id": "amplify:interest:INT-CON",
+      "line_kind": "amplify",
+      "label": "建构/搭建",
+      "source_ref": {
+        "kind": "interest_domain",
+        "id": "INT-07",
+        "construct": "INT-CON"
+      },
+      "target_tokens": [
+        "INT-CON"
+      ],
+      "rationale": "兴趣领域『建构/搭建』被明显吸引（INT 内排名第5，原始带『高』，喜爱档 4）——顺势提供更多此类机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-COG-011",
+          "name": "积木与磁力片搭建·照图搭+自由搭",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-CON"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-CON",
+          "temperament_fit_notes": "高活跃—给大空间和大颗粒、允许推倒重来（推倒也是因果探索）；高负性情绪—『塔倒了』时示范『倒了没关系，我们看看怎么搭更稳』（成长型思维前体）；慢热—先模仿大人搭。",
+          "safety_notes": "大颗粒优先防误吞；磁力片注意磁珠类产品吞咽危险（选正规大片，避免小磁珠）；搭高防倒塌砸到。"
+        }
+      ],
+      "type_coverage": {
+        "game": 1,
+        "exercise": 1,
+        "companionship": 1
+      }
+    },
+    {
+      "line_id": "amplify:interest:INT-SOC",
+      "line_kind": "amplify",
+      "label": "社交/扮演",
+      "source_ref": {
+        "kind": "interest_domain",
+        "id": "INT-08",
+        "construct": "INT-SOC"
+      },
+      "target_tokens": [
+        "INT-SOC"
+      ],
+      "rationale": "兴趣领域『社交/扮演』被明显吸引（INT 内排名第6，原始带『高』，喜爱档 4）——顺势提供更多此类机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-COG-018",
+          "name": "过家家/主题假装游戏·含计划-执行",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-SOC"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "慢热—用熟悉主题、先旁观再入戏；高活跃—给动作型角色（消防员、运动员）；高负性情绪—借角色练情绪表达（『医生怎么安慰病人』）。",
+          "safety_notes": "道具安全无尖锐；避免危险情节模仿（如真用药/明火）。"
+        },
+        {
+          "id": "ACT-INT-007",
+          "name": "轮流与合作小游戏·你一次我一次",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5"
+          ],
+          "matched_targets": [
+            "INT-SOC"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-SOC",
+          "temperament_fit_notes": "高活跃—选有身体动作的轮流游戏（滚球、轮流跳），等待环节短，逐步拉长；慢热—从与最熟的家人一对一开始，玩熟后再引入新伙伴；高负性情绪—『等待轮到自己』最易受挫，把等待时间设短、用倒数/儿歌帮他度过。",
+          "safety_notes": "选无伤害风险的玩法；多人时注意碰撞；情绪冲突时家长在旁示范化解。"
+        },
+        {
+          "id": "ACT-LANG-014",
+          "name": "把绘本演出来·戏剧化复述",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-SOC"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:沟通/语言",
+          "temperament_fit_notes": "高活跃—扮演是把精力导入语言的极佳出口；慢热/害羞—先演给玩偶看、不要求面对众人，父母多承担『话多』角色降低压力。",
+          "safety_notes": "道具避免长绳/塑料袋等缠绕窒息风险；演出空间清空防绊倒。"
+        },
+        {
+          "id": "ACT-SEL-015",
+          "name": "我们是一队·必须合作才能赢的任务",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-SOC"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "SEL:依恋与关系",
+          "temperament_fit_notes": "高活跃—选有跑动/搬运的合作任务；慢热—先与熟悉的家人合作再扩到同伴；高负性情绪—合作（无输家）比竞争更适合，能降低挫败和攻击。",
+          "safety_notes": "二人三足等需平整场地、看护防摔；搬运物品要轻、无尖角。"
+        },
+        {
+          "id": "ACT-SEL-016",
+          "name": "开商店/看医生·社会扮演练社交脚本",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-SOC"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-SOC",
+          "temperament_fit_notes": "慢热—角色扮演给一个『不是我、是角色在说』的安全壳，常能说出平时不敢说的社交话；高活跃—给有动作的角色（送货员、厨师）；高负性情绪—可借角色演练『生气时怎么说』，把情绪脚本先在游戏里跑一遍。",
+          "safety_notes": "道具无尖角、无小到可误吞的零件（看护）。"
+        },
+        {
+          "id": "ACT-SEL-018",
+          "name": "玩偶剧场·用玩偶演情绪与和好",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "INT-SOC"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "SEL:情绪调节",
+          "temperament_fit_notes": "慢热—通过玩偶『替身』表达比本人直接表达压力小；高负性情绪—可在玩偶身上『外化』自己的情绪，安全地练习平复脚本；高活跃—给玩偶设计有动作的情节。",
+          "safety_notes": "手偶无小装饰件脱落风险；自制袜偶缝线牢固。"
+        }
+      ],
+      "type_coverage": {
+        "game": 6,
+        "exercise": 1,
+        "companionship": 6
+      }
+    },
+    {
+      "line_id": "amplify:quality:focus_persistence",
+      "line_kind": "amplify",
+      "label": "专注-坚持",
+      "source_ref": {
+        "kind": "interest_quality",
+        "id": "focus_persistence"
+      },
+      "target_tokens": [
+        "focus_persistence"
+      ],
+      "rationale": "兴趣品质信号『专注-坚持』为高——偏好已超越一时新鲜、值得持续提供深入机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-ATL-013",
+          "name": "再难一点点·挑战阶梯游戏",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "mastery",
+          "temperament_fit_notes": "高负性情绪/回避挑战—难度加得极缓，先『赢』够了再升级，卡住先共情；高活跃—选体能投掷类、节奏快；慢热—私下玩、不比赛。",
+          "safety_notes": "投掷物选软质（布球/海绵），不向人投；活动区清空易碎物；体能类防滑防撞。"
+        },
+        {
+          "id": "ACT-ATL-019",
+          "name": "我会自己来·生活自理挑战（穿衣/整理/倒水）",
+          "type": [
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:个人-社会/自理",
+          "temperament_fit_notes": "高负性情绪/易急—从『留最后一步』起步保住成功感，卡住先共情；高活跃—把整理变成『限时小游戏』；慢热—多给不被催的时间；对祖辈包办家庭特别提示『放手让孩子自己来』。",
+          "safety_notes": "倒水用小壶防烫（不给热水）；整理时防夹手/砸落；穿衣避免长绳帽绳（防勒）。"
+        },
+        {
+          "id": "ACT-COG-001",
+          "name": "西蒙说/队长说",
+          "type": [
+            "game"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持/易分心—每轮5-8个指令即可，常赢一下保持动机；高活跃—用全身大动作版消耗精力；慢热—先由其发指令当『西蒙』建立掌控感。",
+          "safety_notes": "避免要求危险动作（闭眼转圈、爬高）；指令保持安全可控。"
+        },
+        {
+          "id": "ACT-COG-005",
+          "name": "记忆翻牌配对",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—用4对起步、回合快；高活跃—把卡片铺在地上『翻完跑去拿』加动作；高负性情绪—采取『合作模式』全家一起翻、目标清空全桌而非比谁多。",
+          "safety_notes": "卡片边缘防割手；3岁幼儿防把小卡片放入口中。"
+        },
+        {
+          "id": "ACT-COG-006",
+          "name": "线性数字走格棋·1→10/20跑道",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:问题解决/认知",
+          "temperament_fit_notes": "低坚持—用1→10短跑道、一局两三分钟；高活跃—把跑道画在地上用身体当棋子走；务必走『线性横排』且念出落点数字（线性优于圆形、数字格优于纯颜色格）。",
+          "safety_notes": "骰子/棋子为小零件，3岁前后防误吞；地面版注意走动安全。"
+        },
+        {
+          "id": "ACT-COG-009",
+          "name": "拼图",
+          "type": [
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:精细动作",
+          "temperament_fit_notes": "高负性情绪/低挫折恢复—从远低于其能力的块数起步确保掌握愉悦，卡住先共情再拆小步、必要时留1-2块给他完成『收尾』；高活跃—分段完成、允许中途起身；慢热—独自钻研也很好。",
+          "safety_notes": "小块拼图3岁以下/爱放嘴里的孩子有误吞风险，选大块；木质拼图防边角。"
+        },
+        {
+          "id": "ACT-COG-011",
+          "name": "积木与磁力片搭建·照图搭+自由搭",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-CON",
+          "temperament_fit_notes": "高活跃—给大空间和大颗粒、允许推倒重来（推倒也是因果探索）；高负性情绪—『塔倒了』时示范『倒了没关系，我们看看怎么搭更稳』（成长型思维前体）；慢热—先模仿大人搭。",
+          "safety_notes": "大颗粒优先防误吞；磁力片注意磁珠类产品吞咽危险（选正规大片，避免小磁珠）；搭高防倒塌砸到。"
+        },
+        {
+          "id": "ACT-COG-021",
+          "name": "身体版执行功能游戏·按颜色跳格听数字做动作",
+          "type": [
+            "exercise",
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "focus_persistence"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "为高活跃儿童量身——把抽象EF练习装进跑跳，既消耗精力又练自控；低坚持—回合短、规则少；慢热—先慢走版。",
+          "safety_notes": "地面防滑、清空障碍；跳跃落地缓冲；穿防滑鞋或光脚。"
+        }
+      ],
+      "type_coverage": {
+        "game": 7,
+        "exercise": 4,
+        "companionship": 5
+      }
+    },
+    {
+      "line_id": "amplify:quality:initiative",
+      "line_kind": "amplify",
+      "label": "主动性",
+      "source_ref": {
+        "kind": "interest_quality",
+        "id": "initiative"
+      },
+      "target_tokens": [
+        "initiative"
+      ],
+      "rationale": "兴趣品质信号『主动性』为高——偏好已超越一时新鲜、值得持续提供深入机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-ATL-019",
+          "name": "我会自己来·生活自理挑战（穿衣/整理/倒水）",
+          "type": [
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:个人-社会/自理",
+          "temperament_fit_notes": "高负性情绪/易急—从『留最后一步』起步保住成功感，卡住先共情；高活跃—把整理变成『限时小游戏』；慢热—多给不被催的时间；对祖辈包办家庭特别提示『放手让孩子自己来』。",
+          "safety_notes": "倒水用小壶防烫（不给热水）；整理时防夹手/砸落；穿衣避免长绳帽绳（防勒）。"
+        },
+        {
+          "id": "ACT-LANG-021",
+          "name": "定期逛图书馆·借书仪式",
+          "type": [
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-LAN",
+          "temperament_fit_notes": "高活跃—先在儿童区动一动再选书，约定『轻声』规则（练场合行为）；慢热—熟悉环境需要几次，前几次只看不借也可。",
+          "safety_notes": "外出注意看护；公共场所手部卫生。"
+        },
+        {
+          "id": "ACT-SEL-011",
+          "name": "小帮手·真实家务中的助人练习",
+          "type": [
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "SEL:共情与亲社会",
+          "temperament_fit_notes": "高活跃—给需要走动、搬运的家务消耗精力又有成就感；慢热—从固定、熟悉的小任务起步，不当众要求；高负性情绪—任务难度确保能成功，失败时不批评，强调『你愿意帮就很棒』。",
+          "safety_notes": "任务避开刀具、热源、易碎与高处；力所能及为准。"
+        },
+        {
+          "id": "ACT-SEL-019",
+          "name": "每日特别时光·孩子主导的专属陪伴",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "SEL:依恋与关系",
+          "temperament_fit_notes": "慢热—稳定可预期的专属时光是其安全感来源；高负性情绪—非冲突情境下的高质量陪伴能『储蓄』亲子关系，减少日常对抗；高活跃—可包含身体游戏（追逐、骑大马）消耗精力同时联结；二胎家庭给每个孩子单独的特别时光。",
+          "safety_notes": "选择适龄、安全玩具；身体游戏注意力度与场地，防碰撞；避免把特别时光当作交换条件。"
+        },
+        {
+          "id": "ACT-ATL-004",
+          "name": "我想知道问题罐·亲子提问仪式",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "LRN:好奇与探索",
+          "temperament_fit_notes": "慢热/内向—接受孩子用画代替说、用点头选择问题；高活跃—把『找答案』做成动手小任务而非久坐讨论；高负性情绪—不为『没找到答案』施压，肯定『提了个好问题』本身。",
+          "safety_notes": "低风险；注意保护孩子提问的积极性，不评判问题『幼稚/简单』。"
+        },
+        {
+          "id": "ACT-ATL-007",
+          "name": "今天你来当小老师/小主厨·角色赋权",
+          "type": [
+            "companionship",
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "LRN:主动性与自我驱动",
+          "temperament_fit_notes": "慢热/害羞—从只对家人的小角色开始，不强迫表演；高活跃—给能动手走动的角色；高负性情绪—降低『做对』的压力，强调『你来安排』本身就很棒，过程中遇阻先共情。",
+          "safety_notes": "『小主厨』避免用火/利刀/滚烫物，安排洗、拌、摆等冷加工步骤；全程看护，食材防误食过敏原。"
+        },
+        {
+          "id": "ACT-ATL-008",
+          "name": "自选游戏角+你想玩什么开场",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "LRN:主动性与自我驱动",
+          "temperament_fit_notes": "高活跃—允许频繁切换、留出大动作空间；慢热—接受较长的『热身观望』，不催选择；高负性情绪/选择困难—把『想玩什么』缩成『积木还是画画』二选一，减轻决策压力。",
+          "safety_notes": "游戏角材料按龄筛选（无小零件误吞、无尖锐），固定收纳防绊倒。"
+        },
+        {
+          "id": "ACT-ATL-016",
+          "name": "等一等再帮·忍住手陪伴法（家长策略）",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "initiative"
+          ],
+          "match_count": 1,
+          "evidence_strength": "一般性发展原理",
+          "domain": "LRN:专注与坚持",
+          "temperament_fit_notes": "高负性情绪/易崩溃—等待时间缩短、共情先行，避免等到大哭；高活跃/没耐心—把任务拆更小让每步快速见效；慢热—给足不被催的时间，反而表现更好；对包办型家庭（祖辈）特别提示此法。",
+          "safety_notes": "仅适用于安全任务；涉及危险（够高处、用刀剪、靠近火/水）时不可『等一等』，须立即介入。"
+        }
+      ],
+      "type_coverage": {
+        "game": 1,
+        "exercise": 3,
+        "companionship": 8
+      }
+    },
+    {
+      "line_id": "amplify:quality:mastery",
+      "line_kind": "amplify",
+      "label": "掌握取向",
+      "source_ref": {
+        "kind": "interest_quality",
+        "id": "mastery"
+      },
+      "target_tokens": [
+        "mastery"
+      ],
+      "rationale": "兴趣品质信号『掌握取向』为高——偏好已超越一时新鲜、值得持续提供深入机会。",
+      "protected_high": true,
+      "shortlist": [
+        {
+          "id": "ACT-ATL-013",
+          "name": "再难一点点·挑战阶梯游戏",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "mastery",
+          "temperament_fit_notes": "高负性情绪/回避挑战—难度加得极缓，先『赢』够了再升级，卡住先共情；高活跃—选体能投掷类、节奏快；慢热—私下玩、不比赛。",
+          "safety_notes": "投掷物选软质（布球/海绵），不向人投；活动区清空易碎物；体能类防滑防撞。"
+        },
+        {
+          "id": "ACT-ATL-014",
+          "name": "过程表扬家庭口头禅·成人语言习惯改造",
+          "type": [
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "resilience",
+          "temperament_fit_notes": "高负性情绪—受挫当下先共情情绪（『我知道你很气』）再说成长语，否则孩子听不进；慢热—过程表扬宜私下、平静地说；高活跃—简短即时反馈比长篇说教有效。",
+          "safety_notes": "低风险；避免完全不表扬或过度纠错，过程表扬与温暖共情并用。"
+        },
+        {
+          "id": "ACT-ATL-019",
+          "name": "我会自己来·生活自理挑战（穿衣/整理/倒水）",
+          "type": [
+            "companionship",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:个人-社会/自理",
+          "temperament_fit_notes": "高负性情绪/易急—从『留最后一步』起步保住成功感，卡住先共情；高活跃—把整理变成『限时小游戏』；慢热—多给不被催的时间；对祖辈包办家庭特别提示『放手让孩子自己来』。",
+          "safety_notes": "倒水用小壶防烫（不给热水）；整理时防夹手/砸落；穿衣避免长绳帽绳（防勒）。"
+        },
+        {
+          "id": "ACT-COG-011",
+          "name": "积木与磁力片搭建·照图搭+自由搭",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-CON",
+          "temperament_fit_notes": "高活跃—给大空间和大颗粒、允许推倒重来（推倒也是因果探索）；高负性情绪—『塔倒了』时示范『倒了没关系，我们看看怎么搭更稳』（成长型思维前体）；慢热—先模仿大人搭。",
+          "safety_notes": "大颗粒优先防误吞；磁力片注意磁珠类产品吞咽危险（选正规大片，避免小磁珠）；搭高防倒塌砸到。"
+        },
+        {
+          "id": "ACT-GM-008",
+          "name": "抛接沙包/投准（上肢操控+瞄准）",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·操控类（投掷瞄准）",
+          "temperament_fit_notes": "高负性情绪/易受挫—靶子调到『十投七八中』高成功率慢慢加；高活跃—『投完跑去捡再跑回投』增加跑动；慢热—亲子并肩投、不当众比赛。",
+          "safety_notes": "用软沙包/纸团，不向人投；室内避开灯具、屏幕、热水。"
+        },
+        {
+          "id": "ACT-GM-012",
+          "name": "亲子骑行/滑步车/三轮车",
+          "type": [
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·全身协调+下肢力量+平衡",
+          "temperament_fit_notes": "高活跃—高效放电且户外开阔；高负性情绪/易挫—强调『今天能滑3秒就进步』、不催不比；慢热/谨慎—允许长时间只双脚蹬地，不强推放脚。",
+          "safety_notes": "头盔强制；远离机动车道、坡顶、水边；检查刹车与车况；学骑期间成人贴身。"
+        },
+        {
+          "id": "ACT-GM-019",
+          "name": "投球入篮/拍球（球类进阶）",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·操控类（上抛/拍击）",
+          "temperament_fit_notes": "高负性情绪/易受挫—拍球难度大，先庆祝『拍到1下』逐步加；高活跃—投完跑去捡再投增加跑动；慢热—亲子轮流、不当众比赛。",
+          "safety_notes": "室内用软球避免砸坏物品/砸人；拍球选平整地面防球乱弹绊倒。"
+        },
+        {
+          "id": "ACT-INT-006",
+          "name": "球类与投准游戏·拍踢扔接投篮",
+          "type": [
+            "exercise",
+            "game",
+            "companionship"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "mastery"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "INT-MOV",
+          "temperament_fit_notes": "高活跃—高强度球类是理想出口；用『连续成功N次』的目标把冲动导向专注；慢热—先自己对墙/对桶练，无他人围观，熟练后再与人对抛；高负性情绪—从必成功的近距离起步，多给『你做到了』，失误时淡化、鼓励再试。",
+          "safety_notes": "室内用软球防碰撞打碎物品；场地无障碍防绊；避免向人脸投掷。"
+        }
+      ],
+      "type_coverage": {
+        "game": 5,
+        "exercise": 7,
+        "companionship": 5
+      }
+    },
+    {
+      "line_id": "nurture:dev:大运动",
+      "line_kind": "nurture",
+      "label": "大运动",
+      "source_ref": {
+        "kind": "dev_domain",
+        "id": "大运动"
+      },
+      "target_tokens": [
+        "DEV:大运动"
+      ],
+      "rationale": "发展快照·大运动 在孩子内部相对靠后且原始非高（相对位 -0.70，原始带『中』）——温和扶持、低挫败入口。",
+      "protected_high": false,
+      "shortlist": [
+        {
+          "id": "ACT-COG-002",
+          "name": "音乐停就定住·跳舞定格",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "高活跃/高负性情绪尤其适合——把躁动转化为合法的『动—静』切换，定住后的平静本身是情绪调节练习；慢热—允许小幅度动作起步。",
+          "safety_notes": "清空场地；定格造型不鼓励单脚长时间硬撑以免摔倒。"
+        },
+        {
+          "id": "ACT-COG-021",
+          "name": "身体版执行功能游戏·按颜色跳格听数字做动作",
+          "type": [
+            "exercise",
+            "game"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "为高活跃儿童量身——把抽象EF练习装进跑跳，既消耗精力又练自控；低坚持—回合短、规则少；慢热—先慢走版。",
+          "safety_notes": "地面防滑、清空障碍；跳跃落地缓冲；穿防滑鞋或光脚。"
+        },
+        {
+          "id": "ACT-FAM-005",
+          "name": "每日放电身体活动优先·先动后静",
+          "type": [
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动",
+          "temperament_fit_notes": "高活跃是优势（运动潜力、精力）——叙事用『精力充沛』而非『坐不住』；不要用『罚站/久坐』对待高活跃孩子。",
+          "safety_notes": "场地无尖角、地面防滑；攀爬有人看护。"
+        },
+        {
+          "id": "ACT-GM-001",
+          "name": "动物模仿赛（小马跑/小兔跳/螃蟹横走）",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·位移类基本动作",
+          "temperament_fit_notes": "高活跃—延长距离作放电，并把『定住不动』作努力控制小练习；慢热—先和大人一起做、不强求当出题官；高负性情绪—去掉比快比赢，只比『像不像』。",
+          "safety_notes": "地面平整防滑、清空障碍；横走留意旁边孩子相撞。"
+        },
+        {
+          "id": "ACT-GM-002",
+          "name": "大软球滚接与抛接（投接入门）",
+          "type": [
+            "game",
+            "exercise",
+            "companionship"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·操控/球类",
+          "temperament_fit_notes": "高负性情绪/易受挫—强调『一起数能接几次』而非『又没接住』，先用大球高成功率建立掌握愉悦；慢热—一对一玩熟再引入第三人；高活跃—『接到后绕一圈再传』消耗精力。",
+          "safety_notes": "用软球避免砸伤面部；室内远离易碎物与电视。"
+        },
+        {
+          "id": "ACT-GM-003",
+          "name": "单脚跳房子（跳格子）",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·位移+动态平衡",
+          "temperament_fit_notes": "高活跃—连跳多轮当放电，用『单脚稳住3秒』练抑制；高负性情绪—跳错不重来从头，就地继续、弱化失败；慢热—先看大人跳一遍，允许只跳前3格。",
+          "safety_notes": "选平整非硬质地面；提醒累了可休息，避免疲劳崴脚。"
+        },
+        {
+          "id": "ACT-GM-004",
+          "name": "平衡木/地面直线走（走独木桥）",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·稳定/平衡类",
+          "temperament_fit_notes": "慢热/谨慎—从地面线起步、全程可牵手；高活跃—『走到中间停住数3秒』给冲动一个刹车练习；高负性情绪—掉下来当游戏的一部分、不评判。",
+          "safety_notes": "任何离地高度都需成人贴身可及；平衡木下方最好是草地/软垫；不在湿滑边缘玩。"
+        },
+        {
+          "id": "ACT-GM-007",
+          "name": "红灯绿灯木头人（起停+抑制控制）",
+          "type": [
+            "game",
+            "exercise"
+          ],
+          "age_bands": [
+            "3-4",
+            "4-5",
+            "5-6"
+          ],
+          "matched_targets": [
+            "DEV:大运动"
+          ],
+          "match_count": 1,
+          "evidence_strength": "有据",
+          "domain": "DEV:大运动·起停控制+自我调节",
+          "temperament_fit_notes": "高活跃/高冲动—把『想冲』转成『能停』的黄金练习，正面强化每次成功定住；慢热—先当发令者参与，降低被追的紧张；高负性情绪—『被退回起点』说成游戏规则而非惩罚、不淘汰出局。",
+          "safety_notes": "地面平整、跑向开阔方向；多孩同玩约定不推挤抢摸；急停急转防滑倒。"
+        }
+      ],
+      "type_coverage": {
+        "game": 7,
+        "exercise": 8,
+        "companionship": 2
+      }
+    }
+  ],
+  "red_flags_passthrough": [],
+  "warnings": [],
+  "instructions_for_llm": "以上 shortlist 为确定性候选，仅供裁剪。撰写时：每条建议必须挂一个真实 activity id 以溯源；用昵称、温暖口吻；amplify 线写成『顺势放大长板/兴趣』，nurture 线写成『按 goodness-of-fit 的低门槛扶持』，绝不把 ipsative 相对低点说成缺陷或诊断；protected_high 的项只夸不补；confidence 为 low/med 时弱化绝对表述、加重免责；结合 temperament_fit_notes 按孩子气质给出调适。"
+}
