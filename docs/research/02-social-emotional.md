@@ -65,7 +65,7 @@ DECA-P2 把**依恋/关系（Attachment/Relationships）**定义为"儿童**与�
 | **DECA-P2 中文版（Siu, Keung & To 2024）** | 教师报告中文版；同结构 | 2–6 岁中国样本（N=246） | 验证性因素分析支持**四因子结构**（attachment, initiative, self-regulation, behavioral concern）；与 SDQ 做聚合/区分效度 | 提供**中文本土化**的构念可迁移性证据，文化适配支撑 |
 | **SDQ（Strengths and Difficulties Questionnaire, Goodman）** | 家长/教师/自评；25 题；**3 点**（Not True / Somewhat True / Certainly True）；有 **2–4 岁学前版** 与 4–17 版 | 2–4（学前版）/ 4–17 | **5 个分量表**（各 5 题）：情绪症状、品行问题、多动/注意不能、同伴关系问题、**亲社会行为**；前四者合成"总困难分" | **只借用"亲社会行为"分量表**的构念与行为锚点作为本工具优势；学前版的"温和化/对立性"改写提示按龄措辞 |
 | **SDQ 中国常模（Du, Kou & Coghill 2008）** | 家长/教师/自评中文版；上海样本 | 3–17（含 535 名幼儿园儿童） | 同上五量表 | 证明 SDQ 五因子结构在中国可用、有常模；但注意学前段内部一致性偏低（见第 6 节） |
-| **SDQ 香港学前中文版（Wong et al. 2025, Frontiers in Psychology, PMC12426018）** | 家长/幼师中文版 | 学前 | 同上五量表 | 中文（粤语区）学前施测与措辞参考（2026-06 改引可核实来源，替换原 HKU 手册条目） |
+| **SDQ 香港学前中文版（Wong, Tang, Choi & Leung 2025, Frontiers in Psychology, 16:1623690, PMC12426018）** | 家长/幼师中文版（CUHK 译） | 学前 | 同上五量表 | 中文（粤语区）学前施测与措辞参考（2026-06 全核实：第一作者 Terry Tin-Yau Wong、卷 16、文章号 1623690；该文比较 SDQ 与 ASEBA 在不同报告人下的鉴别效度） |
 | **ASQ:SE-2（Ages & Stages Questionnaires: Social-Emotional, 2nd ed.；Squires, Bricker & Twombly 2015, Brookes）** | **家长**完成；按月龄分 9 份问卷（2/6/12/18/24/30/36/48/60 月）；约 10–15 分钟 | 出生–6 岁 | 监测 **7 个社会情绪领域**：自我调节、顺从（compliance）、社会沟通、适应功能、自主、情感（affect）、与人互动 | **重要设计借鉴**：①家长单人填报范式；②7 领域是本工具子维度的良好"广度清单"。**注意：ASQ:SE-2 只给一个总分、不给分量表分**（开发者发现各领域数据区分度不足、题目跨多领域）——这对本工具"是否能稳健报告子维度"是直接警示（见第 6 节） |
 | **执行功能/努力控制实证（Diamond 2013；Carlson 2005；Kochanska et al. 2000）** | 实验室任务 + 评定 | 学前为主 | EF 三件套（抑制、工作记忆、认知灵活性）；努力控制 | 提供**按龄行为锚点**的发展轨迹依据（3→5 岁 EF 快速增长） |
 | **情绪能力框架（Denham et al. 2003）** | 观察/任务 + 教师评 | 3–5 岁 | 情绪表达、情绪知识、情绪调节 | "情绪调节"子维度的构念与行为锚点措辞 |
@@ -244,7 +244,7 @@ DECA-P2 把**依恋/关系（Attachment/Relationships）**定义为"儿童**与�
 
 5. ✅ Du, Y., Kou, J., & Coghill, D. (2008). **The validity, reliability and normative scores of the parent, teacher and self report versions of the Strengths and Difficulties Questionnaire in China**. *Child and Adolescent Psychiatry and Mental Health*, 2:8. DOI: 10.1186/1753-2000-2-8. （上海样本，3–17 岁，含 535 名幼儿园儿童；建立中国常模；家长版部分分量表 α 偏低）URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC2409296/
 
-6. ✅ Wong, et al. (2025). **香港学前 SDQ 中文版信效度研究**. *Frontiers in Psychology*（PMC12426018）. URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12426018/ 〔**替换 2026-06**：原「香港大学心理学系 SDQ for Hong Kong Preschool」无法提取作者/年份，改引可核实的 Wong et al. 2025 Frontiers 文；第一作者全名与卷期文章号正式引用前补全〕
+6. ✅ Wong, T. T.-Y., Tang, J. W.-Y., Choi, P. P.-K., & Leung, T. S.-C. (2025). **Identification of preschoolers with special educational needs: comparing the discriminative validity of the SDQ and the ASEBA across different informants in Hong Kong.** *Frontiers in Psychology*, 16, 1623690. DOI: 10.3389/fpsyg.2025.1623690 ｜ https://pmc.ncbi.nlm.nih.gov/articles/PMC12426018/ 〔**2026-06 全核实补全**：第一作者 **Terry Tin-Yau Wong**，卷 16、文章号 **1623690**；CUHK 译制中文版 SDQ，香港学前样本对比 SDQ 与 ASEBA 鉴别效度〕
 
 7. ✅ Squires, J., Bricker, D., & Twombly, E. (2015). **Ages & Stages Questionnaires®: Social-Emotional, Second Edition (ASQ:SE-2) — User's Guide**. Baltimore: Paul H. Brookes Publishing. （家长填报；9 份按月龄问卷 2–60 月；筛查 7 个社会情绪领域：自我调节、顺从、社会沟通、适应功能、自主、情感、与人互动；**只报总分、不报分量表分**）ISBN 9781598579567. 出版社页：https://brookespublishing.com/product/asqse-2/
 

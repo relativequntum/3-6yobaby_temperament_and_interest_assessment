@@ -191,7 +191,7 @@ EF（工作记忆、抑制控制/反应抑制、认知灵活性/转换）是入�
 - 负性反应/F 维偏高时，提示"挫折恢复仍在发展"，给情绪共情 + 拆小步骤 + 过程表扬的家庭策略。
 
 **局限**
-1. **单一家长报告的偏差**：社会赞许性（DMQ 数据显示家长普遍给偏高分，**「多在 3.2–4.6/5」标「待核」**——该区间系二手转述、未回 DMQ 手册逐项核对，正式引用前须核实或删去）、单评分者主观性；本工具靠"在家小观察"题缓解但无法消除。
+1. **单一家长报告的偏差**：社会赞许性（DMQ 数据显示家长普遍给偏高分——**「多数题目与分量表的平均评分落在约 3.2–4.6/5」已核实**，2026-06 直接核对 DMQ 手册 2009 原文："The average rating for most items and scales ranged from approximately 3.2 to 4.6 out of 5… perhaps indicating some social [desirability]"，去「待核」）、单评分者主观性；本工具靠"在家小观察"题缓解但无法消除。
 2. **反向题易误填**：DMQ 经验表明 10–20% 家长对反向/负性题理解有误，DMQ 18 已剔除部分反向题。本工具反向题需做问卷可读性测试，措辞尽量直白。
 3. **行为表现 ≠ 潜在能力**：专注/坚持的家长评定与实验室 EF 任务相关为中等（CHEXI、DMQ 均如此），不能据此做 EF/ADHD 等任何诊断。
 4. **年龄外推风险**：OECD SSES 针对 10/15 岁，仅作构念分层参考，**严禁直接照搬其题目到 3–6 岁**。
@@ -206,7 +206,7 @@ EF（工作记忆、抑制控制/反应抑制、认知灵活性/转换）是入�
 
 1. ✅ Morgan, G. A., Liao, H.-F., Nyitrai, Á., Huang, S.-Y., Wang, P.-J., Blasco, P. M., Ramakrishnan, J., & Józsa, K. (2017/2020). **The revised Dimensions of Mastery Questionnaire (DMQ 18) for infants and preschool children with and without risks or delays in Hungary, Taiwan and the US.** *Hungarian Educational Research Journal*, 7(2). 全文（含 7 分量表、39 题、5 点"完全不像→完全像"锚点与各量表示例题）：https://real.mtak.hu/86125/1/HERJ_2017_2_4_Morgan.pdf ；ResearchGate 版 https://www.researchgate.net/publication/326107138 〔作者完整名单与确切卷期页码 🟡 需进一步核实〕
 
-2. ✅ Morgan, G. A., Busch-Rossnagel, N. A., Barrett, K. C., & Wang, J. (2009). **The Dimensions of Mastery Questionnaire (DMQ): A manual about its development, psychometrics, and use.** Colorado State University. PDF：https://www.vernieuwenderwijs.nl/wp-content/uploads/DMQ-manual-2009.pdf （含 DMQ 17：45 题、5 点"not at all typical→very typical"、反向题需重编码 5→1、家长评分均值 3.2–4.6）
+2. ✅ Morgan, G. A., Busch-Rossnagel, N. A., Barrett, K. C., & Wang, J. (2009). **The Dimensions of Mastery Questionnaire (DMQ): A manual about its development, psychometrics, and use.** Colorado State University. PDF：https://www.vernieuwenderwijs.nl/wp-content/uploads/DMQ-manual-2009.pdf （含 DMQ 17：45 题、5 点"not at all typical→very typical"、反向题需重编码 5→1；**家长评分均值约 3.2–4.6/5，2026-06 直接核对手册原文确认**——"average rating for most items and scales ranged from approximately 3.2 to 4.6 out of 5"）
 
 3. ✅ Józsa, K., & Morgan, G. A. (2015). **An improved measure of mastery motivation: Reliability and validity of the Dimensions of Mastery Questionnaire (DMQ 18) for preschool children.** *Hungarian Educational Research Journal*, 5(4), 87–103. DOI: 10.14413/HERJ2015.04.08. （DMQ 18 学前版信效度；期刊/年份/卷期/DOI 2026-06 补全，🟡→✅）https://www.academia.edu/27100288
 

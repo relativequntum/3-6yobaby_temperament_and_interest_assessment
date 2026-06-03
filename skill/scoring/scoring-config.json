@@ -1,0 +1,1632 @@
+{
+  "version": "1.0.0",
+  "source_item_bank_version": "1.1.1",
+  "source_export_schema_version": "1.1",
+  "generated_from": [
+    "docs/item-bank.json",
+    "docs/理论依据与方法学.md §4.6-4.8",
+    "schema/export.schema.json"
+  ],
+  "non_diagnostic_notice": "本配置仅用于个体内（ipsative）相对优势画像；不做诊断/筛查、不出人群百分位、不设达标切分点。",
+  "age_bands": [
+    {
+      "id": "3-4",
+      "min_months": 36,
+      "max_months": 47
+    },
+    {
+      "id": "4-5",
+      "min_months": 48,
+      "max_months": 59
+    },
+    {
+      "id": "5-6",
+      "min_months": 60,
+      "max_months": 72
+    }
+  ],
+  "items": {
+    "TMP-01": {
+      "section": "TMP",
+      "subscale": "活动水平",
+      "report_subscale": "活动水平",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-02": {
+      "section": "TMP",
+      "subscale": "活动水平",
+      "report_subscale": "活动水平",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-03": {
+      "section": "TMP",
+      "subscale": "社交接近",
+      "report_subscale": "社交接近",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-04": {
+      "section": "TMP",
+      "subscale": "害羞/慢热",
+      "report_subscale": "害羞/慢热",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-05": {
+      "section": "TMP",
+      "subscale": "趋避/适应",
+      "report_subscale": "趋避/适应",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-06": {
+      "section": "TMP",
+      "subscale": "冒险/高强度愉悦",
+      "report_subscale": "冒险/高强度愉悦",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-07": {
+      "section": "TMP",
+      "subscale": "冒险/高强度愉悦",
+      "report_subscale": "冒险/高强度愉悦",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-08": {
+      "section": "TMP",
+      "subscale": "挫折/愤怒反应",
+      "report_subscale": "挫折/愤怒反应",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-09": {
+      "section": "TMP",
+      "subscale": "挫折/愤怒反应",
+      "report_subscale": "挫折/愤怒反应",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-10": {
+      "section": "TMP",
+      "subscale": "可安抚性",
+      "report_subscale": "可安抚性",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-11": {
+      "section": "TMP",
+      "subscale": "恐惧/谨慎",
+      "report_subscale": "恐惧/谨慎",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-12": {
+      "section": "TMP",
+      "subscale": "恐惧/谨慎",
+      "report_subscale": "恐惧/谨慎",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-13": {
+      "section": "TMP",
+      "subscale": "注意聚焦/坚持",
+      "report_subscale": "注意聚焦/坚持",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-14": {
+      "section": "TMP",
+      "subscale": "注意聚焦/坚持",
+      "report_subscale": "注意聚焦/坚持",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-15": {
+      "section": "TMP",
+      "subscale": "注意聚焦/坚持",
+      "report_subscale": "注意聚焦/坚持",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-16": {
+      "section": "TMP",
+      "subscale": "抑制控制",
+      "report_subscale": "抑制控制",
+      "cluster": "inhibitory_control",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-17": {
+      "section": "TMP",
+      "subscale": "抑制控制",
+      "report_subscale": "抑制控制",
+      "cluster": "inhibitory_control",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-18": {
+      "section": "TMP",
+      "subscale": "抑制控制",
+      "report_subscale": "抑制控制",
+      "cluster": "inhibitory_control",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "TMP-19": {
+      "section": "TMP",
+      "subscale": "冒险/高强度愉悦",
+      "report_subscale": "冒险/高强度愉悦",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-01": {
+      "section": "SEL",
+      "subscale": "情绪调节",
+      "report_subscale": "情绪调节",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-02": {
+      "section": "SEL",
+      "subscale": "情绪调节",
+      "report_subscale": "情绪调节",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-03": {
+      "section": "SEL",
+      "subscale": "情绪调节",
+      "report_subscale": "情绪调节",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-04": {
+      "section": "SEL",
+      "subscale": "行为与冲动控制",
+      "report_subscale": "行为与冲动控制",
+      "cluster": "inhibitory_control",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-05": {
+      "section": "SEL",
+      "subscale": "行为与冲动控制",
+      "report_subscale": "行为与冲动控制",
+      "cluster": "inhibitory_control",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-06": {
+      "section": "SEL",
+      "subscale": "行为与冲动控制",
+      "report_subscale": "行为与冲动控制",
+      "cluster": "inhibitory_control",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-07": {
+      "section": "SEL",
+      "subscale": "主动性与自主",
+      "report_subscale": "主动性与自主",
+      "cluster": "initiative",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-08": {
+      "section": "SEL",
+      "subscale": "主动性与自主",
+      "report_subscale": "主动性与自主",
+      "cluster": "initiative",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-1"
+    },
+    "SEL-09": {
+      "section": "SEL",
+      "subscale": "主动性与自主",
+      "report_subscale": "主动性与自主",
+      "cluster": "initiative",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-1"
+    },
+    "SEL-10": {
+      "section": "SEL",
+      "subscale": "依恋与关系",
+      "report_subscale": "依恋与关系",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-11": {
+      "section": "SEL",
+      "subscale": "依恋与关系",
+      "report_subscale": "依恋与关系",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-12": {
+      "section": "SEL",
+      "subscale": "依恋与关系",
+      "report_subscale": "依恋与关系",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-13": {
+      "section": "SEL",
+      "subscale": "共情与亲社会",
+      "report_subscale": "共情与亲社会",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-14": {
+      "section": "SEL",
+      "subscale": "共情与亲社会",
+      "report_subscale": "共情与亲社会",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-15": {
+      "section": "SEL",
+      "subscale": "共情与亲社会",
+      "report_subscale": "共情与亲社会",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "SEL-16": {
+      "section": "SEL",
+      "subscale": "共情与亲社会",
+      "report_subscale": "共情与亲社会",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-01": {
+      "section": "DEV",
+      "subscale": "沟通/语言",
+      "report_subscale": "沟通/语言",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-02": {
+      "section": "DEV",
+      "subscale": "沟通/语言",
+      "report_subscale": "沟通/语言",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-03": {
+      "section": "DEV",
+      "subscale": "沟通/语言",
+      "report_subscale": "沟通/语言",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-04": {
+      "section": "DEV",
+      "subscale": "大运动",
+      "report_subscale": "大运动",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-05": {
+      "section": "DEV",
+      "subscale": "大运动",
+      "report_subscale": "大运动",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-06": {
+      "section": "DEV",
+      "subscale": "精细动作",
+      "report_subscale": "精细动作",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-07": {
+      "section": "DEV",
+      "subscale": "精细动作",
+      "report_subscale": "精细动作",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-08": {
+      "section": "DEV",
+      "subscale": "精细动作",
+      "report_subscale": "精细动作",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-09": {
+      "section": "DEV",
+      "subscale": "问题解决/认知",
+      "report_subscale": "问题解决/认知",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-10": {
+      "section": "DEV",
+      "subscale": "问题解决/认知",
+      "report_subscale": "问题解决/认知",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-11": {
+      "section": "DEV",
+      "subscale": "问题解决/认知",
+      "report_subscale": "问题解决/认知",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-12": {
+      "section": "DEV",
+      "subscale": "个人-社会/自理",
+      "report_subscale": "个人-社会/自理",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-13": {
+      "section": "DEV",
+      "subscale": "个人-社会/自理",
+      "report_subscale": "个人-社会/自理",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-14": {
+      "section": "DEV",
+      "subscale": "个人-社会/自理",
+      "report_subscale": "个人-社会/自理",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "DEV-15": {
+      "section": "DEV",
+      "subscale": "问题解决/认知",
+      "report_subscale": "问题解决/认知",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-01": {
+      "section": "INT",
+      "subscale": "运动/大肌肉",
+      "report_subscale": "运动/大肌肉",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-02": {
+      "section": "INT",
+      "subscale": "艺术/绘画手工",
+      "report_subscale": "艺术/绘画手工",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-03": {
+      "section": "INT",
+      "subscale": "音乐/律动",
+      "report_subscale": "音乐/律动",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-04": {
+      "section": "INT",
+      "subscale": "语言/故事",
+      "report_subscale": "语言/故事",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-05": {
+      "section": "INT",
+      "subscale": "数理/逻辑",
+      "report_subscale": "数理/逻辑",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-06": {
+      "section": "INT",
+      "subscale": "自然探索",
+      "report_subscale": "自然探索",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-07": {
+      "section": "INT",
+      "subscale": "建构/搭建",
+      "report_subscale": "建构/搭建",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-08": {
+      "section": "INT",
+      "subscale": "社交/扮演",
+      "report_subscale": "社交/扮演",
+      "cluster": null,
+      "scale": "like5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-09": {
+      "section": "INT",
+      "subscale": "强度/沉浸",
+      "report_subscale": "强度/沉浸",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-10": {
+      "section": "INT",
+      "subscale": "持续性/专注",
+      "report_subscale": "持续性/专注",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-2"
+    },
+    "INT-11": {
+      "section": "INT",
+      "subscale": "持续性/专注",
+      "report_subscale": "持续性/专注",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-2"
+    },
+    "INT-12": {
+      "section": "INT",
+      "subscale": "自主发起",
+      "report_subscale": "自主发起",
+      "cluster": "initiative",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-3"
+    },
+    "INT-13": {
+      "section": "INT",
+      "subscale": "自主发起",
+      "report_subscale": "自主发起",
+      "cluster": "initiative",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-3"
+    },
+    "INT-14": {
+      "section": "INT",
+      "subscale": "掌握取向/愉悦",
+      "report_subscale": "掌握取向/愉悦",
+      "cluster": "mastery",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "INT-15": {
+      "section": "INT",
+      "subscale": "掌握取向/愉悦",
+      "report_subscale": "掌握取向/愉悦",
+      "cluster": "mastery",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-01": {
+      "section": "LRN",
+      "subscale": "专注与坚持",
+      "report_subscale": "专注与坚持",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-4"
+    },
+    "LRN-02": {
+      "section": "LRN",
+      "subscale": "专注与坚持",
+      "report_subscale": "专注与坚持",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": "cp-4"
+    },
+    "LRN-03": {
+      "section": "LRN",
+      "subscale": "专注与坚持",
+      "report_subscale": "专注与坚持",
+      "cluster": "focus_persistence",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-04": {
+      "section": "LRN",
+      "subscale": "好奇与探索",
+      "report_subscale": "好奇与探索",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-05": {
+      "section": "LRN",
+      "subscale": "好奇与探索",
+      "report_subscale": "好奇与探索",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-06": {
+      "section": "LRN",
+      "subscale": "主动性与自我驱动",
+      "report_subscale": "主动性与自我驱动",
+      "cluster": "initiative",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-14": {
+      "section": "LRN",
+      "subscale": "主动性与自我驱动",
+      "report_subscale": "主动性与自我驱动",
+      "cluster": "initiative",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-07": {
+      "section": "LRN",
+      "subscale": "创造与灵活",
+      "report_subscale": "创造与灵活",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-08": {
+      "section": "LRN",
+      "subscale": "创造与灵活",
+      "report_subscale": "创造与灵活",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-09": {
+      "section": "LRN",
+      "subscale": "创造与灵活",
+      "report_subscale": "创造与灵活",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-10": {
+      "section": "LRN",
+      "subscale": "掌握愉悦与挑战取向",
+      "report_subscale": "掌握愉悦与挑战取向",
+      "cluster": "mastery",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-11": {
+      "section": "LRN",
+      "subscale": "掌握愉悦与挑战取向",
+      "report_subscale": "掌握愉悦与挑战取向",
+      "cluster": "mastery",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-12": {
+      "section": "LRN",
+      "subscale": "面对挫折的恢复",
+      "report_subscale": "面对挫折的恢复",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "LRN-13": {
+      "section": "LRN",
+      "subscale": "面对挫折的恢复",
+      "report_subscale": "面对挫折的恢复",
+      "cluster": "resilience",
+      "scale": "freq5",
+      "reverse": true,
+      "age_bands": [
+        "4-5",
+        "5-6"
+      ],
+      "scored": true,
+      "consistency_pair_id": null
+    },
+    "FAM-01": {
+      "section": "FAM",
+      "subscale": "养育方式·要求性",
+      "report_subscale": "养育方式·要求性",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-02": {
+      "section": "FAM",
+      "subscale": "养育方式·要求性",
+      "report_subscale": "养育方式·要求性",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-03": {
+      "section": "FAM",
+      "subscale": "养育方式·回应性",
+      "report_subscale": "养育方式·回应性",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-04": {
+      "section": "FAM",
+      "subscale": "养育方式·回应性",
+      "report_subscale": "养育方式·回应性",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-05": {
+      "section": "FAM",
+      "subscale": "家庭学习环境",
+      "report_subscale": "家庭学习环境",
+      "cluster": null,
+      "scale": "single",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-06": {
+      "section": "FAM",
+      "subscale": "家庭学习环境",
+      "report_subscale": "家庭学习环境",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-07": {
+      "section": "FAM",
+      "subscale": "家庭学习环境",
+      "report_subscale": "家庭学习环境",
+      "cluster": null,
+      "scale": "multi",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-08": {
+      "section": "FAM",
+      "subscale": "屏幕与媒体使用",
+      "report_subscale": "屏幕与媒体使用",
+      "cluster": null,
+      "scale": "single",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-09": {
+      "section": "FAM",
+      "subscale": "屏幕与媒体使用",
+      "report_subscale": "屏幕与媒体使用",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-10": {
+      "section": "FAM",
+      "subscale": "作息与睡眠",
+      "report_subscale": "作息与睡眠",
+      "cluster": null,
+      "scale": "single",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-11": {
+      "section": "FAM",
+      "subscale": "语言环境",
+      "report_subscale": "语言环境",
+      "cluster": null,
+      "scale": "single",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-12": {
+      "section": "FAM",
+      "subscale": "照看结构与支持网络",
+      "report_subscale": "照看结构与支持网络",
+      "cluster": null,
+      "scale": "multi",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    },
+    "FAM-13": {
+      "section": "FAM",
+      "subscale": "照看结构与支持网络",
+      "report_subscale": "照看结构与支持网络",
+      "cluster": null,
+      "scale": "freq5",
+      "reverse": false,
+      "age_bands": [
+        "3-4",
+        "4-5",
+        "5-6"
+      ],
+      "scored": false,
+      "consistency_pair_id": null
+    }
+  },
+  "clusters": {
+    "focus_persistence": {
+      "report_name": "专注-坚持",
+      "members": [
+        "INT-09",
+        "INT-10",
+        "INT-11",
+        "LRN-01",
+        "LRN-02",
+        "LRN-03",
+        "TMP-13",
+        "TMP-14",
+        "TMP-15"
+      ],
+      "merge_rule": "合并为单一指标、只计基线一次",
+      "merge_detail": "取簇内全部本龄段启用题（reverse 已翻转、同向校验通过）的统一均值为单一共享方差指标；该指标在个人总均值基线与相对位排序中只占一席；报告对每簇只写一条叙述，不得拆成多条独立优势。"
+    },
+    "inhibitory_control": {
+      "report_name": "抑制控制",
+      "members": [
+        "SEL-04",
+        "SEL-05",
+        "SEL-06",
+        "TMP-16",
+        "TMP-17",
+        "TMP-18"
+      ],
+      "merge_rule": "合并为单一指标、只计基线一次",
+      "merge_detail": "取簇内全部本龄段启用题（reverse 已翻转、同向校验通过）的统一均值为单一共享方差指标；该指标在个人总均值基线与相对位排序中只占一席；报告对每簇只写一条叙述，不得拆成多条独立优势。"
+    },
+    "initiative": {
+      "report_name": "主动性",
+      "members": [
+        "INT-12",
+        "INT-13",
+        "LRN-06",
+        "LRN-14",
+        "SEL-07",
+        "SEL-08",
+        "SEL-09"
+      ],
+      "merge_rule": "合并为单一指标、只计基线一次",
+      "merge_detail": "取簇内全部本龄段启用题（reverse 已翻转、同向校验通过）的统一均值为单一共享方差指标；该指标在个人总均值基线与相对位排序中只占一席；报告对每簇只写一条叙述，不得拆成多条独立优势。"
+    },
+    "resilience": {
+      "report_name": "挫折恢复/情绪调节",
+      "members": [
+        "LRN-12",
+        "LRN-13",
+        "SEL-01",
+        "SEL-02",
+        "SEL-03",
+        "TMP-08",
+        "TMP-09",
+        "TMP-10"
+      ],
+      "merge_rule": "合并为单一指标、只计基线一次",
+      "merge_detail": "取簇内全部本龄段启用题（reverse 已翻转、同向校验通过）的统一均值为单一共享方差指标；该指标在个人总均值基线与相对位排序中只占一席；报告对每簇只写一条叙述，不得拆成多条独立优势。"
+    },
+    "mastery": {
+      "report_name": "掌握取向",
+      "members": [
+        "INT-14",
+        "INT-15",
+        "LRN-10",
+        "LRN-11"
+      ],
+      "merge_rule": "合并为单一指标、只计基线一次",
+      "merge_detail": "取簇内全部本龄段启用题（reverse 已翻转、同向校验通过）的统一均值为单一共享方差指标；该指标在个人总均值基线与相对位排序中只占一席；报告对每簇只写一条叙述，不得拆成多条独立优势。"
+    }
+  },
+  "centering": {
+    "scope": "按量表/按section",
+    "scope_detail": "个体内中心化分两条独立基线：freq5 行为频率题按 section（TMP/SEL/DEV/INT-B/LRN）汇入「个人行为频率总均值」基线；like5 兴趣领域分只在 INT 内部横向排序，不并入 freq5 基线。",
+    "like5_freq5_separate": true,
+    "center_formula": "个体内相对分 = 子维度/簇均分 − 个人总均值（仅由计入画像的 freq5 题构成）。like5 领域分单独在 INT 内横向排序。",
+    "reverse_then_center": "reverse:true 题先 6 − raw_value 翻转、同向校验通过后再参与均分与中心化。",
+    "exclude_from_baseline": {
+      "int_a_like5_domains": [
+        "INT-01",
+        "INT-02",
+        "INT-03",
+        "INT-04",
+        "INT-05",
+        "INT-06",
+        "INT-07",
+        "INT-08"
+      ],
+      "standalone_single_item_freq5_subscales": [
+        "TMP-03",
+        "TMP-04",
+        "TMP-05"
+      ],
+      "fam_section": true,
+      "open_section": true,
+      "rule": "§4.8：单题构成的子维度（本段启用题数=1 且不归入任何同义簇）不纳入个体内排序、只作描述性陈述，并从个人总均值基线剔除；全部 INT A 层 like5 领域题（§4.1.3/§4.8）不进入 freq5 基线；FAM（scored:false）与 OPEN（开放题）不计入孩子画像。",
+      "note_in_cluster_singles": "TMP-10/INT-09/INT-14/LRN-06/LRN-12 虽在某些段为单题，但归属同义簇，按 §4.6 折叠进对应簇的合并指标（计基线一次），不作为 standalone 剔除。"
+    }
+  },
+  "aggregation": {
+    "default_granularity": "section",
+    "section_outputs": "TMP/SEL/INT(B层)/LRN 各输出一个个体内相对位；DEV 按 5 领域在孩子内部排序（不判达标/落后、不出百分位、不设切分点）。",
+    "subscale": "qualitative_only_with_caveat",
+    "subscale_caveat": "题少／子维度间相关高，仅供参考",
+    "cluster_in_baseline": "同义簇合并为单一指标后只占基线一席，报告每簇仅一条叙述。",
+    "single_item": "not_ranked",
+    "single_item_detail": "单题子维度只作描述性陈述、不纳入个体内排序。",
+    "int_two_layer": "INT A 层 8 领域（like5）做横向偏好排序；B 层 4 品质信号判断偏好成色；二者不混合求和。"
+  },
+  "descriptive_bands": {
+    "basis": "锚定量表语义（频率/喜爱档位）与个体内相对位，绝不出现「超过 X% 的孩子」等人群百分位表述。",
+    "freq5": {
+      "scale_labels": {
+        "1": "几乎从不",
+        "2": "偶尔",
+        "3": "有时",
+        "4": "经常",
+        "5": "几乎总是"
+      },
+      "mean_to_band": [
+        {
+          "range": "[1.0, 2.5)",
+          "level": "低",
+          "freq_phrase": "多落在「偶尔/几乎从不」一档"
+        },
+        {
+          "range": "[2.5, 3.5)",
+          "level": "中",
+          "freq_phrase": "多落在「有时」一档"
+        },
+        {
+          "range": "[3.5, 5.0]",
+          "level": "高",
+          "freq_phrase": "多落在「经常/几乎总是」一档"
+        }
+      ]
+    },
+    "like5": {
+      "scale_labels": {
+        "1": "明显不喜欢/会躲开",
+        "2": "不太感兴趣",
+        "3": "一般/还行",
+        "4": "挺喜欢、会主动玩",
+        "5": "一玩就停不下来"
+      },
+      "mean_to_band": [
+        {
+          "range": "[1.0, 2.5)",
+          "level": "低",
+          "like_phrase": "相对较少被这类活动吸引"
+        },
+        {
+          "range": "[2.5, 3.5)",
+          "level": "中",
+          "like_phrase": "对这类活动一般/还行"
+        },
+        {
+          "range": "[3.5, 5.0]",
+          "level": "高",
+          "like_phrase": "明显更被这类活动吸引、会主动玩"
+        }
+      ]
+    },
+    "caution": "档位为锚点语义描述，配合个体内相对位（相对突出/相对还在发展中）使用；阈值为人读描述方便而设，非人群常模切分。"
+  },
+  "quality_flags": {
+    "longstring": {
+      "source": "meta.quality.longstring_max / straightlining_flag",
+      "status": "computed",
+      "rule": "连续≥10 题完全同档即 straightlining；longstring_max 为最长连续同选串。前端本端已算，skill 读取。"
+    },
+    "timing": {
+      "source": "meta.timing.total_active_sec / per_section_sec",
+      "status": "computed",
+      "rule": "平均每题作答过快（常用每题<2 秒为可疑下界，需本地校准）→ fast_response_flag；某节突然极快定位中途满意化。"
+    },
+    "familiarity_low": {
+      "source": "_identity_extra.daily_contact (+ relationship)",
+      "status": "computed_from_contact",
+      "rule": "每日相处 daily_contact=lt1（尤其叠加 relationship=other_caregiver）→ familiarity_low；降低报告强度、加重免责。"
+    },
+    "inconsistency": {
+      "source": "consistency_pair_id 配对（cp-1..cp-4）",
+      "status": "computed_in_skill_from_pairs",
+      "pairs": {
+        "cp-1": [
+          "SEL-08",
+          "SEL-09"
+        ],
+        "cp-2": [
+          "INT-10",
+          "INT-11"
+        ],
+        "cp-3": [
+          "INT-12",
+          "INT-13"
+        ],
+        "cp-4": [
+          "LRN-01",
+          "LRN-02"
+        ]
+      },
+      "rule": "同一 pair 内正/反向题各自翻转到同向后比对；严重矛盾（同向化后差值过大）即置 inconsistency_flag。覆盖面有限，无专用语义矛盾探针。"
+    },
+    "sdb_halo": {
+      "source": "reserved",
+      "status": "reserved",
+      "rule": "本版预留、恒 false、暂不稳健判定（缺去赞许探针）。可暂以「全卷高分 + 维度间方差过低」作弱代理、标低置信，真正判定待后续补探针。"
+    },
+    "high_missing": {
+      "source": "responses 缺答比例",
+      "status": "computed",
+      "rule": "缺答比例过高 → high_missing_flag。"
+    },
+    "recent_disruption": {
+      "source": "身份/备注（如近期生病/换环境/家庭变动）",
+      "status": "computed_from_contact",
+      "rule": "近期特殊情况置 recent_disruption，提示状态干扰、避开刚入园 1-2 周。"
+    },
+    "handling": "标注优先而非删除（Ward & Meade 2023）：多旗标 → 弱化绝对表述、加重免责；对家长温和提示而非指责。"
+  },
+  "red_flags": {
+    "philosophy": "非诊断、非筛查；保守红旗（宁可少触发），借鉴 AAP 2020 / CDC LTSAE / ASQ-3 监测区思路。",
+    "trigger": {
+      "basis": "按 DEV 各发展领域的原始锚点档位，而非个体内相对位。",
+      "rule": "当某 DEV 发展领域相关行为长期停在最低档（原始作答=1「几乎从不」），且 familiarity_low=false（照看人熟悉度高）、recent_disruption=false（近期无特殊情况）时，触发一条温和、非评判的软转介提示。",
+      "scope": "soft_referral 仅作温和建议，不并入孩子优势分。"
+    },
+    "wording_template": "「每个孩子节奏不同，这套小测评不能替代专业判断。如果您对孩子在 X 方面的发展有持续的担心，和孩子的儿保医生或专业老师聊一聊，是个很稳妥的做法。」",
+    "red_lines": [
+      "绝不出现诊断词（如「自闭」「发育迟缓」「多动」）",
+      "绝不下结论、绝不制造焦虑",
+      "始终以「可以问问专业人士」温和收尾"
+    ],
+    "open_ended_concern": "OPEN-03 若家长自述发展担忧，报告温和引导寻求专业评估，话术同上、不诊断。",
+    "fam_advisory": "FAM 要求性×回应性给养育方式温和提示；屏幕/睡眠对照 WHO/AAP/AASM 给「绿色/可优化」两档建议；不并入孩子优势分、不贴「专制/放任」标签（独立于 red_flags 的非诊断建议侧）。"
+  }
+}

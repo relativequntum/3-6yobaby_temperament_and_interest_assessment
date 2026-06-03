@@ -9,6 +9,9 @@ Desktop.ini
 *.swp
 *~
 
+# === Claude Code 本地设置（个人/本机级权限，勿入库）===
+.claude/settings.local.json
+
 # === Node ===
 node_modules/
 npm-debug.log*
