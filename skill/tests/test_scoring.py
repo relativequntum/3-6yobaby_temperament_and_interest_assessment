@@ -393,5 +393,159 @@ class TestRedFlags(unittest.TestCase):
         self.assertEqual(prof["red_flags"], [])
 
 
+# ---------------------------------------------------------------------------
+class TestR3Fixes(unittest.TestCase):
+    """第三轮复核修订（SCORE-F1/F2/F3/F5、SA-03、CMC-02/03）回归。"""
+
+    def test_f1_section_zero_point_matches_baseline(self):
+        """SCORE-F1：section 相对位与基线同口径——全同分时各 section 相对位≈0。
+
+        若 section 用题级均值、基线用单位均值之均值，全同分以外的输入零点会偏移；
+        这里用全同分锁住零点一致性，并断言 section 含 n_units 字段（折叠口径凭证）。
+        """
+        prof = run(_build_export(all_value(3)))
+        for s in prof["sections"]:
+            self.assertIn("n_units", s)
+            self.assertAlmostEqual(s["within_child_relative"], 0.0, places=2)
+        # 基线均值应等于各 freq5 题同向值（全 3）→ 3.0
+        self.assertAlmostEqual(prof["baseline"]["freq5_person_mean"], 3.0, places=2)
+
+    def test_f1_int_section_folds_clusters_not_item_mean(self):
+        """SCORE-F1：INT(B层)section 均值按折叠单位（3 簇各一席）算，而非 7 题题级均值。
+
+        构造：让 INT-09..15 七题取不同值，使「题级均值」与「3 簇各折一席再均」不同，
+        断言 section.raw_mean 等于后者（折叠口径）。
+        """
+        # 目标【同向值】：fp(09/10/11)=5、init(12/13)=1、mastery(14/15)=3。
+        # 反向题(INT-11/13)需用 6-原值 反推原始值，保证同向后命中目标。
+        target_oriented = {"INT-09": 5, "INT-10": 5, "INT-11": 5,
+                           "INT-12": 1, "INT-13": 1,
+                           "INT-14": 3, "INT-15": 3}
+
+        def vfn(resp):
+            iid = resp["item_id"]
+            if iid in target_oriented:
+                t = target_oriented[iid]
+                return (6 - t) if resp.get("reverse") else t  # 反推原始值
+            return 3
+
+        prof = run(_build_export(vfn, band="5-6"))
+        int_sec = next(s for s in prof["sections"] if s["id"] == "INT")
+        # 折叠口径：fp=5, init=1, mastery=3 → (5+1+3)/3 = 3.0；
+        # 题级均值会是 (5+5+5+1+1+3+3)/7≈3.29，二者不同，锁住折叠口径。
+        self.assertAlmostEqual(int_sec["raw_mean"], 3.0, places=2)
+        self.assertEqual(int_sec["n_units"], 3)
+
+    def test_f2_section_and_overlapping_cluster_not_both_in_strengths(self):
+        """SCORE-F2：INT(B层)全由簇成员构成→该 section 与其重叠簇不同时进 strengths。"""
+        # 抬高 INT 全部 B 层题，使 INT section 与 fp/init/mastery 簇都相对突出
+        def vfn(resp):
+            iid = resp["item_id"]
+            if iid.startswith("INT-") and CONFIG["items"][iid]["scale"] == "freq5":
+                return oriented_high(resp)
+            return 2 if not resp.get("reverse") else 4  # 其余压低，制造分化
+
+        prof = run(_build_export(vfn, band="5-6"))
+        refs = [(s["kind"], s["ref"]) for s in prof["relative_strengths_top"]]
+        # INT section 不应作为 section 候选与簇同时上榜
+        self.assertNotIn(("section", "INT"), refs)
+
+    def test_f3_label_pool_consistent_at_rounding_edge(self):
+        """SCORE-F3：label 与 growth 池同用 round 后 rel——不出现「标还在发展中却不入池」。"""
+        prof = run(SAMPLE)
+        pool_refs = {it["ref"] for it in prof["growth_areas_top"]["items"]}
+        for s in prof["sections"] + prof["clusters"]:
+            ref = s.get("id") or s.get("cluster")
+            lbl = s.get("relative_label")
+            if lbl == "相对还在发展中":
+                # 标为发展中（非保护）→ 必在 growth 池或被 F2 去重的全簇 section
+                self.assertTrue(
+                    ref in pool_refs or s.get("within_child_relative", 0) >= 0
+                    or s.get("id") == "INT",
+                    msg=f"{ref} 标发展中但未入 growth 池",
+                )
+
+    def test_f5_single_floor_item_no_red_flag(self):
+        """SCORE-F5：DEV 某领域仅 1 题且=1 不触发软转介（需≥2 题守卫）。"""
+        exp = _build_export(all_value(4), band="3-4",
+                            identity={"relationship": "mother", "daily_contact": "gt6"})
+        # 3-4 段「大运动」启用 DEV-04/05（2 题）；只把 DEV-04 置 1，DEV-05 保持高
+        for resp in exp["responses"]:
+            if resp["item_id"] == "DEV-04":
+                resp["raw_value"] = 1
+        prof = run(exp)
+        areas = [rf.get("area") for rf in prof["red_flags"]]
+        self.assertNotIn("大运动", areas)
+
+    def test_sa03_effective_age_band_emitted_and_fallback(self):
+        """SA-03：meta.effective_age_band = _active_band 回退结果（越界回退最近段）。"""
+        prof = run(SAMPLE)
+        self.assertEqual(prof["meta"]["effective_age_band"], SAMPLE["age_band"])
+        # 越界 → effective_age_band 回退到 5-6（月龄 80）
+        exp = _build_export(all_value(4), band="4-5")
+        exp["age_band"] = "out_of_range"
+        exp["child"]["age_months_at_submit"] = 80
+        prof2 = run(exp)
+        self.assertEqual(prof2["meta"]["age_band"], "out_of_range")
+        self.assertEqual(prof2["meta"]["effective_age_band"], "5-6")
+
+    def test_cmc02_exported_cluster_matches_config(self):
+        """CMC-02：导出每题 cluster == config 对应值（引擎反查表与 clusters.members 一致）。
+
+        ① 引擎 item_to_cluster 与各题 config['cluster'] 字段一致；
+        ② profile.clusters[].members_used 的每个成员，其 config cluster == 该簇名；
+        ③ config.clusters[*].members 中每个成员的 config['cluster'] 等于其所属簇名。
+        """
+        scorer = score.Scorer(CONFIG)
+        items_cfg = CONFIG["items"]
+        # ③ config 自洽：members 列表与逐题 cluster 字段双向一致
+        for cname, cinfo in CONFIG["clusters"].items():
+            for iid in cinfo["members"]:
+                self.assertEqual(
+                    items_cfg[iid].get("cluster"), cname,
+                    msg=f"{iid} 的 config.cluster 与所属簇 {cname} 不符",
+                )
+        # ① 引擎反查表 == 逐题 cluster 字段（仅对有 cluster 的题）
+        for iid, meta in items_cfg.items():
+            cname = meta.get("cluster")
+            if cname:
+                self.assertEqual(scorer.item_to_cluster.get(iid), cname)
+            else:
+                self.assertIsNone(scorer.item_to_cluster.get(iid))
+        # ② 导出 profile：members_used 归属正确
+        prof = run(SAMPLE)
+        for c in prof["clusters"]:
+            for iid in c["members_used"]:
+                self.assertEqual(items_cfg[iid].get("cluster"), c["cluster"])
+
+    def test_cmc03_thresholds_read_from_config(self):
+        """CMC-03：相对位档阈值读自 scoring-config.relative_label_thresholds。"""
+        self.assertIn("relative_label_thresholds", CONFIG)
+        scorer = score.Scorer(CONFIG)
+        self.assertEqual(scorer.rel_strong,
+                         CONFIG["relative_label_thresholds"]["strong_at_or_above"])
+        self.assertEqual(scorer.rel_low,
+                         CONFIG["relative_label_thresholds"]["low_at_or_below"])
+        # 改阈值即改判档：把 strong 调到 0.05，原本 rel∈[0.05,0.30) 的项应升档为「相对突出」
+        cfg2 = copy.deepcopy(CONFIG)
+        cfg2["relative_label_thresholds"]["strong_at_or_above"] = 0.05
+        base = score.score_export(copy.deepcopy(SAMPLE), CONFIG, SCHEMA)
+        tuned = score.score_export(copy.deepcopy(SAMPLE), cfg2, SCHEMA)
+        base_strong = sum(1 for s in base["sections"] if s["relative_label"] == "相对突出")
+        tuned_strong = sum(1 for s in tuned["sections"] if s["relative_label"] == "相对突出")
+        self.assertGreaterEqual(tuned_strong, base_strong)
+
+    def test_f6_baseline_contribution_present(self):
+        """SCORE-F6：subscales 带 baseline_contribution，且簇成员标 via_cluster（非误读）。"""
+        prof = run(SAMPLE)
+        for sub in prof["subscales"]:
+            self.assertIn("baseline_contribution", sub)
+            if sub["in_cluster"]:
+                self.assertEqual(sub["baseline_contribution"], "via_cluster")
+                self.assertFalse(sub["excluded_from_baseline"])
+            if sub["scale"] == "like5":
+                self.assertEqual(sub["baseline_contribution"], "none_like5")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

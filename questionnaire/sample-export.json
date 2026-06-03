@@ -6,10 +6,10 @@
     "date": "2026-06-02",
     "age_range": "3-6",
     "language": "zh-CN",
-    "item_bank_version": "1.1.0"
+    "item_bank_version": "1.1.2"
   },
   "child": {
-    "child_id": "cid-ede473db-c630-4b3f-a3f9-c30eaca01eb4",
+    "child_id": "cid-3de65ce6-3f4b-4205-adf2-87423afa6717",
     "nickname": "豆豆",
     "birth_month": "2021-12",
     "age_months_at_submit": 54,
@@ -19,7 +19,7 @@
   "consent": {
     "agreed": true,
     "consent_version": "1.1",
-    "agreed_at": "2026-06-02T17:34:26+08:00"
+    "agreed_at": "2026-06-03T19:27:51+08:00"
   },
   "responses": [
     {
@@ -336,14 +336,14 @@
       "report_subscale": "冒险/高强度愉悦",
       "cluster": null,
       "consistency_pair_id": null,
-      "question_text": "在游乐场或户外，孩子喜欢又跑又跳、玩得大声大动作，越热闹越开心。",
+      "question_text": "玩刺激的活动时孩子常意犹未尽，会主动要求「再来一次、再快一点、再用力点」，想让刺激变得更强。",
       "scale": "freq5",
       "raw_value": 3,
       "value_label": "有时",
       "age_band": "4-5",
       "reverse": false,
       "scored": true,
-      "anchor_shown": "越热闹越带劲、玩得很疯"
+      "anchor_shown": "玩着玩着主动要求加码——「再快点、再高点」"
     },
     {
       "item_id": "SEL-01",
@@ -1067,7 +1067,7 @@
       "report_subscale": "自主发起",
       "cluster": "initiative",
       "consistency_pair_id": "cp-3",
-      "question_text": "孩子大多要等大人安排，自己很少主动选择想做的事。",
+      "question_text": "孩子很少主动说出或挑选自己喜欢、想玩的东西，多是别人给什么就玩什么。",
       "scale": "freq5",
       "raw_value": 2,
       "value_label": "偶尔",
@@ -1118,14 +1118,14 @@
       "report_subscale": "专注与坚持",
       "cluster": "focus_persistence",
       "consistency_pair_id": "cp-4",
-      "question_text": "玩他喜欢的活动时，孩子能专心投入、不容易被旁边的事吸引走。",
+      "question_text": "做一件普通的事（如收拾、画画、听人讲）时，旁边有人走动或说话，孩子也能不被带跑、继续把手上的事做下去。",
       "scale": "freq5",
       "raw_value": 4,
       "value_label": "经常",
       "age_band": "4-5",
       "reverse": false,
       "scored": true,
-      "anchor_shown": "10-15分钟"
+      "anchor_shown": "有人走动说话也较少被带跑"
     },
     {
       "item_id": "LRN-02",
@@ -1203,14 +1203,14 @@
       "report_subscale": "主动性与自我驱动",
       "cluster": "initiative",
       "consistency_pair_id": null,
-      "question_text": "孩子会自己想出要玩什么、要做什么，而不是总等大人安排。",
+      "question_text": "玩的时候，孩子会自己冒出新点子、想出新的玩法，而不是只照大人教的或原来的方式玩。",
       "scale": "freq5",
       "raw_value": 4,
       "value_label": "经常",
       "age_band": "4-5",
       "reverse": false,
       "scored": true,
-      "anchor_shown": "会提议玩什么"
+      "anchor_shown": "会给玩法加点自己的新花样"
     },
     {
       "item_id": "LRN-14",
@@ -1610,8 +1610,8 @@
   ],
   "meta": {
     "timing": {
-      "started_at": "2026-06-02T17:34:26+08:00",
-      "submitted_at": "2026-06-02T17:34:32+08:00",
+      "started_at": "2026-06-03T19:27:51+08:00",
+      "submitted_at": "2026-06-03T19:27:57+08:00",
       "total_active_sec": 6,
       "per_section_sec": {
         "TMP": 1,

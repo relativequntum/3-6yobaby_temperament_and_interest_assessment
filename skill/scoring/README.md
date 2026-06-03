@@ -2,7 +2,7 @@
 
 本目录把方法学第 4 章的**计分契约**固化为机读配置 `scoring-config.json`，供阶段四计分 skill 直接消费。本文件逐条解释配置项如何对应方法学 `docs/理论依据与方法学.md` §4 与各既定决策。
 
-- **事实源关系**：题级事实以 `docs/item-bank.json`（题库，`item_bank_version` 1.1.1）为准；某次作答的过程数据以导出 JSON（机读事实源 `schema/export.schema.json`，`schema_version` 1.1）为准。本配置**不复制题干文本**，只携带计分所需的题级元数据（section/subscale/report_subscale/cluster/scale/reverse/age_bands/scored/consistency_pair_id），且这些字段逐题对齐题库、由题库机械生成，不臆造规则。
+- **事实源关系**：题级事实以 `docs/item-bank.json`（题库，`item_bank_version` 1.1.2）为准；某次作答的过程数据以导出 JSON（机读事实源 `schema/export.schema.json`，`schema_version` 1.1）为准。本配置**不复制题干文本**，只携带计分所需的题级元数据（section/subscale/report_subscale/cluster/scale/reverse/age_bands/scored/consistency_pair_id），且这些字段逐题对齐题库、由题库机械生成，不臆造规则。
 - **本配置不计分**：题库与问卷前端均不计分；计分在 skill 侧依据导出 JSON + 本配置执行（§4 开头约束）。
 
 ## 1. 顶层字段
@@ -10,7 +10,7 @@
 | 字段 | 含义 | 对应方法学 |
 |---|---|---|
 | `version` | 本配置版本（1.0.0） | — |
-| `source_item_bank_version` | 据以生成的题库版本（1.1.1） | §4.8 元数据支撑 |
+| `source_item_bank_version` | 据以生成的题库版本（1.1.2） | §4.8 元数据支撑 |
 | `source_export_schema_version` | 消费的导出契约版本（1.1） | json-schema §0 |
 | `non_diagnostic_notice` | 非诊断/非筛查/不出百分位总声明 | §4.2、§6.1 |
 | `age_bands` | 3-4/4-5/5-6 月龄区间（复制自题库） | §2.2 |

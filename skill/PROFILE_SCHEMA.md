@@ -22,7 +22,7 @@ python skill/scripts/score.py <export.json> [-o profile.json] [--no-validate]
 | 字段 | 类型 | 含义 |
 |---|---|---|
 | `schema` | object | `{profile_schema:"1.0", doc:"skill/PROFILE_SCHEMA.md"}` |
-| `meta` | object | 昵称/child_id/龄段/月龄/性别/提交时间/题库版本/计分配置版本/非诊断声明 |
+| `meta` | object | 昵称/child_id/龄段/`effective_age_band`(SA-03：越界回退后实际生效龄段)/月龄/性别/提交时间/题库版本/计分配置版本/非诊断声明 |
 | `data_quality` | object | 各质量旗标 + `confidence`(high/med/low) + 说明 + 处置原则 |
 | `baseline` | object | freq5 个人总均值基线（中心化基准）与构成单位 |
 | `sections[]` | array | TMP/SEL/DEV/INT(B层)/LRN 各一个个体内相对位（默认报告粒度） |
@@ -43,9 +43,10 @@ python skill/scripts/score.py <export.json> [-o profile.json] [--no-validate]
 ```jsonc
 {
   "nickname": "豆豆", "child_id": "cid-...", "age_band": "4-5",
+  "effective_age_band": "4-5",
   "age_months_at_submit": 54, "sex": "girl",
   "submitted_at": "2026-06-02T17:34:32+08:00",
-  "item_bank_version": "1.1.0", "scoring_config_version": "1.0.0",
+  "item_bank_version": "1.1.2", "scoring_config_version": "1.0.0",
   "source_export_schema_version": "1.1",
   "non_diagnostic_notice": "本配置仅用于个体内相对优势画像；不做诊断/筛查……"
 }
@@ -73,10 +74,12 @@ python skill/scripts/score.py <export.json> [-o profile.json] [--no-validate]
 
 ## sections[]
 
-每条：`id`、`name`、`scale`、`raw_mean`、`raw_band`(=`{level,phrase,scale}`，**原始水平描述带**)、`n_items`、`within_child_relative`(= section 均值 − baseline)、`relative_label`、`protected_high`(原始 band=高)。
+每条：`id`、`name`、`scale`、`raw_mean`、`raw_band`(=`{level,phrase,scale}`，**原始水平描述带**)、`n_items`、`n_units`(= 该 section 折叠后的单位数：簇折一席 + 非簇 freq5 子维度各一席)、`within_child_relative`(= section 均值 − baseline)、`relative_label`、`protected_high`(原始 band=高)。
 按 `within_child_relative` 降序。**DEV** 另含 `domain_order[]`（5 领域在孩子内部排序，每个领域同样带 `raw_band`/相对位/`protected_high`）。
 
-`relative_label` 取值：`相对突出`(rel≥0.30) / `中间位置` / `相对还在发展中`(rel≤−0.30 且非原始高) / **`相对没那么突出但仍很常见`**(rel≤−0.30 但原始 band=高，**T-11 防护**)。
+> **SCORE-F1 同口径**：section（及 DEV 领域）的 `raw_mean` 与个人基线**同一聚合口径**——section 内**先把同义簇折叠为一席、再与非簇 freq5 子维度等权**求「单位均值的均值」，使 `within_child_relative` 的零点与基线一致（消除原「题级均值 vs 单位均值之均值」约 0.08 的零点偏差）。
+
+`relative_label` 取值：`相对突出`(rel≥ `strong_at_or_above`) / `中间位置` / `相对还在发展中`(rel≤ `low_at_or_below` 且非原始高) / **`相对没那么突出但仍很常见`**(rel≤ `low_at_or_below` 但原始 band=高，**T-11 防护**)。档位阈值（**CMC-03**）读自 `scoring-config.json` 的 `relative_label_thresholds`（`strong_at_or_above` 默认 0.30、`low_at_or_below` 默认 −0.30；缺省回退 ±0.30）。判档所用 rel 与 `within_child_relative` **同口径**（均为 round 后值，**SCORE-F3**），避免极窄窗口下 label 与 growth 池不一致。
 
 ## clusters[]
 
@@ -86,7 +89,9 @@ python skill/scripts/score.py <export.json> [-o profile.json] [--no-validate]
 
 ## subscales[]
 
-定性补充，**不进入个体内排序**：`section`、`report_subscale`、`scale`、`raw_mean`、`raw_band`、`n_items`、`in_cluster`、`ranked:false`、`excluded_from_baseline`、`standalone_single_item`、`caveat:"题少／子维度间相关高，仅供参考"`。
+定性补充，**不进入个体内排序**：`section`、`report_subscale`、`scale`、`raw_mean`、`raw_band`、`n_items`、`in_cluster`、`ranked:false`、`excluded_from_baseline`、`baseline_contribution`、`standalone_single_item`、`caveat:"题少／子维度间相关高，仅供参考"`。
+
+> **SCORE-F6 防误读**：`excluded_from_baseline` 仅指「该子维度是否**作为独立子维度单位**进入 freq5 基线」——对 `in_cluster:true` 的子维度恒为 `false`，但这**不代表**其题被计入基线：簇成员题是**折叠进所属簇、以簇一席**进入基线的。故另给 `baseline_contribution` ∈ {`as_subscale_unit`(以子维度一席计入) / `via_cluster`(折叠进簇一席) / `none_standalone_single`(单题/standalone 剔除) / `none_like5`(like5 不入 freq5 基线)} 显式标明贡献路径。
 
 ## interest_map
 

@@ -100,7 +100,8 @@ hr{border:none; border-top:1px dashed var(--line); margin:1.6em 0;}
 
 /* ---- 行动建议三线 ---- */
 .act-lines{display:grid; gap:12px;}
-@media(min-width:640px){.act-lines{grid-template-columns:1fr;}}
+/* RENDER-F4：≥640px 真正多栏——三条线(游戏/锻炼/家庭陪伴)横排三栏，不再单栏堆叠。 */
+@media(min-width:640px){.act-lines{grid-template-columns:repeat(3,1fr); align-items:start;}}
 .act-line{border:1px solid var(--line); border-radius:14px; overflow:hidden;
   background:#fff;}
 .act-line>.head{padding:10px 14px; font-weight:700; color:#fff;

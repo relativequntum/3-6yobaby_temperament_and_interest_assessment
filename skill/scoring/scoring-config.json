@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "source_item_bank_version": "1.1.1",
+  "source_item_bank_version": "1.1.2",
   "source_export_schema_version": "1.1",
   "generated_from": [
     "docs/item-bank.json",
@@ -1491,6 +1491,11 @@
       "note_in_cluster_singles": "TMP-10/INT-09/INT-14/LRN-06/LRN-12 虽在某些段为单题，但归属同义簇，按 §4.6 折叠进对应簇的合并指标（计基线一次），不作为 standalone 剔除。"
     }
   },
+  "relative_label_thresholds": {
+    "strong_at_or_above": 0.30,
+    "low_at_or_below": -0.30,
+    "note": "个体内相对位（= 子维度/簇/section 均值 − 个人 freq5 基线）的人读档位切分阈值：rel≥strong_at_or_above→『相对突出』；rel≤low_at_or_below 且原始非高→『相对还在发展中』，原始为高→T-11 保护措辞；其余→『中间位置』。阈值为描述方便而设、非人群常模切分；score.py 读取本配置，缺省回退 ±0.30。"
+  },
   "aggregation": {
     "default_granularity": "section",
     "section_outputs": "TMP/SEL/INT(B层)/LRN 各输出一个个体内相对位；DEV 按 5 领域在孩子内部排序（不判达标/落后、不出百分位、不设切分点）。",
@@ -1607,9 +1612,9 @@
       "rule": "缺答比例过高 → high_missing_flag。"
     },
     "recent_disruption": {
-      "source": "身份/备注（如近期生病/换环境/家庭变动）",
-      "status": "computed_from_contact",
-      "rule": "近期特殊情况置 recent_disruption，提示状态干扰、避开刚入园 1-2 周。"
+      "source": "meta.quality.recent_disruption（前端依身份/备注，如近期生病/换环境/家庭变动置位）",
+      "status": "frontend_provided",
+      "rule": "本版 skill 不从原始字段派生，直接读取前端预置的 meta.quality.recent_disruption 布尔值；为真则提示状态干扰、抑制 red_flag、加重免责。后续如要 skill 侧派生，再改回 computed_from_contact 并补实现。"
     },
     "handling": "标注优先而非删除（Ward & Meade 2023）：多旗标 → 弱化绝对表述、加重免责；对家长温和提示而非指责。"
   },

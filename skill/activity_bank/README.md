@@ -2,7 +2,7 @@
 
 > 配套「3–6 岁幼儿发展优势与兴趣画像测评」的**循证活动库**。由分析 skill 按孩子的**个体内（ipsative）画像**——哪些构念/能力/兴趣相对突出、哪些相对还在发展中——检索、裁剪后，输出「游戏 / 锻炼 / 家庭陪伴」三条建议线。
 >
-> 机读主文件：`activity-bank.json`（version 1.1.0，对齐 `item-bank.json` v1.1.1 / `scoring-config.json` v1.0.0）
+> 机读主文件：`activity-bank.json`（version 1.1.0，对齐 `item-bank.json` v1.1.2 / `scoring-config.json` v1.0.0）
 > 数据来源：`docs/research/activities/A1–A8`（8 份循证简报）
 
 ---

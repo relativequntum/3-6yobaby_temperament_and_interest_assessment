@@ -29,6 +29,7 @@ interest_heatmap / domain_ladder），供 render.py 在正文内联使用；不�
 from __future__ import annotations
 
 import math
+import re
 from html import escape
 from typing import Optional, Sequence
 
@@ -124,6 +125,23 @@ def _truncate(text, max_chars) -> str:
 
 def _color(key) -> str:
     return PALETTE.get(key, "#999999")
+
+
+def _alpha_hex(color: str, alpha_byte: str = "1f") -> str:
+    """RENDER-F3：给颜色叠加低透明填充，不依赖 PALETTE 恒为 6 位十六进制。
+
+    仅当 color 是规范 6 位 #RRGGBB 时才用 8 位 #RRGGBBAA 写法（最省字节）；
+    其它形态（3 位、8 位、命名色等）一律退回 fill-opacity 表达，确保始终良构。
+    返回 (fill_value, extra_attr)：extra_attr 为需要追加的属性串（含前导空格）或 ""。
+    """
+    if re.fullmatch(r"#[0-9a-fA-F]{6}", color or ""):
+        return color + alpha_byte, ""
+    # 近似把两位十六进制 alpha 转为 0-1 透明度（1f≈0.12）。
+    try:
+        opacity = int(alpha_byte, 16) / 255.0
+    except ValueError:
+        opacity = 0.12
+    return color, ' fill-opacity="%s"' % _f(opacity, 2)
 
 
 def _band_level(obj) -> str:
@@ -693,15 +711,17 @@ def confidence_badge(confidence: str) -> str:
     }
     key, text = mapping.get((confidence or "").lower(), ("muted", "数据置信：未知"))
     color = _color(key)
+    # RENDER-F3：低透明填充不再硬拼 "color+1f"（依赖 6 位 hex），改用稳健叠加。
+    fill_val, fill_extra = _alpha_hex(color, "1f")
     w = 188 if (confidence or "").lower() == "low" else 120
     return (
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d 22" height="18" '
         'role="img" aria-label="%s" font-family="%s" '
         'style="vertical-align:middle">'
-        '<rect x="0.5" y="0.5" width="%d" height="21" rx="10.5" fill="%s1f" '
+        '<rect x="0.5" y="0.5" width="%d" height="21" rx="10.5" fill="%s"%s '
         'stroke="%s" stroke-width="1"/>'
         '<circle cx="12" cy="11" r="4.5" fill="%s"/>%s</svg>'
-        % (w, _e(text), FONT, w - 1, color, color, color,
+        % (w, _e(text), FONT, w - 1, fill_val, fill_extra, color, color,
            _text(22, 15, text, size=11, color=PALETTE["ink"]))
     )
 

@@ -271,7 +271,16 @@ def collect_seeds(profile: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
 
 
 def _dedup_lines(lines: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """同 line_id 去重（兴趣领域与品质信号可能与 cluster 线撞键），保留先到者并并合 target。"""
+    """建议线去重，两层归一（同一信号绝不重复成两条线）：
+
+      第一层（同 line_id）：兴趣领域/品质信号可能与 cluster 线撞 line_id，
+        保留先到者并并合 target_tokens。
+      第二层（SA-01/SA-02）：按 (line_kind, frozenset(target_tokens)) 归一——
+        覆盖『nurture:dev:{d} 与 nurture:dev_domain:{ref} 指向同一 DEV 领域 token』
+        以及『同簇 amplify 两线：cluster 线与 quality 线 target 同为 {簇名}』。
+        同键保留先到者，丢弃后到者，并把其 line_id 记入 merged_line_ids 备溯源。
+    """
+    # 第一层：同 line_id
     seen: Dict[str, Dict[str, Any]] = {}
     order: List[str] = []
     for ln in lines:
@@ -282,7 +291,24 @@ def _dedup_lines(lines: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         else:
             merged = list(dict.fromkeys(seen[lid]["target_tokens"] + ln["target_tokens"]))
             seen[lid]["target_tokens"] = merged
-    return [seen[lid] for lid in order]
+    first_pass = [seen[lid] for lid in order]
+
+    # 第二层：同 (line_kind, frozenset(target_tokens))
+    by_signal: Dict[tuple, Dict[str, Any]] = {}
+    out: List[Dict[str, Any]] = []
+    for ln in first_pass:
+        key = (ln["line_kind"], frozenset(ln.get("target_tokens") or []))
+        # 无 target 的线不参与信号归一（各自保留，后续 build 会单独告警）。
+        if not key[1]:
+            out.append(ln)
+            continue
+        if key not in by_signal:
+            by_signal[key] = ln
+            out.append(ln)
+        else:
+            kept = by_signal[key]
+            kept.setdefault("merged_line_ids", []).append(ln["line_id"])
+    return out
 
 
 def _section_target_tokens(sid: str, profile: Dict[str, Any]) -> List[str]:
@@ -422,7 +448,10 @@ def build_candidates(
     validate_targets: bool,
 ) -> Dict[str, Any]:
     meta = profile.get("meta", {}) or {}
-    age_band = meta.get("age_band")
+    # SA-03：优先用 score.py 写入的 effective_age_band（越界已回退到最近段）做活动
+    # 龄段命中；缺省回退 age_band。这样 out_of_range 不会让整盘 shortlist 落空。
+    declared_band = meta.get("age_band")
+    age_band = meta.get("effective_age_band") or declared_band
     activities = bank.get("activities", [])
 
     warnings: List[str] = []
@@ -471,7 +500,8 @@ def build_candidates(
         "meta": {
             "nickname": meta.get("nickname"),
             "child_id": meta.get("child_id"),
-            "age_band": age_band,
+            "age_band": declared_band,
+            "effective_age_band": age_band,
             "age_months_at_submit": meta.get("age_months_at_submit"),
             "activity_bank_version": bank.get("version"),
             "item_bank_version": meta.get("item_bank_version"),

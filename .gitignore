@@ -41,3 +41,6 @@ reports/*
 *.local
 *.tmp
 draft-*.json
+
+# === skill 运行时中间产物（每次分析的临时 RCO/profile/candidates 等）===
+work/

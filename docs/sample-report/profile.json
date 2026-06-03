@@ -5,12 +5,13 @@
   },
   "meta": {
     "nickname": "豆豆",
-    "child_id": "cid-ede473db-c630-4b3f-a3f9-c30eaca01eb4",
+    "child_id": "cid-3de65ce6-3f4b-4205-adf2-87423afa6717",
     "age_band": "4-5",
+    "effective_age_band": "4-5",
     "age_months_at_submit": 54,
     "sex": "girl",
-    "submitted_at": "2026-06-02T17:34:32+08:00",
-    "item_bank_version": "1.1.0",
+    "submitted_at": "2026-06-03T19:27:57+08:00",
+    "item_bank_version": "1.1.2",
     "scoring_config_version": "1.0.0",
     "source_export_schema_version": "1.1",
     "non_diagnostic_notice": "本配置仅用于个体内（ipsative）相对优势画像；不做诊断/筛查、不出人群百分位、不设达标切分点。"
@@ -154,14 +155,15 @@
       "id": "DEV",
       "name": "发展快照",
       "scale": "freq5",
-      "raw_mean": 3.933,
+      "raw_mean": 3.867,
       "raw_band": {
         "level": "高",
         "phrase": "多落在「经常/几乎总是」一档",
         "scale": "freq5"
       },
       "n_items": 15,
-      "within_child_relative": 0.238,
+      "n_units": 5,
+      "within_child_relative": 0.171,
       "relative_label": "中间位置",
       "protected_high": true,
       "domain_order": [
@@ -233,32 +235,34 @@
       ]
     },
     {
-      "id": "INT",
-      "name": "兴趣品质(B层)",
-      "scale": "freq5",
-      "raw_mean": 3.857,
-      "raw_band": {
-        "level": "高",
-        "phrase": "多落在「经常/几乎总是」一档",
-        "scale": "freq5"
-      },
-      "n_items": 7,
-      "within_child_relative": 0.162,
-      "relative_label": "中间位置",
-      "protected_high": true
-    },
-    {
       "id": "LRN",
       "name": "学习品质",
       "scale": "freq5",
-      "raw_mean": 3.857,
+      "raw_mean": 3.861,
       "raw_band": {
         "level": "高",
         "phrase": "多落在「经常/几乎总是」一档",
         "scale": "freq5"
       },
       "n_items": 14,
-      "within_child_relative": 0.162,
+      "n_units": 6,
+      "within_child_relative": 0.165,
+      "relative_label": "中间位置",
+      "protected_high": true
+    },
+    {
+      "id": "INT",
+      "name": "兴趣品质(B层)",
+      "scale": "freq5",
+      "raw_mean": 3.833,
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "n_items": 7,
+      "n_units": 3,
+      "within_child_relative": 0.138,
       "relative_label": "中间位置",
       "protected_high": true
     },
@@ -273,6 +277,7 @@
         "scale": "freq5"
       },
       "n_items": 15,
+      "n_units": 5,
       "within_child_relative": 0.038,
       "relative_label": "中间位置",
       "protected_high": true
@@ -281,14 +286,15 @@
       "id": "TMP",
       "name": "气质",
       "scale": "freq5",
-      "raw_mean": 3.563,
+      "raw_mean": 3.528,
       "raw_band": {
         "level": "高",
         "phrase": "多落在「经常/几乎总是」一档",
         "scale": "freq5"
       },
       "n_items": 16,
-      "within_child_relative": -0.133,
+      "n_units": 6,
+      "within_child_relative": -0.168,
       "relative_label": "中间位置",
       "protected_high": true
     }
@@ -439,6 +445,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -456,6 +463,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -473,6 +481,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -490,6 +499,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -507,6 +517,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -524,6 +535,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -541,6 +553,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -558,6 +571,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -575,6 +589,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -592,6 +607,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -609,6 +625,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -626,6 +643,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -643,6 +661,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -660,6 +679,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -677,6 +697,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -694,6 +715,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -711,6 +733,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_like5",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -728,6 +751,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -745,6 +769,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -762,6 +787,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -779,6 +805,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -796,6 +823,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -813,6 +841,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -830,6 +859,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -847,6 +877,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -864,6 +895,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -881,6 +913,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -898,6 +931,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -915,6 +949,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -932,6 +967,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -949,6 +985,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_standalone_single",
       "standalone_single_item": true,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -966,6 +1003,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -983,6 +1021,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -1000,6 +1039,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -1017,6 +1057,7 @@
       "in_cluster": true,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "via_cluster",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -1034,6 +1075,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": false,
+      "baseline_contribution": "as_subscale_unit",
       "standalone_single_item": false,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -1051,6 +1093,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_standalone_single",
       "standalone_single_item": true,
       "caveat": "题少／子维度间相关高，仅供参考"
     },
@@ -1068,6 +1111,7 @@
       "in_cluster": false,
       "ranked": false,
       "excluded_from_baseline": true,
+      "baseline_contribution": "none_standalone_single",
       "standalone_single_item": true,
       "caveat": "题少／子维度间相关高，仅供参考"
     }
@@ -1252,20 +1296,7 @@
         "phrase": "多落在「经常/几乎总是」一档",
         "scale": "freq5"
       },
-      "within_child_relative": 0.238,
-      "relative_label": "中间位置",
-      "protected_high": true
-    },
-    {
-      "ref": "INT",
-      "kind": "section",
-      "name": "兴趣品质(B层)",
-      "raw_band": {
-        "level": "高",
-        "phrase": "多落在「经常/几乎总是」一档",
-        "scale": "freq5"
-      },
-      "within_child_relative": 0.162,
+      "within_child_relative": 0.171,
       "relative_label": "中间位置",
       "protected_high": true
     },
@@ -1278,7 +1309,20 @@
         "phrase": "多落在「经常/几乎总是」一档",
         "scale": "freq5"
       },
-      "within_child_relative": 0.162,
+      "within_child_relative": 0.165,
+      "relative_label": "中间位置",
+      "protected_high": true
+    },
+    {
+      "ref": "resilience",
+      "kind": "cluster",
+      "name": "挫折恢复/情绪调节",
+      "raw_band": {
+        "level": "高",
+        "phrase": "多落在「经常/几乎总是」一档",
+        "scale": "freq5"
+      },
+      "within_child_relative": 0.054,
       "relative_label": "中间位置",
       "protected_high": true
     }
@@ -1295,7 +1339,7 @@
           "phrase": "多落在「经常/几乎总是」一档",
           "scale": "freq5"
         },
-        "within_child_relative": -0.133,
+        "within_child_relative": -0.168,
         "note": "原始水平高（经常/几乎总是），相对没那么突出但仍很常见，不列为待发展"
       }
     ],

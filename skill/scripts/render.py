@@ -881,6 +881,27 @@ _ITALIC = re.compile(r"(?<!\*)\*([^*]+)\*(?!\*)")
 _LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
 
+def _safe_href(raw: str) -> Optional[str]:
+    """RENDER-F1：链接 href scheme 白名单——只许 http/https/mailto 与相对链接；
+    挡 javascript:/data:/vbscript: 等危险 scheme（防 XSS via LLM 叙事注入）。
+
+    判定在【HTML 转义后】的字符串上进行（: 不被 _h 转义，故可解析 scheme）。
+    返回放行的 href，或 None（拒绝）。
+    """
+    s = (raw or "").strip()
+    if not s:
+        return None
+    # 去掉前导控制字符/空白（绕过 "java\tscript:" 之类）。
+    probe = re.sub(r"[\s\x00-\x20]+", "", s).lower()
+    # 有显式 scheme（形如 foo:）时必须在白名单内。
+    m = re.match(r"^([a-z][a-z0-9+.\-]*):", probe)
+    if m:
+        if m.group(1) not in ("http", "https", "mailto"):
+            return None
+    # 锚点 #、相对路径、协议相对 //、查询 ? 等无 scheme → 视为相对，放行。
+    return s
+
+
 def _inline_md(text) -> str:
     """行内 markdown → HTML（先转义，再放行受控标记）。"""
     s = _h(text)
@@ -888,7 +909,15 @@ def _inline_md(text) -> str:
     s = _INLINE_CODE.sub(r"<code>\1</code>", s)
     s = _BOLD.sub(r"<strong>\1</strong>", s)
     s = _ITALIC.sub(r"<em>\1</em>", s)
-    s = _LINK.sub(r'<a href="\2" rel="noopener nofollow">\1</a>', s)
+
+    def _link_sub(mo):
+        label, href = mo.group(1), mo.group(2)
+        safe = _safe_href(href)
+        if safe is None:
+            return label  # 危险 scheme：丢链接、保留可读文本，绝不输出 href
+        return '<a href="%s" rel="noopener nofollow">%s</a>' % (safe, label)
+
+    s = _LINK.sub(_link_sub, s)
     return s
 
 

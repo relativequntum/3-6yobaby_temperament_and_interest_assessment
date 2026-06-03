@@ -143,6 +143,10 @@ class Scorer:
             self.exclude.get("standalone_single_item_freq5_subscales", [])
         )
         self.like5_domains = set(self.exclude.get("int_a_like5_domains", []))
+        # CMC-03：相对位档位阈值改为读 scoring-config（无则回退默认 ±0.30）。
+        rlt = config.get("relative_label_thresholds", {}) or {}
+        self.rel_strong = rlt.get("strong_at_or_above", 0.30)
+        self.rel_low = rlt.get("low_at_or_below", -0.30)
         # 簇成员 → 簇名 反查
         self.item_to_cluster = {}
         for cname, cinfo in self.clusters_cfg.items():
@@ -169,9 +173,9 @@ class Scorer:
 
     # -- 主入口 ------------------------------------------------------------
     def score(self, export):
-        meta_out = self._meta(export)
         age_band = export.get("age_band")
         active_band = self._active_band(export)
+        meta_out = self._meta(export, active_band)
 
         # 收集每题同向化值（仅 scored=true 且本龄段启用、数值合法者）
         oriented = {}  # item_id -> oriented numeric value
@@ -216,7 +220,7 @@ class Scorer:
         interest_map = self._interest_map(oriented)
         interest_quality = self._interest_quality(clusters)
         # ---- 优势/成长（带 T-11 防护）----
-        strengths, growth = self._strengths_and_growth(sections, clusters)
+        strengths, growth = self._strengths_and_growth(sections, clusters, oriented)
         # ---- 数据质量 + confidence ----
         data_quality = self._data_quality(
             export, oriented, total_scored_presented, answered_scored
@@ -253,7 +257,7 @@ class Scorer:
         }
 
     # -- meta --------------------------------------------------------------
-    def _meta(self, export):
+    def _meta(self, export, active_band=None):
         child = export.get("child", {}) or {}
         instrument = export.get("instrument", {}) or {}
         timing = (export.get("meta", {}) or {}).get("timing", {}) or {}
@@ -261,6 +265,9 @@ class Scorer:
             "nickname": child.get("nickname"),
             "child_id": child.get("child_id"),
             "age_band": export.get("age_band"),
+            # SA-03：实际用于题目启用/活动龄段命中的龄段（越界已回退到最近段；
+            # 下游 select_activities 用它命中活动库，避免 out_of_range 整盘落空）。
+            "effective_age_band": active_band,
             "age_months_at_submit": child.get("age_months_at_submit"),
             "sex": child.get("sex"),
             "submitted_at": timing.get("submitted_at"),
@@ -314,12 +321,24 @@ class Scorer:
             in_cluster = any(self.item_to_cluster.get(i) for i, _ in items)
             standalone = all(i in self.standalone_excluded for i, _ in items)
             band = raw_band(self.config, scale, mean)
-            # 是否从 freq5 个人基线剔除：like5 领域、standalone 单题、或非簇单题。
-            excluded = (
+            # SCORE-F6：本字段=「该子维度是否【作为独立子维度单位】进入 freq5 基线」。
+            # 注意它对 in_cluster=True 的子维度恒为 False，并不代表其题被计入基线——
+            # 簇成员题是【折叠进所属簇、以簇一席】进入基线的，而非以子维度单位进入。
+            # 故另给 baseline_contribution 显式标明贡献路径，避免把「excluded=False」
+            # 误读成「以子维度计入基线」。
+            excluded_as_subscale_unit = (
                 scale == "like5"
                 or standalone
                 or (n == 1 and not in_cluster)
             )
+            if scale == "like5":
+                baseline_contribution = "none_like5"           # like5 不入 freq5 基线
+            elif in_cluster:
+                baseline_contribution = "via_cluster"          # 折叠进簇一席
+            elif excluded_as_subscale_unit:
+                baseline_contribution = "none_standalone_single"  # 单题/standalone 剔除
+            else:
+                baseline_contribution = "as_subscale_unit"     # 以子维度一席计入
             out.append(
                 {
                     "section": section,
@@ -330,7 +349,8 @@ class Scorer:
                     "n_items": n,
                     "in_cluster": in_cluster,
                     "ranked": False,
-                    "excluded_from_baseline": excluded,
+                    "excluded_from_baseline": excluded_as_subscale_unit,
+                    "baseline_contribution": baseline_contribution,
                     "standalone_single_item": standalone,
                     "caveat": self.config["aggregation"]["subscale_caveat"],
                 }
@@ -418,17 +438,55 @@ class Scorer:
         ]
         return baseline, unit_summary
 
+    # -- 同口径折叠：簇折叠成一席、与非簇 freq5 子维度等权（与基线一致）------
+    def _fold_units_mean(self, item_values):
+        """SCORE-F1：把一组 (iid, oriented) 折叠为「单位均值的均值」。
+
+        与 _baseline 同口径：簇成员先按所属簇折叠为一席（簇内题统一均值算一个单位），
+        非簇 freq5 题按 (section, report_subscale) 聚合为子维度单位；standalone 单题
+        与 like5 不计入。每个单位等权汇入，确保 section/DEV 相对位的零点与基线一致
+        （消除原「题级均值 vs 单位均值的均值」不对称导致的 ~0.08 零点偏差）。
+
+        不破坏：簇只占一席（按簇折叠）；standalone 单题不进基线（剔除）；
+        like5/freq5 分离（仅 freq5 入）；T-11（仅改聚合口径，不动防护）。
+        """
+        cluster_vals = defaultdict(list)
+        non_cluster = defaultdict(list)
+        for iid, ov in item_values:
+            cfg = self.items_cfg[iid]
+            if cfg["scale"] != "freq5":
+                continue  # like5 不入
+            if iid in self.standalone_excluded:
+                continue  # standalone 单题剔除
+            cname = self.item_to_cluster.get(iid)
+            if cname:
+                cluster_vals[cname].append(ov)  # 折叠进簇一席
+            else:
+                key = (cfg["section"], cfg.get("report_subscale") or cfg.get("subscale"))
+                non_cluster[key].append(ov)
+        units = []
+        for cname, vals in cluster_vals.items():
+            units.append(sum(vals) / len(vals))  # 每簇一席
+        for key, vals in non_cluster.items():
+            # 与 _baseline 同口径：本段启用题数=1 且不归簇的单题维度不入（§4.8 噪声防护）。
+            if len(vals) == 1:
+                continue
+            units.append(sum(vals) / len(vals))  # 每非簇子维度一席
+        if not units:
+            return None, 0
+        return sum(units) / len(units), len(units)
+
     # -- section 相对位 ----------------------------------------------------
     def _build_sections(self, oriented, clusters, baseline_mean):
         """TMP/SEL/DEV/INT(B层)/LRN 各一个个体内相对位。
 
-        section 原始均值 = 该 section 计入基线的 freq5 题的均值（簇成员含在内，
-        但 section 层用题级均值即可，因为 section 内不重复计簇）。
+        section 原始均值 = 该 section 内「先折叠簇为一席、再与非簇 freq5 子维度
+        等权」的单位均值的均值（与 _baseline 同口径，见 _fold_units_mean）。这样
+        section 相对位的零点与个人基线一致，不会因簇题量大而系统性偏低（SCORE-F1）。
         relative = section_mean - baseline_mean。
         DEV 另含 5 领域内部排序（domain_order）。
         """
-        cluster_name = {c["cluster"]: c for c in clusters}
-        section_vals = defaultdict(list)
+        section_items = defaultdict(list)
         for iid, ov in oriented.items():
             cfg = self.items_cfg[iid]
             sec = cfg["section"]
@@ -436,7 +494,7 @@ class Scorer:
                 continue  # INT A 层 like5 不进 section 行为相对位
             if iid in self.standalone_excluded:
                 continue  # 单题剔除维度不污染 section 均值
-            section_vals[sec].append(ov)
+            section_items[sec].append((iid, ov))
 
         out = []
         section_names = {
@@ -444,21 +502,29 @@ class Scorer:
             "INT": "兴趣品质(B层)", "LRN": "学习品质",
         }
         for sec in ("TMP", "SEL", "DEV", "INT", "LRN"):
-            vals = section_vals.get(sec, [])
-            if not vals:
+            items = section_items.get(sec, [])
+            if not items:
                 continue
-            mean = sum(vals) / len(vals)
+            mean, n_units = self._fold_units_mean(items)
+            if mean is None:
+                # 全为被剔单题维度等极端：退回题级均值以免整段丢失（仍非诊断、稳健）。
+                vals = [ov for _, ov in items]
+                mean = sum(vals) / len(vals)
+                n_units = 0
             band = raw_band(self.config, "freq5", mean)
             rel = (mean - baseline_mean) if baseline_mean is not None else None
+            # SCORE-F3：label 与 pool 同口径——统一用 round 后的相对位判档。
+            rel_r = round_half_up(rel) if rel is not None else None
             entry = {
                 "id": sec,
                 "name": section_names[sec],
                 "scale": "freq5",
                 "raw_mean": round_half_up(mean),
                 "raw_band": band,
-                "n_items": len(vals),
-                "within_child_relative": round_half_up(rel) if rel is not None else None,
-                "relative_label": self._relative_label(rel, band),
+                "n_items": len(items),
+                "n_units": n_units,
+                "within_child_relative": rel_r,
+                "relative_label": self._relative_label(rel_r, band),
                 "protected_high": is_high(band),
             }
             if sec == "DEV":
@@ -481,14 +547,15 @@ class Scorer:
             mean = sum(vals) / len(vals)
             band = raw_band(self.config, "freq5", mean)
             rel = (mean - baseline_mean) if baseline_mean is not None else None
+            rel_r = round_half_up(rel) if rel is not None else None  # SCORE-F3 同口径
             domains.append(
                 {
                     "domain": name,
                     "raw_mean": round_half_up(mean),
                     "raw_band": band,
                     "n_items": len(vals),
-                    "within_child_relative": round_half_up(rel) if rel is not None else None,
-                    "relative_label": self._relative_label(rel, band),
+                    "within_child_relative": rel_r,
+                    "relative_label": self._relative_label(rel_r, band),
                     "protected_high": is_high(band),
                 }
             )
@@ -499,19 +566,23 @@ class Scorer:
         for c in clusters:
             mean = c["_raw_mean_exact"]
             rel = (mean - baseline_mean) if baseline_mean is not None else None
-            c["within_child_relative"] = round_half_up(rel) if rel is not None else None
-            c["relative_label"] = self._relative_label(rel, c["raw_band"])
+            rel_r = round_half_up(rel) if rel is not None else None  # SCORE-F3 同口径
+            c["within_child_relative"] = rel_r
+            c["relative_label"] = self._relative_label(rel_r, c["raw_band"])
             c["protected_high"] = is_high(c["raw_band"])
             del c["_raw_mean_exact"]
 
     def _relative_label(self, rel, band):
-        """个体内相对位标签。T-11：原始为高（band=高）即便相对低，也用保护性措辞。"""
+        """个体内相对位标签。T-11：原始为高（band=高）即便相对低，也用保护性措辞。
+
+        档位阈值（CMC-03）来自 scoring-config.relative_label_thresholds，缺省 ±0.30。
+        """
         if rel is None:
             return None
         protected = is_high(band)
-        if rel >= 0.30:
+        if rel >= self.rel_strong:
             return "相对突出"
-        if rel <= -0.30:
+        if rel <= self.rel_low:
             if protected:
                 # 人为低点防护：原始高但相对偏低 → 不贬为劣势
                 return "相对没那么突出但仍很常见"
@@ -584,8 +655,37 @@ class Scorer:
                 )
         return out
 
+    def _section_cluster_overlap(self, oriented):
+        """SCORE-F2：每个 section → 其内出现的簇集合，及该 section 是否「全由簇成员构成」。
+
+        返回 (section_to_clusters, fully_cluster_sections)：
+          - section_to_clusters[sec] = {cluster_name, ...}（该 section 含成员的簇）
+          - fully_cluster_sections = {sec, ...}（该 section 计入相对位的 freq5 题里
+            没有任何非簇子维度单位——典型如 INT(B层)，其 section 信号与重叠簇同源）。
+        用于去重：section 与其重叠簇不同时上榜。
+        """
+        section_to_clusters = defaultdict(set)
+        section_has_non_cluster = defaultdict(bool)
+        for iid, _ov in oriented.items():
+            cfg = self.items_cfg[iid]
+            if cfg["scale"] != "freq5":
+                continue
+            if iid in self.standalone_excluded:
+                continue
+            sec = cfg["section"]
+            cname = self.item_to_cluster.get(iid)
+            if cname:
+                section_to_clusters[sec].add(cname)
+            else:
+                section_has_non_cluster[sec] = True
+        fully = {
+            sec for sec, cls in section_to_clusters.items()
+            if cls and not section_has_non_cluster.get(sec)
+        }
+        return section_to_clusters, fully
+
     # -- 优势/成长（T-11 防护核心）----------------------------------------
-    def _strengths_and_growth(self, sections, clusters):
+    def _strengths_and_growth(self, sections, clusters, oriented):
         """relative_strengths_top / growth_areas_top。
 
         T-11 人为低点防护：
@@ -593,20 +693,31 @@ class Scorer:
           - 原始为“高”的项绝不进入 growth（protected_high=True 直接排除）；
             若它相对偏低，仅在 strengths 侧或单独标“相对没那么突出但仍很常见”。
         以 section 层 + 簇为候选（默认粒度 section；簇为合并单一指标）。
+
+        SCORE-F2 去重：当某 section 的相对位信号「全由簇成员构成」（如 INT B 层
+        全为 INT-09..15，分属 3 簇），该 section 与其重叠簇是同一信号，不得同时上榜。
+        策略：择一——保留更精细、可溯源的「簇」候选，剔除该冗余 section 候选；并在
+        该 section 候选上记 merged_into_clusters 供叙述合并。
         """
+        section_to_clusters, fully_cluster_sections = self._section_cluster_overlap(oriented)
+
         candidates = []
         for s in sections:
-            candidates.append(
-                {
-                    "ref": s["id"],
-                    "kind": "section",
-                    "name": s["name"],
-                    "raw_band": s["raw_band"],
-                    "within_child_relative": s["within_child_relative"],
-                    "relative_label": s["relative_label"],
-                    "protected_high": s.get("protected_high", False),
-                }
-            )
+            sec = s["id"]
+            cand = {
+                "ref": sec,
+                "kind": "section",
+                "name": s["name"],
+                "raw_band": s["raw_band"],
+                "within_child_relative": s["within_child_relative"],
+                "relative_label": s["relative_label"],
+                "protected_high": s.get("protected_high", False),
+            }
+            # 全簇构成的 section（信号与重叠簇同源）→ 标注并从候选剔除，择「簇」上榜。
+            if sec in fully_cluster_sections:
+                cand["_redundant_with_clusters"] = sorted(section_to_clusters.get(sec, set()))
+                continue
+            candidates.append(cand)
         for c in clusters:
             candidates.append(
                 {
@@ -708,6 +819,7 @@ class Scorer:
             notes.append("填写人每日相处较少%s，报告强度下调、加重免责" % extra)
         flags["familiarity_low"] = fam_low
 
+        # SCORE-F4：recent_disruption 为 frontend_provided——直接读前端预置布尔，skill 不派生。
         flags["recent_disruption"] = bool(quality.get("recent_disruption"))
         # sdb_halo 预留（恒读前端值，弱代理不在此强判，仅记录）
         flags["sdb_halo"] = bool(quality.get("sdb_halo_flag"))
@@ -789,7 +901,8 @@ class Scorer:
         out = []
         template = cfg_rf.get("wording_template", "")
         for domain, vals in dev_domains.items():
-            if vals and all(v == 1 for v in vals):
+            # SCORE-F5：至少 2 题守卫——单题领域不足以触发软转介，避免单题噪声误判。
+            if len(vals) >= 2 and all(v == 1 for v in vals):
                 out.append(
                     {
                         "type": "soft_referral",

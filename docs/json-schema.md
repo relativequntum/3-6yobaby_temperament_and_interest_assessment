@@ -2,7 +2,7 @@
 
 > 本文件定义问卷在用户提交后**导出的 JSON 结构**（自包含）。它是问卷前端与未来计分 skill 之间的契约：前端按此结构产出，skill 按此结构消费。
 > 与 `docs/item-bank.json`（题库事实源）的关系：题库是「问什么」，导出 JSON 是「这一次某个孩子答了什么 + 怎么答的过程元数据」。键名用英文，文本值用简体中文。
-> 版本：本导出契约 `schema_version` 当前为 **`1.1`**（详见 §0 变更说明）。注意：导出 JSON 顶层的 `schema_version`（导出契约版本）与题库 `item_bank_version`（本次所用题库版本，当前 `1.1.0`）是两条独立的版本线，互不绑定。
+> 版本：本导出契约 `schema_version` 当前为 **`1.1`**（详见 §0 变更说明）。注意：导出 JSON 顶层的 `schema_version`（导出契约版本）与题库 `item_bank_version`（本次所用题库版本，当前 `1.1.2`）是两条独立的版本线，互不绑定。
 > **机读事实源**：本文档为人读说明；导出结构的**唯一机读事实源**是 [`schema/export.schema.json`](../schema/export.schema.json)（JSON Schema draft 2020-12）。两者如有歧义，以 `schema/export.schema.json` 为准；前端实际导出（`questionnaire/index.html` 的 `buildExport()`）为行为基准，本文与 schema 均按其真实导出描述。
 
 ---
@@ -151,7 +151,7 @@
     "date": "2026-06-02",
     "age_range": "3-6",
     "language": "zh-CN",
-    "item_bank_version": "1.1.0"
+    "item_bank_version": "1.1.2"
   },
   "child": {
     "child_id": "cid-7f3a9b2e-4c10-4d8a-9f21-0b3e5a7c9d10",
@@ -294,4 +294,4 @@
 }
 ```
 
-> 示例为节选：完整导出的 `responses` 应包含本龄段呈现的全部评分题（4-5 段 76 评分题 + 13 道 FAM）。`open_ended` 含家长实际填写的开放题（未填可省略或留空 `text`）。
+> 示例为节选：完整导出的 `responses` 应包含本龄段呈现的全部评分题（4-5 段 78 评分题 + 13 道 FAM）。`open_ended` 含家长实际填写的开放题（未填可省略或留空 `text`）。

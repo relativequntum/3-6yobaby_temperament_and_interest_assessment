@@ -37,15 +37,28 @@ p{margin:.5em 0}
 .small{font-size:.85rem}
 a{color:var(--brand)}
 
-/* 顶部进度条 */
+/* 顶部进度条（分段：每个 section 一段） */
 #topbar{position:sticky; top:0; z-index:50; background:var(--bg);
   padding:8px 14px 6px; box-shadow:0 1px 0 var(--line)}
 #topbar .inner{max-width:720px; margin:0 auto}
-.progress-track{height:8px; background:#e3e8ee; border-radius:6px; overflow:hidden}
-.progress-fill{height:100%; width:0%; background:linear-gradient(90deg,var(--brand),var(--accent));
-  border-radius:6px; transition:width .3s ease}
+/* 一排分段；段间留小间隙，段内可填充表示本部分进度 */
+.seg-row{display:flex; gap:4px; align-items:center}
+.seg{position:relative; flex:1 1 0; min-width:10px; height:9px; background:#e3e8ee;
+  border-radius:6px; overflow:hidden; transition:background .25s ease}
+/* 段内填充条（仅当前段按题推进；已完成段直接整段填实） */
+.seg .seg-in{position:absolute; left:0; top:0; bottom:0; width:0%;
+  background:linear-gradient(90deg,var(--brand),var(--accent)); border-radius:6px;
+  transition:width .3s ease}
+/* 已完成：整段实色 */
+.seg.done{background:var(--brand)}
+/* 当前：底色高亮 + 轮廓，段内按题填充 */
+.seg.current{background:#d3e6e0; box-shadow:0 0 0 2px var(--brand-l), 0 0 0 3px var(--brand)}
+/* 未到：灰色（即默认背景） */
+.seg.todo{background:#e3e8ee}
 .progress-meta{display:flex; justify-content:space-between; align-items:center;
-  margin-top:4px; font-size:.8rem; color:var(--muted)}
+  margin-top:6px; font-size:.8rem; color:var(--muted); gap:8px}
+.progress-meta #progLabel{font-weight:600; color:var(--brand-d)}
+@media(max-width:380px){ .seg{height:8px} .progress-meta{font-size:.74rem} }
 
 /* 卡片 */
 .card{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
@@ -156,7 +169,11 @@ a{color:var(--brand)}
 <!-- 顶部进度条 -->
 <div id="topbar" class="no-print">
   <div class="inner">
-    <div class="progress-track"><div class="progress-fill" id="progFill"></div></div>
+    <!-- 分段进度：每个 section 一段；已完成填实、当前高亮、未到灰色 -->
+    <div class="seg-row" id="segRow" role="progressbar"
+         aria-label="问卷进度（按部分）" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <!-- 分段动态渲染于此 -->
+    </div>
     <div class="progress-meta">
       <span id="progLabel">封面</span>
       <span id="progPct">0%</span>
@@ -186,8 +203,8 @@ a{color:var(--brand)}
    ============================================================================ */
 const ITEM_BANK = {
   "schema_version":"1.0",
-  "schema_version_note":"1.0 结构保持向后兼容：1.1.0 题库新增的 report_subscale/cluster/consistency_pair_id/note 等均为附加字段，老消费方未识别时应忽略而非报错，不破坏既有 schema 1.0 结构。",
-  "instrument":{"name":"3-6岁幼儿发展优势与兴趣画像测评","version":"1.0.0","date":"2026-06-02","age_range":"3-6","language":"zh-CN","item_bank_version":"1.1.1"},
+  "schema_version_note":"1.0 结构保持向后兼容：1.1.2 题库新增的 report_subscale/cluster/consistency_pair_id/note 等均为附加字段，老消费方未识别时应忽略而非报错，不破坏既有 schema 1.0 结构。",
+  "instrument":{"name":"3-6岁幼儿发展优势与兴趣画像测评","version":"1.0.0","date":"2026-06-02","age_range":"3-6","language":"zh-CN","item_bank_version":"1.1.2"},
   "age_bands":[{"id":"3-4","min_months":36,"max_months":47},{"id":"4-5","min_months":48,"max_months":59},{"id":"5-6","min_months":60,"max_months":72}],
   "out_of_range_notice":"本测评专为出生月龄在36至72个月（约3至6周岁）之间的幼儿设计。根据您填写的出生年月，孩子目前不在这一区间内。低于3岁的幼儿行为变化快、个体差异大，3岁以上孩子才更适用本工具的发展锚点；超过6岁则更接近学龄期，建议使用面向学龄儿童的工具。您仍可继续填写以作初步了解，但结果的参照锚点可能不完全贴合孩子的实际年龄，请谨慎看待。",
   "consent_text":"感谢您参与这份「3-6岁幼儿发展优势与兴趣画像」测评。在开始前，请您了解以下几点：\n\n【这是什么】本测评帮助您看清自己孩子在不同方面相对更擅长、更喜欢什么，形成一份「优势与兴趣画像」。它做的是同一个孩子在自己身上的相对比较（哪些方面相对突出、哪些方面还在发展中）。\n\n【这不是什么】本测评不是医学诊断、不是发育筛查、不是智力或天赋鉴定。它不会给孩子打「合格/不合格」「正常/异常」的标签，不会与其他孩子比较，也不会给出人群百分位或排名。题目由我们参照国际与本土成熟研究框架自行编写，不属于任何标准化诊断量表。\n\n【用途说明】结果仅供家庭自我了解、安排亲子活动与陪伴方向参考。它反映的是「填写人在最近一段时间、在家庭情境中观察到的孩子」，换一个人、换一段时间填写，结果可能略有不同，这很正常。如果您对孩子在某方面的发展有持续的担心，请咨询儿童保健医生或专业老师，本测评不能替代专业评估。\n\n【数据说明】您填写的信息将用于生成本次画像报告。请如实填写——填得真实比填得「好看」更有用。\n\n【数据治理】您的作答仅保存在本机浏览器，不会上传到任何服务器；草稿默认一直保留，直到您主动清除；页面随时提供「清除本机草稿」按钮，可一键删除。建议导出结果文件后立即清除草稿。即使出生月龄不在适用区间（越界 out_of_range）继续作答，数据同样仅保存在本机、不上传。本次会话使用的随机标识仅用于标记这一份作答，不跨次关联同一孩子。\n\n请确认您已阅读并理解以上说明，并同意在此基础上开始填写。",
@@ -228,7 +245,7 @@ const SECTIONS=[
  {"id":"TMP-16","subscale":"抑制控制","report_subscale":"抑制控制","cluster":"inhibitory_control","construct":"努力控制 Effortful Control","text":"当大人说「先等一下」，孩子能忍住、等一会儿。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"让他「等大家都拿到再吃」，看他能等多久。","anchors_by_band":{"3-4":"能等几秒","4-5":"能等几十秒","5-6":"能等几分钟"}},
  {"id":"TMP-17","subscale":"抑制控制","report_subscale":"抑制控制","cluster":"inhibitory_control","construct":"努力控制 Effortful Control","text":"被告知不可以碰的东西，孩子还是会忍不住去碰。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":true,"observe_hint":"被叮嘱不能碰的东西（如别人手机），他能不能管住自己。","anchors_by_band":{"3-4":"提醒下仍想碰","4-5":"提醒后能短暂忍住","5-6":"能较好管住自己"}},
  {"id":"TMP-18","subscale":"抑制控制","report_subscale":"抑制控制","cluster":"inhibitory_control","construct":"努力控制 Effortful Control","text":"很想要某样东西时，孩子能按约定先等一等再拿。","age_bands":["4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"约定「等一下再给」时，他能否遵守（类「棉花糖」情境）。","anchors_by_band":{"4-5":"约定后能短暂等待","5-6":"能为奖励延迟满足"}},
- {"id":"TMP-19","subscale":"冒险/高强度愉悦","report_subscale":"冒险/高强度愉悦","cluster":null,"construct":"外向性/活跃性 Surgency","text":"孩子喜欢又强又刺激的玩法，比如被高高举起、用力转圈、被大人快速追着跑或激烈打闹，越刺激越兴奋。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"和他玩举高高、转圈、追逐打闹时，看他是越刺激越要、主动求「再来一次、再用力点」，还是很快觉得太过想停下来。","note":"归属「冒险/高强度愉悦」依据 Rothbart 2001（CBQ）的 High-Intensity Pleasure 维度：测的是对强烈、刺激、新奇感官输入的愉悦与主动寻求倾向（如被举高、旋转、激烈追逐打闹时越刺激越兴奋），属外向性 Surgency。与 TMP-01「活动水平」刻意区分——TMP-01 测总体活动量/坐不住（动得多少），本题测「主动追求并享受强刺激」的愉悦取向（追求刺激强度），二者语义不再交叠。","anchors_by_band":{"3-4":"喜欢被举高、转圈，玩完还要「再来一次、再用力点」","4-5":"追逐打闹越激烈越兴奋，主动要更刺激的玩法","5-6":"偏爱强烈刺激（被快速甩转、激烈追打），刺激越强越享受"}}
+ {"id":"TMP-19","subscale":"冒险/高强度愉悦","report_subscale":"冒险/高强度愉悦","cluster":null,"construct":"外向性/活跃性 Surgency","text":"玩刺激的活动时孩子常意犹未尽，会主动要求「再来一次、再快一点、再用力点」，想让刺激变得更强。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"玩到尽兴处，看他是玩够了就满足收手，还是主动喊「再来、再快、再用力」，追着要把刺激加码、玩得更猛。","note":"归属「冒险/高强度愉悦」依据 Rothbart 2001（CBQ）的 High-Intensity Pleasure 维度，测其 seeking 核心——主动寻求并不断升级刺激强度（玩刺激活动意犹未尽、要求再来/再快/再用力点），属外向性 Surgency。与同维度 TMP-06 刻意分工：TMP-06 测「是否喜欢/享受」举高转圈等高强度玩法（愉悦反应），本题测「主动追求并把刺激加码升级」（寻求与升级倾向），举例不与 TMP-06 重叠。与 TMP-01「活动水平」也区分：TMP-01 测总体活动量/坐不住（动得多少），本题测对刺激强度的主动加码（要更强），二者语义不交叠。","anchors_by_band":{"3-4":"玩完一次还要，主动喊「再来一次、再用力点」","4-5":"玩着玩着主动要求加码——「再快点、再高点」","5-6":"不满足于现有强度，主动提更刺激、更猛的玩法"}}
 ]},
 {"id":"SEL","title":"社会情绪与自我调节","intro":"这一部分了解孩子在情绪管理、自控、独立、与人相处和关心他人方面的表现。这些都是孩子的内在「优势」，会随着成长慢慢发展。请根据孩子最近一两周的真实表现，选择各行为出现的频率。","items":[
  {"id":"SEL-01","subscale":"情绪调节","report_subscale":"情绪调节","cluster":"resilience","construct":"自我调节·情绪面 Self-Regulation","text":"遇到不顺心的事（如玩具被拿走、要求被拒绝），孩子能在较短时间内平静下来。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"他被拒绝后多久能恢复情绪。","anchors_by_band":{"3-4":"在大人安抚/转移下平复","4-5":"提醒后能等一会儿","5-6":"多能自己较快平复"}},
@@ -278,17 +295,17 @@ const SECTIONS=[
  {"id":"INT-10","subscale":"持续性/专注","report_subscale":"持续性/专注","cluster":"focus_persistence","construct":"兴趣品质·持续 INT-PER","text":"做喜欢的活动时，孩子能坚持较长时间而不频繁换来换去。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"consistency_pair_id":"cp-2","observe_hint":"他做最爱的活动能持续多久。","anchors_by_band":{"3-4":"约5-10分钟","4-5":"10-20分钟","5-6":"20分钟以上"}},
  {"id":"INT-11","subscale":"持续性/专注","report_subscale":"持续性/专注","cluster":"focus_persistence","construct":"兴趣品质·持续 INT-PER","text":"孩子很容易就对手头的活动失去兴趣、转去做别的。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":true,"consistency_pair_id":"cp-2","observe_hint":"他是不是玩一下就丢、很快换别的。","anchors_by_band":null},
  {"id":"INT-12","subscale":"自主发起","report_subscale":"自主发起","cluster":"initiative","construct":"兴趣品质·自主 INT-SELF","text":"不用大人提议，孩子会自己找出或提出想玩的活动，并有明显偏爱。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"consistency_pair_id":"cp-3","observe_hint":"把几样玩具放一起，他通常先抓哪一两样。","anchors_by_band":{"3-4":"会主动奔向喜欢的","4-5":"会主动提出要玩什么","5-6":"会自己规划怎么玩"}},
- {"id":"INT-13","subscale":"自主发起","report_subscale":"自主发起","cluster":"initiative","construct":"兴趣品质·自主 INT-SELF","text":"孩子大多要等大人安排，自己很少主动选择想做的事。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":true,"consistency_pair_id":"cp-3","observe_hint":"他是不是很少自己开始玩、总等人安排。","anchors_by_band":null},
+ {"id":"INT-13","subscale":"自主发起","report_subscale":"自主发起","cluster":"initiative","construct":"兴趣品质·自主 INT-SELF","text":"孩子很少主动说出或挑选自己喜欢、想玩的东西，多是别人给什么就玩什么。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":true,"consistency_pair_id":"cp-3","observe_hint":"他是不是很少表达「我想玩这个」、很少自己挑出偏爱的那一样，多半给什么玩什么。","anchors_by_band":null},
  {"id":"INT-14","subscale":"掌握取向/愉悦","report_subscale":"掌握取向/愉悦","cluster":"mastery","construct":"兴趣品质·掌握 INT-MAS","text":"自己做到/完成一件事时，孩子会表现出明显的高兴、得意（笑、拍手、要你看）。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"他做成一件事后的反应。","anchors_by_band":null},
  {"id":"INT-15","subscale":"掌握取向/愉悦","report_subscale":"掌握取向/愉悦","cluster":"mastery","construct":"兴趣品质·掌握 INT-MAS","text":"孩子喜欢挑战稍微有点难的玩法，而不只玩已经很熟的。","age_bands":["4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"给他略难一点的版本，看他是否更带劲。","anchors_by_band":{"4-5":"失败后愿再试","5-6":"主动找更难的挑战"}}
 ]},
 {"id":"LRN","title":"学习品质","intro":"这一部分了解孩子「怎么学」的风格——好奇心、专注坚持、主动探索、灵活变通、面对挫折的恢复等。这些是比「学了多少」更重要的学习底色，而且都可以通过陪伴和鼓励慢慢培养。请根据孩子最近一两周的真实表现作答。","items":[
- {"id":"LRN-01","subscale":"专注与坚持","report_subscale":"专注与坚持","cluster":"focus_persistence","construct":"专注与坚持 Focus & Persistence","text":"玩他喜欢的活动时，孩子能专心投入、不容易被旁边的事吸引走。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"consistency_pair_id":"cp-4","observe_hint":"他做喜欢的事时旁边有动静会不会就分神。","anchors_by_band":{"3-4":"约5-10分钟即算专注","4-5":"10-15分钟","5-6":"15-20分钟以上"}},
+ {"id":"LRN-01","subscale":"专注与坚持","report_subscale":"专注与坚持","cluster":"focus_persistence","construct":"专注与坚持 Focus & Persistence","text":"做一件普通的事（如收拾、画画、听人讲）时，旁边有人走动或说话，孩子也能不被带跑、继续把手上的事做下去。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"consistency_pair_id":"cp-4","observe_hint":"他做一件不算最爱的日常小事时，旁边有动静（有人路过、说话、开电视）会不会就被带跑。","anchors_by_band":{"3-4":"旁边有点动静仍能继续手上的事","4-5":"有人走动说话也较少被带跑","5-6":"能屏蔽干扰、稳稳把事做下去"}},
  {"id":"LRN-02","subscale":"专注与坚持","report_subscale":"专注与坚持","cluster":"focus_persistence","construct":"专注与坚持 Focus & Persistence","text":"一件事没做完，孩子就想去做别的、很难收回注意力。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":true,"consistency_pair_id":"cp-4","observe_hint":"他是不是常常一件事没完就跳去别的。","anchors_by_band":null},
  {"id":"LRN-03","subscale":"专注与坚持","report_subscale":"专注与坚持","cluster":"focus_persistence","construct":"专注与坚持 Focus & Persistence","text":"做一件需要好几步的事（如搭一座桥、画一幅画），孩子能坚持做到完成。","age_bands":["4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"他做多步骤的事能否坚持到底。","anchors_by_band":{"4-5":"能做完多数步骤","5-6":"即使中间枯燥也能做完"}},
  {"id":"LRN-04","subscale":"好奇与探索","report_subscale":"好奇与探索","cluster":null,"construct":"好奇与探索 Curiosity","text":"看到没见过的东西，孩子会主动靠近、去看去摸、想弄清楚那是什么。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"桌上放一件新奇小物，看他是否主动探究。","anchors_by_band":null},
  {"id":"LRN-05","subscale":"好奇与探索","report_subscale":"好奇与探索","cluster":null,"construct":"好奇与探索 Curiosity","text":"孩子经常问「这是什么」「为什么会这样」之类的问题。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"读绘本时留意他主动发问的次数。","anchors_by_band":{"3-4":"多问「这是什么」","4-5":"出现「为什么/怎么会」","5-6":"围绕一个主题深挖追问"}},
- {"id":"LRN-06","subscale":"主动性与自我驱动","report_subscale":"主动性与自我驱动","cluster":"initiative","construct":"主动性与自我驱动 Initiative","text":"孩子会自己想出要玩什么、要做什么，而不是总等大人安排。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"给他空闲时间，他能否自己安排活动。","anchors_by_band":{"3-4":"简单自选","4-5":"会提议玩什么","5-6":"会提议并组织"}},
+ {"id":"LRN-06","subscale":"主动性与自我驱动","report_subscale":"主动性与自我驱动","cluster":"initiative","construct":"主动性与自我驱动 Initiative","text":"玩的时候，孩子会自己冒出新点子、想出新的玩法，而不是只照大人教的或原来的方式玩。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"给他熟悉的玩具，看他会不会自己琢磨出新玩法、提出「不如这样玩」。","anchors_by_band":{"3-4":"偶尔想出一个新玩法","4-5":"会给玩法加点自己的新花样","5-6":"常自发想出新点子、新规则或新组合"}},
  {"id":"LRN-14","subscale":"主动性与自我驱动","report_subscale":"主动性与自我驱动","cluster":"initiative","construct":"主动性与自我驱动 Initiative","text":"孩子能为了一个自己定的小目标（如把这座塔搭高），主动想办法去实现。","age_bands":["4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"他能否朝一个自己设的小目标坚持想办法。","anchors_by_band":{"4-5":"有简单目标导向","5-6":"目标导向＋计划萌芽"}},
  {"id":"LRN-07","subscale":"创造与灵活","report_subscale":"创造与灵活","cluster":null,"construct":"创造与灵活 Creativity & Flexibility","text":"同一种玩具或材料，孩子能想出好几种不同的玩法。","age_bands":["3-4","4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"只给纸和笔/几块积木，看玩法数量。","anchors_by_band":null},
  {"id":"LRN-08","subscale":"创造与灵活","report_subscale":"创造与灵活","cluster":null,"construct":"创造与灵活 Creativity & Flexibility","text":"玩法或规则变了，孩子能比较快地跟着调整，而不是非按原来不可。","age_bands":["4-5","5-6"],"scale":"freq5","options":f5(),"reverse":false,"observe_hint":"玩到一半改个小规则，看他能否切换。","anchors_by_band":null},
@@ -694,18 +711,71 @@ const App = (function(){
     window.scrollTo(0,0);
   }
 
+  // 当前 band 下某节（含 OPEN）已答题数 / 应答题数
+  function sectionAnsweredCount(p){
+    if(p.type==="open"){
+      const items = sectionById("OPEN").items;
+      const a = items.filter(it=>{ const v=state.open[it.id]; return v && String(v).trim().length>0; }).length;
+      return {a, b:items.length};
+    }
+    const items = visibleItems(p.id);
+    const a = items.filter(it=>{
+      const v = state.answers[it.id];
+      if(Array.isArray(v)) return v.length>0;
+      return v!==undefined && v!==null && v!=="";
+    }).length;
+    return {a, b:items.length};
+  }
+
+  // 分段进度：每个 section（含结尾 OPEN）一段。
+  // 段状态：已完成 done / 当前 current / 未到 todo；当前段段内按题填充。
+  // 文字标签：第 X 部分 / 共 Y 部分 · 本部分 a/b 题。Y = 该 age_band 实际渲染的 section 数。
   function updateProgress(){
     const pg = pages[state.pageIndex];
-    let pct=0, label="封面";
-    const total = pages.length-1; // 不含 done 之后
-    if(pg.type==="cover"){ pct=0; label="封面"; }
-    else if(pg.type==="consent"){ pct=4; label="知情同意"; }
-    else if(pg.type==="identity"){ pct=8; label="身份采集"; }
-    else if(pg.type==="section"){ pct = Math.round(10 + (state.pageIndex-2)/(total-2)*85); label=pg.title; }
-    else if(pg.type==="open"){ pct=96; label="开放题"; }
-    else if(pg.type==="done"){ pct=100; label="完成"; }
-    $("#progFill").style.width = pct+"%";
-    $("#progPct").textContent = pct+"%";
+    // 构成"部分"的页面：所有 section + 结尾 OPEN（封面/同意/身份/完成不算部分）
+    const segPages = pages.filter(p=>p.type==="section"||p.type==="open");
+    const Y = segPages.length;
+    const curSegIdx = (pg.type==="section"||pg.type==="open")
+      ? segPages.indexOf(pg) : -1;
+
+    // 段内填充比例（仅当前段用）
+    let inPct = 0, label = "", pctOverall = 0;
+    if(pg.type==="cover"){ label="封面"; pctOverall=0; }
+    else if(pg.type==="consent"){ label="知情同意"; pctOverall=3; }
+    else if(pg.type==="identity"){ label="身份采集"; pctOverall=7; }
+    else if(pg.type==="done"){ label="完成"; pctOverall=100; }
+    else { // section / open
+      const {a,b} = sectionAnsweredCount(pg);
+      inPct = b>0 ? Math.round(a/b*100) : 0;
+      label = `第 ${curSegIdx+1} 部分 / 共 ${Y} 部分 · 本部分 ${a}/${b} 题`;
+      // 总体百分比：身份采集后(约10%) 起，按"已完成段 + 当前段内进度"在 10%-100% 间推进
+      const segDone = curSegIdx + (b>0 ? a/b : 0);
+      pctOverall = Math.round(10 + segDone/Y * 90);
+    }
+
+    // 渲染分段
+    const row = $("#segRow");
+    if(row){
+      let html = "";
+      for(let i=0;i<Y;i++){
+        let cls = "todo", inner = "";
+        if(curSegIdx===-1){
+          // 未进入任何部分（封面/同意/身份）→ 全部未到；完成页另处理
+          cls = (pg.type==="done") ? "done" : "todo";
+        } else if(i < curSegIdx){ cls = "done"; }
+        else if(i === curSegIdx){ cls = "current"; inner = `<span class="seg-in" style="width:${inPct}%"></span>`; }
+        else { cls = "todo"; }
+        const sp = segPages[i];
+        const t = sp ? (sp.type==="open" ? "您还想说的" : sp.title) : "";
+        html += `<span class="seg ${cls}" title="${xmlEsc(t)}" aria-label="第${i+1}部分 ${xmlEsc(t)}">${inner}</span>`;
+      }
+      row.innerHTML = html;
+      row.setAttribute("aria-valuenow", String(pctOverall));
+      row.setAttribute("aria-valuetext",
+        (curSegIdx>=0) ? `共 ${Y} 部分，当前第 ${curSegIdx+1} 部分` : label);
+    }
+
+    $("#progPct").textContent = pctOverall+"%";
     $("#progLabel").textContent = label;
   }
 
@@ -918,11 +988,13 @@ const App = (function(){
               state.answers[item.id] = arr;
               refreshChecks(wrap, item);
               saveDraft();
+              updateProgress();
             },0);
           } else {
             state.answers[item.id] = realV;
             refreshChecks(wrap, item);
             saveDraft();
+            updateProgress();
           }
           wrap.classList.remove("flag");
         });
@@ -965,7 +1037,7 @@ const App = (function(){
     app.appendChild(div);
     sec.items.forEach(item=>{
       const ta = $("#open_"+item.id);
-      ta.addEventListener("input", ()=>{ state.open[item.id]=ta.value; saveDraft(); });
+      ta.addEventListener("input", ()=>{ state.open[item.id]=ta.value; saveDraft(); updateProgress(); });
     });
     $("#btnNext").textContent = "完成并查看结果";
     $("#btnNext").className = "btn btn-accent";
