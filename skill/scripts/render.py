@@ -128,6 +128,7 @@ class RCO:
 class ReportBuilder:
     SECTION_TITLES = {
         "overview": "概览",
+        "how_to_read": "怎么读这份报告",
         "temperament": "气质",
         "social_emotional": "社会情绪与自我调节",
         "dev_snapshot": "发展快照",
@@ -137,13 +138,18 @@ class ReportBuilder:
         "synthesis": "综合画像",
         "actions": "行动建议",
         "boundary": "边界声明与复测建议",
-        "appendix": "附录：方法学与局限",
+        "appendix": "附录：建议来源与方法学",
     }
     ACT_LINE_TITLES = {
         "game": ("游戏", "🎲"),
         "exercise": ("锻炼", "🏃"),
         "companionship": ("家庭陪伴", "🤍"),
     }
+    # 各图统一的白话脚注（指回《怎么读这份报告》）。措辞固定在 render 层，便于一致。
+    CHART_FOOTNOTE = (
+        "这张图是把孩子和 TA 自己比：越往右＝在 TA 身上相对越突出，"
+        "越往左＝相对没那么突出（不和别人比）；右边标的是实际做到的程度。"
+        "怎么看详见前面《怎么读这份报告》。")
 
     def __init__(self, rco: RCO):
         self.r = rco
@@ -154,21 +160,25 @@ class ReportBuilder:
         self.main_charts = _charts.render_all(self.p)
 
     # -- 顶层装配 ----------------------------------------------------------
+    # 章节顺序（家长反馈版）：① 一页速览 → ② 概览(精简) → ③《怎么读这份报告》
+    #   → ④ 行动建议(上移) → ⑤ 详细分析(气质/社会情绪/发展快照/兴趣/学习/家庭环境)
+    #   → ⑥ 综合画像 → ⑦ 边界+软提示+复测 → ⑧ 附录(建议来源+方法学)
     def build(self) -> List[Dict[str, Any]]:
         self.blocks = []
         self._cover()
-        self._glance()
-        self._overview()
-        self._temperament()
+        self._glance()                 # ①
+        self._overview()               # ②
+        self._how_to_read()            # ③ 新增静态段
+        self._actions()                # ④ 上移
+        self._temperament()            # ⑤ 详细分析（始）
         self._social_emotional()
         self._dev_snapshot()
         self._interests()
         self._learning()
-        self._family_env()
-        self._synthesis()
-        self._actions()
-        self._boundary_and_retest()
-        self._appendix()
+        self._family_env()             # ⑤ 详细分析（终）
+        self._synthesis()              # ⑥
+        self._boundary_and_retest()    # ⑦
+        self._appendix()               # ⑧
         return self.blocks
 
     # -- 小工具：追加块 ----------------------------------------------------
@@ -276,13 +286,85 @@ class ReportBuilder:
                        + ("相关线索：" + "；".join(expl) if expl else "")
                        + " 若方便，换个安静的时间回看几题再生成，会更贴近 TA 的真实样子。"})
 
+    # -- 怎么读这份报告（静态段，每份报告一致；措辞由 render 层固定，不靠叙事）----
+    def _how_to_read(self):
+        nick = self.nick
+        self._h(2, self.SECTION_TITLES["how_to_read"], anchor="how_to_read")
+
+        # A·和他自己比
+        self._add({"t": "h", "level": 3, "text": "和他自己比"})
+        self._p(
+            f"本报告只把{nick}和 TA 自己比、不和别的小朋友比。这里有两个看的角度：")
+        self._add({"t": "ul", "items": [
+            "原始水平 = 一件事 TA 实际多常做到：高 = 经常／几乎总是、中 = 有时、低 = 偶尔。",
+            "相对位（图里的「零点」是 TA 自己的平均）= 把 TA 各方面放在一起排一排，看哪些"
+            "在 TA 身上相对更突出、哪些相对没那么突出。",
+        ]})
+        self._add({"t": "note", "text":
+                   f"因此会出现「某项原始是高（做得挺好）、但在{nick}众多强项里相对靠后」"
+                   "——这不是短板，只是没 TA 最闪光的那几项扎眼；我们绝不把「做得挺好、"
+                   "只是相对没那么突出」说成缺点。"})
+
+        # 测什么（各大块各一句）
+        self._add({"t": "h", "level": 3, "text": "这份报告测了什么"})
+        self._add({"t": "ul", "items": [
+            "气质（Temperament）：TA 做事的天生「底色」，比如好动还是安静、慢热还是自来熟。",
+            "社会情绪与自我调节：TA 在情绪平复、与人相处、忍住冲动这些方面的相对样子。",
+            "发展快照：按 5 个领域，看 TA 在自己身上相对更轻松、相对还在发展中的方面"
+            "（不是发育筛查、不是达标判定）。",
+            "兴趣：TA 此刻相对最被哪些活动领域吸引（会随成长和接触机会变化）。",
+            "学习品质：TA「怎么学」——专注、坚持、好奇这些过程性特质，而不是学了多少。",
+        ]})
+
+        # 为什么只和自己比、非诊断
+        self._add({"t": "h", "level": 3, "text": "为什么「只和自己比、非诊断」"})
+        self._p(
+            "这份报告是家庭层面的自我了解工具，不是医学诊断、发育筛查或天赋鉴定。"
+            "它只在 TA 自己身上看相对高低，帮家长顺着 TA 此刻的样子多给机会，"
+            "不和别的孩子比、也不给人群百分位。")
+
+        # 名词解释
+        self._add({"t": "h", "level": 3, "text": "几个名词，用大白话说"})
+        self._add({"t": "table", "head": ["名词", "意思"], "rows": [
+            ["原始水平",
+             "一件事 TA 实际多常做到：高 = 经常／几乎总是、中 = 有时、低 = 偶尔。"],
+            ["个人基线 / 相对位",
+             "图里的「零点」就是 TA 自己的平均（个人基线）；相对位就是看某一项"
+             "在 TA 身上比 TA 自己的平均更突出、还是没那么突出。"],
+            ["气质（Temperament）",
+             "TA 天生、相对稳定的「行事风格」（好动还是安静、慢热还是自来熟、"
+             "情绪来得快还是慢），没有好坏，是做事的「底色」。"],
+            ["个体内（ipsative）",
+             "就是「只和自己比」这种比法的专业说法。"],
+            ["子维度",
+             "更细的小项，每项只问了一两道题、不够稳，意思上也有重叠，"
+             "所以只供参考、不拿来给 TA 排强弱。"],
+        ]})
+
+        # 怎么看图
+        self._add({"t": "h", "level": 3, "text": "怎么看图"})
+        self._p(
+            "图都是把 TA 和 TA 自己比：越往右 = 在 TA 身上相对越突出，"
+            "越往左 = 相对没那么突出（不和别人比）；图右边标的，是 TA 实际做到的程度"
+            "（原始水平）。原始是「高」的项，即使相对靠后，也不会被当作短板。")
+
+        # D·建议来自循证活动库
+        self._add({"t": "h", "level": 3, "text": "建议是怎么来的"})
+        self._add({"t": "soft", "title": "建议来自循证活动库", "items": [
+            "后面每一条游戏／锻炼／家庭陪伴的建议，都来自一套有发展依据的「循证活动库」，"
+            "不是随口建议。",
+            "为了让正文读起来轻松，我们把每条建议的活动编号和详细依据放到了文末"
+            "《附录：建议来源与方法学》里，方便你溯源。",
+        ]})
+
     # -- 气质 --------------------------------------------------------------
     def _temperament(self):
         self._h(2, self.SECTION_TITLES["temperament"], anchor="temperament")
         self._narr(
             "temperament",
-            f"气质是{self.nick}与生俱来、相对稳定的行事风格，没有好坏之分。"
-            "下面是 TA 在自己身上各气质侧面的相对位（横轴零点是 TA 自己的平均）。",
+            f"气质（Temperament）是{self.nick}天生、相对稳定的「行事风格」"
+            "——好动还是安静、慢热还是自来熟、情绪来得快还是慢，没有好坏，是做事的「底色」。"
+            "下面是 TA 在自己身上各气质侧面的相对位。",
         )
         tmp = self._find_section("TMP")
         if tmp is not None:
@@ -318,8 +400,7 @@ class ReportBuilder:
         if domains:
             svg = _charts.domain_ladder(domains, title="发展 5 领域（个体内相对位）")
             self._add({"t": "chart", "name": "dev_ladder", "svg": svg,
-                       "caption": "向右=在 TA 自己身上相对更常见；向左=相对还在发展中。"
-                                  "右侧标注的是原始水平，原始为「高」者不会被当作短板。"})
+                       "caption": self.CHART_FOOTNOTE})
             self._raw_band_guard_list(domains, name_key="domain")
         # 软提示（red_flags）——温和、非诊断
         self._soft_hints_block()
@@ -338,11 +419,13 @@ class ReportBuilder:
             # 热度图（色块）+ 主图条形（原始喜爱度 + 个体内相对热度），双视角同源
             self._add({"t": "chart", "name": "interest_heatmap",
                        "svg": _charts.interest_heatmap(domains, title="兴趣 8 领域热度图"),
-                       "caption": "色越深=TA 相对越被吸引。这是横向偏好，不与行为能力分混算。"})
+                       "caption": "色越深＝在 TA 身上相对越被吸引（把 TA 各兴趣放一起比，"
+                                  "不和别的小朋友比）。怎么看详见前面《怎么读这份报告》。"})
             self._add({"t": "chart", "name": "interest_bars",
                        "svg": self.main_charts.get("interest_bars", ""),
-                       "caption": "条长=原始喜爱度（1–5）；虚线是 TA 自己的兴趣平均，"
-                                  "用于看相对更热/没那么热的领域。"})
+                       "caption": "条越长＝TA 越喜欢；虚线是 TA 自己的兴趣平均，"
+                                  "用来看哪些相对更热、哪些相对没那么热。"
+                                  "怎么看详见前面《怎么读这份报告》。"})
         # 兴趣品质成色（B 层并入簇的定性读出）
         iq = self.p.get("interest_quality") or []
         if iq:
@@ -393,20 +476,22 @@ class ReportBuilder:
         if self.main_charts.get("radar_sections"):
             self._add({"t": "chart", "name": "radar_sections",
                        "svg": self.main_charts["radar_sections"],
-                       "caption": "一眼看 TA 在各领域相对自己平均的位置——"
-                                  "越往外=相对更突出，越往内=相对还在发展中。"})
+                       "caption": "把 TA 和 TA 自己比：越往外＝在 TA 身上相对越突出，"
+                                  "越往内＝相对没那么突出（不和别人比）。"
+                                  "怎么看详见前面《怎么读这份报告》。"})
         if self.main_charts.get("cluster_bars"):
             self._add({"t": "chart", "name": "cluster_bars",
                        "svg": self.main_charts["cluster_bars"],
-                       "caption": "五组跨节合并的能力簇（已去冗余、每簇只一条），"
-                                  "以 TA 自己的基线为中轴。"})
+                       "caption": self.CHART_FOOTNOTE})
         # 相对优势 TOP
         strengths = self.p.get("relative_strengths_top") or []
         if strengths:
             svg = _charts.relative_bar_chart(
                 strengths, title="相对优势 TOP（个体内）")
             self._add({"t": "chart", "name": "strengths_top", "svg": svg,
-                       "caption": "这些是 TA 在自己身上相对更突出的方面，附原始水平。"})
+                       "caption": "这些是把 TA 各方面放一起、在 TA 身上相对更突出的几项"
+                                  "（右边标的是实际做到的程度）。"
+                                  "怎么看详见前面《怎么读这份报告》。"})
         # 成长方向（T-11 防护：原始高项绝不入，单列保护说明）
         growth = self.p.get("growth_areas_top", {}) or {}
         items = growth.get("items") or []
@@ -432,8 +517,9 @@ class ReportBuilder:
         intro = self.r.narrative(
             "actions_intro",
             f"下面是为{self.nick}挑选、按 TA 的画像与气质裁剪过的家庭建议，"
-            "分游戏 / 锻炼 / 家庭陪伴三条线。每条都标注了来源活动编号，便于回溯。"
-            "这些是顺势养育的机会，不是训练处方、不承诺改变测评分数。")
+            "依次分「游戏」「锻炼」「家庭陪伴」三个小节，每条只写「做什么 + 怎么做」。"
+            "这些是顺势养育的机会，不是训练处方、不承诺改变测评分数。"
+            "每条建议都来自一套有发展依据的循证活动库，详细来源与依据见文末附录。")
         self._p(intro)
         grouped = self._group_activities(self.r.activities)
         self._add({"t": "act_lines", "groups": grouped})
@@ -476,27 +562,67 @@ class ReportBuilder:
         if notes:
             self._add({"t": "boundary", "items": notes})
 
-    # -- 附录（方法学与局限）---------------------------------------------
+    # -- 附录（建议来源与依据 + 方法学与局限）-----------------------------
     def _appendix(self):
         self._h(2, self.SECTION_TITLES["appendix"], anchor="appendix")
+
+        # A) 建议来源与依据：把从正文移走的活动编号 + 一句依据列在此处供溯源。
+        self._add({"t": "h", "level": 3, "text": "建议来源与依据"})
+        self._p(
+            "正文每条游戏／锻炼／家庭陪伴建议，都来自一套有发展依据的「循证活动库」。"
+            "为让正文好读，活动编号与依据统一列在下表，方便你溯源核对。")
+        prov_rows = self._activity_provenance_rows(self.r.activities)
+        if prov_rows:
+            self._add({"t": "table",
+                       "head": ["活动编号", "建议名", "证据强度", "依据摘要"],
+                       "rows": prov_rows})
+        else:
+            self._add({"t": "p", "muted": True,
+                       "text": "本次未附带可溯源的活动条目。"})
+
+        # B) 方法学与局限
+        self._add({"t": "h", "level": 3, "text": "方法学与局限"})
         appx = self.r.narrative("appendix", "")
         if appx:
             self._add({"t": "raw_md", "text": appx})
         meta = self.p.get("meta", {}) or {}
         baseline = self.p.get("baseline", {}) or {}
         rows = [
-            ("方法", "个体内（ipsative）相对比较：以孩子自己的 freq5 总均值为基线做中心化。"),
+            ("方法", "个体内（ipsative）相对比较：以孩子自己的 freq5 总均值为基线做中心化"
+                     "——只把孩子和 TA 自己比，不与他人比。"),
             ("不做什么", "不诊断、不筛查、不给人群百分位、不下临床结论、不与他人比较。"),
             ("题库版本", meta.get("item_bank_version")),
             ("计分配置版本", meta.get("scoring_config_version")),
             ("个人基线（freq5 均值）", baseline.get("freq5_person_mean")),
             ("同义簇处理", "5 组同义簇合并为单一指标、只计基线一次，报告每簇只写一条。"),
-            ("子维度", "题少 / 子维度间相关高，仅供定性参考，不进入排序。"),
+            ("子维度", "每项只问一两道题、不够稳、意思也有重叠，仅供参考，不进入排序。"),
+            ("局限", "本工具暂无本土常模与信效度数据，结果仅供家庭参考、非诊断。"),
         ]
         self._add({"t": "table", "head": ["项目", "说明"],
                    "rows": [[k, v] for k, v in rows if v is not None]})
         self._add({"t": "p", "muted": True,
                    "text": "本工具暂无本土常模与信效度数据，结果仅供家庭参考。"})
+
+    def _activity_provenance_rows(self, activities):
+        """把 RCO.activities 摊成附录溯源行：活动编号 + 建议名 + 证据强度 + 依据摘要。
+
+        同一活动可能在多条线（游戏/锻炼/陪伴）复用，这里按 id 去重，只列一次。
+        """
+        seen = set()
+        rows = []
+        for a in activities or []:
+            if not isinstance(a, dict):
+                continue
+            aid = a.get("id")
+            if aid in seen:
+                continue
+            seen.add(aid)
+            name = a.get("name") or aid or "—"
+            evi = a.get("evidence") or {}
+            strength = evi.get("strength") or "—"
+            basis = evi.get("basis") or "—"
+            rows.append([aid or "—", name, strength, basis])
+        return rows
 
     # =======================================================================
     # 复用：相对位 + 防护、子维度 chips、簇取值、软提示、原始水平带
@@ -528,8 +654,7 @@ class ReportBuilder:
             return
         svg = _charts.relative_bar_chart(rows, title=title)
         self._add({"t": "chart", "name": "relpos", "svg": svg,
-                   "caption": "横轴零点是 TA 自己的平均；右侧标注原始水平。"
-                              "原始为「高」者即便相对靠后，也不作短板解读。"})
+                   "caption": self.CHART_FOOTNOTE})
         self._raw_band_guard_list(rows, name_key="name")
 
     def _raw_band_guard_list(self, rows, name_key):
@@ -559,7 +684,8 @@ class ReportBuilder:
             chips.append({"text": f"{s.get('report_subscale')}：{lvl}", "kind": kind})
         self._add({"t": "chips", "items": chips})
         self._add({"t": "p", "muted": True,
-                   "text": "以上子维度题少 / 子维度间相关高，仅供定性参考，不参与相对排序。"})
+                   "text": "上面这些更细的小项，每项只问了一两道题、不够稳，意思上也有重叠，"
+                           "所以只供你参考、不拿来给孩子排强弱——排名只用题目够多够稳的大块。"})
 
     def _soft_hints_block(self):
         """red_flags 软提示：温和、非诊断；并把 RCO 里额外软提示一并呈现。"""
@@ -697,26 +823,22 @@ class MarkdownWriter:
         return "\n\n".join(out)
 
     def _act_item_md(self, a):
+        # 正文只留：建议名 + 怎么做（去掉活动编号 ACT-xx-000 与证据强度标签）。
+        # 活动编号与依据移至文末《附录：建议来源与方法学》供溯源。
         name = a.get("name") or a.get("id")
-        aid = a.get("id")
-        head = f"**{name}**" + (f"（来源 `{aid}`）" if aid else "")
-        lines = [head]
+        lines = [f"**{name}**"]
         why = a.get("why") or a.get("reason")
         if why:
             lines.append(f"- 为什么适合 TA：{why}")
         steps = a.get("steps")
         if isinstance(steps, list) and steps:
-            lines.append("- 怎么玩：" + "；".join(str(s) for s in steps[:3]))
+            lines.append("- 怎么玩：" + "；".join(str(s).rstrip("。.；;、 ") for s in steps[:3]))
         elif a.get("how"):
             lines.append(f"- 怎么玩：{a.get('how')}")
         ladder = a.get("difficulty_ladder") or {}
         tip = a.get("ladder_tip") or ladder.get("harder") or ladder.get("easier")
         if tip:
             lines.append(f"- 难度微调：{tip}")
-        evi = a.get("evidence") or {}
-        if evi.get("strength"):
-            lines.append(f"- 证据：{evi.get('strength')}"
-                         + (f"——{evi.get('basis')}" if evi.get("basis") else ""))
         safety = a.get("safety_notes") or a.get("safety")
         if safety:
             lines.append(f"- 安全：{safety}")
@@ -841,16 +963,16 @@ class HtmlWriter:
         return "".join(out)
 
     def _act_item_html(self, a):
+        # 正文只留：建议名 + 怎么做（去掉活动编号 ACT-xx-000 与证据强度标签）。
+        # 活动编号与依据移至文末《附录：建议来源与方法学》供溯源。
         name = a.get("name") or a.get("id")
-        aid = a.get("id")
-        src = f'<span class="src">来源 {_h(aid)}</span>' if aid else ""
         meta_bits = []
         why = a.get("why") or a.get("reason")
         if why:
             meta_bits.append(f"为什么适合 TA：{_h(why)}")
         steps = a.get("steps")
         if isinstance(steps, list) and steps:
-            meta_bits.append("怎么玩：" + _h("；".join(str(s) for s in steps[:3])))
+            meta_bits.append("怎么玩：" + _h("；".join(str(s).rstrip("。.；;、 ") for s in steps[:3])))
         elif a.get("how"):
             meta_bits.append("怎么玩：" + _h(a.get("how")))
         ladder = a.get("difficulty_ladder") or {}
@@ -860,13 +982,8 @@ class HtmlWriter:
         safety = a.get("safety_notes") or a.get("safety")
         if safety:
             meta_bits.append("安全：" + _h(safety))
-        evi = a.get("evidence") or {}
-        evi_tag = ""
-        if evi.get("strength"):
-            cls = "evi" + (" principle" if "原理" in str(evi.get("strength")) else "")
-            evi_tag = f'<span class="{cls}">{_h(evi.get("strength"))}</span>'
         meta_html = ("".join(f'<div class="meta">{m}</div>' for m in meta_bits))
-        return (f'<div class="act-item"><div class="name">{_h(name)}{evi_tag}{src}</div>'
+        return (f'<div class="act-item"><div class="name">{_h(name)}</div>'
                 f'{meta_html}</div>')
 
 

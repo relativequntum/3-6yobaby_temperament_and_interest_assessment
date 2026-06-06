@@ -98,10 +98,10 @@ hr{border:none; border-top:1px dashed var(--line); margin:1.6em 0;}
 .soft-hint{background:#fff6ec; border:1px dashed var(--accent);
   border-radius:12px; padding:12px 14px; margin:12px 0; color:#7a5a36;}
 
-/* ---- 行动建议三线 ---- */
-.act-lines{display:grid; gap:12px;}
-/* RENDER-F4：≥640px 真正多栏——三条线(游戏/锻炼/家庭陪伴)横排三栏，不再单栏堆叠。 */
-@media(min-width:640px){.act-lines{grid-template-columns:repeat(3,1fr); align-items:start;}}
+/* ---- 行动建议三线（顺序竖排：先游戏、再锻炼、再家庭陪伴）---- */
+/* 撤销上轮 RENDER-F4 的三栏并排：改回单列堆叠，每条占一行、移动端友好。
+   三个小节按 DOM 顺序自然竖排，全宽下亦不再分栏。 */
+.act-lines{display:flex; flex-direction:column; gap:16px;}
 .act-line{border:1px solid var(--line); border-radius:14px; overflow:hidden;
   background:#fff;}
 .act-line>.head{padding:10px 14px; font-weight:700; color:#fff;

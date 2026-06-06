@@ -44,3 +44,7 @@ draft-*.json
 
 # === skill 运行时中间产物（每次分析的临时 RCO/profile/candidates 等）===
 work/
+
+# === 真实作答文件（儿童数据，任何位置都绝不入库）===
+测评作答_*.json
+*_eval_qnn/

@@ -195,9 +195,9 @@ def _text(x, y, s, size=13, color=None, anchor="start", weight="normal", opacity
 
 
 def _caption(x, y):
-    """统一「相对/原始」双读数说明 + 非诊断声明（页脚小字）。"""
-    line1 = "图中为「个体内相对位」（与孩子自己的平均比，非与他人比较）。"
-    line2 = "另以颜色/标注呈现「原始水平」：原始为高的项即使相对没那么突出，也不视为短板。"
+    """统一白话双读数说明（页脚小字）：把孩子和 TA 自己比，指回《怎么读这份报告》。"""
+    line1 = "这张图是把孩子和 TA 自己比：越突出＝在 TA 身上相对越扎眼（不和别人比）。"
+    line2 = "右边标的是实际做到的程度；做得挺好、只是相对没那么突出，不算缺点。"
     return (
         _text(x, y, line1, size=11, color=PALETTE["ink_soft"])
         + _text(x, y + 15, line2, size=11, color=PALETTE["ink_soft"])
